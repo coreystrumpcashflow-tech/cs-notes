@@ -692,6 +692,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 /* website: the to-do list is read-only here */
 .task{cursor:default}
+/* screens out of view hold still */
+.scr.scr-idle,.scr.scr-idle::before,.scr.scr-idle::after,.scr.scr-idle *,.scr.scr-idle *::before,.scr.scr-idle *::after{animation-play-state:paused!important;transition:none!important}
 </style>
 </head>
 <body>
@@ -1779,8 +1781,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   }
 
   if('IntersectionObserver' in window){
-    var io2 = new IntersectionObserver(function(es){ es.forEach(function(e){ SURF.forEach(function(o){ if(o.cv === e.target) o.vis = e.isIntersecting; }); }); }, { rootMargin: '120px' });
+    var io2 = new IntersectionObserver(function(es){ es.forEach(function(e){ SURF.forEach(function(o){ if(o.cv === e.target) o.vis = e.isIntersecting; }); }); });
     SURF.forEach(function(o){ io2.observe(o.cv); });
+    /* screens that aren't on screen also pause their text and CSS motion */
+    var io3 = new IntersectionObserver(function(es){ es.forEach(function(e){ e.target.classList.toggle('scr-idle', !e.isIntersecting); }); });
+    $$('.scr').forEach(function(s){ io3.observe(s); });
   } else SURF.forEach(function(o){ o.vis = true; });
 
   var lastT = 0, frameN = 0;
@@ -1796,7 +1801,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
         sizeS(o, inFs);
         if(o.gl){
           if(o.wt) o.acc = (o.acc || 7) + dt * (o.gl === 'rays' ? 1 + 2 * WS.I : (WS.boom ? 0.5 : 1 + 7 * WS.I));
-          if(inFs || frameN % 2 === 0) drawGL(o, t);
+          drawGL(o, t);
         }
         else if(o.fx === 'paint') drawPaint(o, t);
         else if(o.fx === 'bar') drawBar(o, dt, t);
