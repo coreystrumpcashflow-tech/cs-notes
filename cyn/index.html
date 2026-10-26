@@ -852,7 +852,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <section class="band qs" aria-labelledby="h-qs">
   <div class="in">
     <h2 class="h-ink" id="h-qs">For the call</h2>
-    <p class="lead">Pastor, Martin, Corey. Leave with a timeline and a rehearsal date.</p>
+    <p class="lead">Pastor, Martin, Corey. The first three come first, when Martin and Corey talk Tue, Oct 27. Leave with a timeline and a rehearsal date.</p>
     <div class="qlist" id="qlist"></div>
     <div class="qfoot"><span>Tuesday, Thursday or Friday this week.</span><span><b id="qcount">0 of 12</b> answered · saved on this device</span></div>
   </div>
@@ -861,9 +861,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <section class="band next" aria-labelledby="h-next">
   <div class="in">
     <h2 class="h-mem" id="h-next">next up</h2>
-    <p class="nq">The call with the pastor and Martin.</p>
-    <p class="nq-sub">Leave with: a lighting operator, the presets plan, every due date on the to-do list, and the rehearsal date.</p>
-    <div class="chips"><span>Lights</span><span>Presets</span><span>Song list</span><span>Countdown look</span><span>Rehearsal</span></div>
+    <p class="nq">Martin and Corey talk team and volunteers, Tue Oct 27.</p>
+    <p class="nq-sub">Leave with: who fills each crew role and session, who calls the cues, and who owns the cue sheet. Then the call with the pastor: the presets plan, every due date on the to-do list, and the rehearsal date.</p>
+    <div class="chips"><span>Crew</span><span>Cues</span><span>Cue sheet</span><span>Presets</span><span>Song list</span><span>Countdown look</span><span>Rehearsal</span></div>
   </div>
 </section>
 
@@ -1082,7 +1082,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     {"id": "t32", "title": "When worship happens in each session", "note": "Its own segment before the speaker. Which sessions, what time, how long.", "group": "Worship", "owner": "Martin + worship leader", "due": "2026-10-30", "done": false, "order": 32},
     {"id": "t33", "title": "Load the 2025 recap video into ProPresenter", "note": "It's on communityyn.com. Plays at doors open.", "group": "Screens + slides", "owner": "ProPresenter", "due": "2026-11-06", "done": false, "order": 33},
     {"id": "t34", "title": "Walk-in and walk-out playlist", "note": "", "group": "Sound", "owner": "Lourdes", "due": "2026-11-06", "done": false, "order": 34},
-    {"id": "t35", "title": "Workshop names, leaders and rooms", "note": "For the Workshops slide.", "group": "Screens + slides", "owner": "Pastor", "due": "2026-11-04", "done": false, "order": 35}
+    {"id": "t35", "title": "Workshop names, leaders and rooms", "note": "For the Workshops slide.", "group": "Screens + slides", "owner": "Pastor", "due": "2026-11-04", "done": false, "order": 35},
+    {"id": "t36", "title": "Team and volunteers with Martin", "note": "Who fills each open crew role and session, who calls the cues, who owns the cue sheet.", "group": "People", "owner": "Corey + Martin", "due": "2026-10-27", "done": false, "order": 36}
   ];
 
   /* ---------- to-do state ---------- */
@@ -1274,11 +1275,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
   /* ---------- call checklist (this device) ---------- */
   var qs = [
-    'Who runs lights?',
+    'Crew: who from the church team fills each open role (lights, church systems, LED wall, lyrics + TVs, camera, stage manager), and for which sessions?',
+    'Conference day: who calls the cues Fri and Sat, Corey or Martin?',
+    'Who owns the cue sheet and the run of show?',
     'Lighting presets: Corey likely rebuilds them. Confirm, done by Nov 4?',
     'Gear: what do we have, what’s missing?',
     'Crew comms. Radios or headsets?',
-    'Who runs the LED wall, lyrics + TVs, camera and stage manager?',
     'Countdown look and backgrounds: pick from the Ideas tab.',
     'Who sends the song list, and by when?',
     'Rehearsal: worship + full tech. Which date?',
@@ -1289,7 +1291,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     'Worship: which sessions, what time, how long?',
     'Workshops: names, leaders and rooms?'
   ];
-  var KEY = 'cyn26-production-call-v3', saved = {};
+  var KEY = 'cyn26-production-call-v4', saved = {};
   try { saved = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch(e){ saved = {}; }
   var list = $('#qlist'), cnt = $('#qcount');
   function upd(){ var n = 0; $$('input', list).forEach(function(x){ if(x.checked) n++; }); cnt.textContent = n + ' of ' + qs.length; }
