@@ -742,7 +742,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <section class="band owners" aria-labelledby="h-crew">
   <div class="in">
     <h2 class="crew-h" id="h-crew">Crew <span class="crew-n" id="crewN">4 filled · 6 open</span></h2>
-    <p class="sub-h">The pastor leads the production department. Martin runs production for the church. Corey runs it for CYN. Live roles are needed Fri night, Sat AM and Sat PM.</p>
+    <p class="sub-h">The pastor leads the production department. Martin runs production for the church, is the church's point of contact, and manages the schedule for every session. Corey runs production for CYN, is CYN's point of contact, and works with the pastor on content and creative. Live roles are needed Fri night, Sat AM and Sat PM.</p>
     <div class="crew">
       <div class="crew-row"><span class="crew-role">Producer</span><span class="crew-who">Corey</span><p class="crew-do">Calls every cue, owns the cue sheet, runs the crew</p></div>
       <div class="crew-row"><span class="crew-role">Sound</span><span class="crew-who">Lourdes</span><p class="crew-do">Band, host and speaker mics, walk-in and walk-out playlist, outdoor speaker Fri 9:45pm</p></div>
@@ -1078,8 +1078,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     {"id": "t28", "title": "Fill the camera operator", "note": "One camera to the side TVs, records every session. Fri night, Sat AM and Sat PM.", "group": "People", "owner": "Corey + Pastor", "due": "2026-11-02", "done": false, "order": 28},
     {"id": "t29", "title": "Record every session", "note": "Camera records, clean audio from the sound board, files backed up after each night.", "group": "Photos + video", "owner": "Camera + Lourdes", "due": "2026-11-13", "done": false, "order": 29},
     {"id": "t30", "title": "Speaker timer on the stage monitor", "note": "ProPresenter stage display with the countdown and the real time. Test at the Nov 5 training.", "group": "Screens + slides", "owner": "ProPresenter + Corey", "due": "2026-11-05", "done": false, "order": 30},
-    {"id": "t31", "title": "Speaker line-up by session", "note": "Which guest speaks in Sessions 01 to 04.", "group": "Rehearsals", "owner": "Pastor", "due": "2026-10-30", "done": false, "order": 31},
-    {"id": "t32", "title": "When worship happens in each session", "note": "Its own segment before the speaker. Which sessions, what time, how long.", "group": "Worship", "owner": "Pastor + worship leader", "due": "2026-10-30", "done": false, "order": 32},
+    {"id": "t31", "title": "Speaker line-up by session", "note": "Which guest speaks in Sessions 01 to 04.", "group": "Rehearsals", "owner": "Martin", "due": "2026-10-30", "done": false, "order": 31},
+    {"id": "t32", "title": "When worship happens in each session", "note": "Its own segment before the speaker. Which sessions, what time, how long.", "group": "Worship", "owner": "Martin + worship leader", "due": "2026-10-30", "done": false, "order": 32},
     {"id": "t33", "title": "Load the 2025 recap video into ProPresenter", "note": "It's on communityyn.com. Plays at doors open.", "group": "Screens + slides", "owner": "ProPresenter", "due": "2026-11-06", "done": false, "order": 33},
     {"id": "t34", "title": "Walk-in and walk-out playlist", "note": "", "group": "Sound", "owner": "Lourdes", "due": "2026-11-06", "done": false, "order": 34},
     {"id": "t35", "title": "Workshop names, leaders and rooms", "note": "For the Workshops slide.", "group": "Screens + slides", "owner": "Pastor", "due": "2026-11-04", "done": false, "order": 35}
@@ -1274,7 +1274,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
   /* ---------- call checklist (this device) ---------- */
   var qs = [
-    'What is Martin’s part and what is mine?',
     'Who runs lights?',
     'Lighting presets: Corey likely rebuilds them. Confirm, done by Nov 4?',
     'Gear: what do we have, what’s missing?',
@@ -1290,7 +1289,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     'Worship: which sessions, what time, how long?',
     'Workshops: names, leaders and rooms?'
   ];
-  var KEY = 'cyn26-production-call-v2', saved = {};
+  var KEY = 'cyn26-production-call-v3', saved = {};
   try { saved = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch(e){ saved = {}; }
   var list = $('#qlist'), cnt = $('#qcount');
   function upd(){ var n = 0; $$('input', list).forEach(function(x){ if(x.checked) n++; }); cnt.textContent = n + ' of ' + qs.length; }
