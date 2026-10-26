@@ -1,0 +1,1871 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CYN Conference 2026 · Production Plan</title>
+<meta name="description" content="Production plan for CYN Conference 2026, Nov 13 &amp; 14: crew, to-do list, cue sheet and screen ideas.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#221712">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CYN Conference 2026 · Production Plan">
+<meta property="og:description" content="Crew, to-do list, cue sheet and screen ideas for Nov 13 &amp; 14.">
+<meta property="og:url" content="https://coreystrumpcashflow-tech.github.io/cs-notes/cyn/">
+<meta property="og:image" content="https://coreystrumpcashflow-tech.github.io/cs-notes/cyn/assets/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/cyn-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bellefair&family=DM+Sans:wght@500;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@800;900&display=swap">
+<style>
+/* Layout: full-width color bands stacked like the CYN Conference site, content in a centered 1100px column, closing with the church's own footer. One fixed look, like the church's site. */
+:root{
+  --red:#af1e04; --red-deep:#7b1002; --ink:#3d2506;
+  --brown-900:#221712; --brown-800:#36221f; --char:#1d1d1f; --char-2:#3a3233; --church:#323232;
+  --gold:#feeca2; --peri:#a0bfff; --cream:#fffbf5; --white:#ffffff;
+  --gold-70:rgba(254,236,162,.75); --white-75:rgba(255,255,255,.78); --line-gold:rgba(254,236,162,.24); --line-white:rgba(255,255,255,.18); --line-ink:rgba(61,37,6,.2);
+  --serif:"Bellefair","Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --btn:"DM Sans","Inter",system-ui,-apple-system,sans-serif;
+  --church-font:"Montserrat","Arial Black",system-ui,sans-serif;
+  color-scheme:dark;
+}
+html{background:var(--brown-900)}
+body{background:var(--brown-900);color:var(--white);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.band{position:relative;padding-block:88px;overflow:hidden}
+.in{position:relative;z-index:1;max-width:1100px;margin:0 auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (max-width:700px){.band{padding-block:60px}}
+.label{font-family:var(--btn);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.pill{display:inline-flex;align-items:center;gap:.35em;font-family:var(--btn);font-weight:500;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:10px 20px;border:0;cursor:pointer;text-decoration:none}
+.pill b{font-weight:700}
+.pill.gold{background:var(--gold);color:var(--red-deep)}
+.pill.dark{background:var(--ink);color:var(--white)}
+.pill:focus-visible,.q input:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* Hero */
+.hero{background:var(--red);text-align:center;padding-block:104px 64px}
+.hero::before{content:"";position:absolute;inset:0;background:url(assets/brush.png) center/cover no-repeat;opacity:.92;pointer-events:none}
+.hero h1{font-family:var(--serif);font-weight:400;color:var(--white);margin:0;line-height:.84;text-transform:uppercase;text-wrap:balance}
+.hero h1 span{display:block}
+.hero .l1{font-size:clamp(64px,11vw,132px)}
+.hero .l2{font-size:clamp(40px,10.4vw,128px);letter-spacing:-.035em}
+.hero .l3{font-size:clamp(42px,6.8vw,86px);margin-top:.14em;letter-spacing:-.02em}
+.date{font-weight:500;color:var(--gold);font-size:20px;margin:36px 0 4px}
+.count{color:var(--gold-70);margin:0 0 26px}
+.byline{margin:16px 0 0;font-size:13px;color:var(--white-75)}
+.logo{display:block;width:64px;height:auto;margin:40px auto 0}
+
+/* Yes, now */
+.yes{background:var(--char);text-align:center;padding-block:76px}
+.yes::before{content:"";position:absolute;inset:0;background:url(assets/halftone.jpg) center/cover;opacity:.14;pointer-events:none}
+.yes .big{font-size:clamp(32px,4.6vw,46px);color:var(--gold);margin:0;letter-spacing:-.01em;line-height:1.1}
+.yes .big b{font-weight:700}
+.yes .verse{font-style:italic;color:var(--white-75);margin:14px 0 0;font-size:17px}
+
+/* Shared headings */
+h2{margin:0;font-weight:400}
+.h-gold{font-family:var(--serif);text-transform:uppercase;color:var(--gold);font-size:clamp(46px,6.6vw,80px);line-height:.92;text-wrap:balance}
+.h-peri{font-family:var(--serif);color:var(--peri);font-size:clamp(50px,7vw,86px);line-height:.9;letter-spacing:-.01em;text-wrap:balance}
+.h-sans{font-family:var(--sans);font-weight:500;color:var(--white);font-size:clamp(36px,4.6vw,50px);line-height:1.05;letter-spacing:-.02em}
+.lead{color:var(--white-75);margin:18px 0 0;max-width:38ch}
+.circled{position:relative;display:inline-block;white-space:nowrap}
+.circled img{position:absolute;left:-24%;top:-20%;width:148%;height:140%;pointer-events:none;max-width:none}
+.split{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:start}
+@media (max-width:860px){.split{grid-template-columns:minmax(0,1fr);gap:30px}}
+
+/* Road to Nov 13 */
+.road{background:var(--brown-900)}
+.tl{list-style:none;margin:6px 0 0;padding:0;border-left:1px solid var(--line-gold)}
+.tl li{position:relative;padding:0 0 22px 26px}
+.tl li:last-child{padding-bottom:0}
+.tl li::before{content:"";position:absolute;left:-6px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--gold);box-sizing:border-box}
+.tl li.done::before{background:var(--white)}
+.tl li.prop::before{background:var(--brown-900);border:1.5px dashed var(--gold)}
+.tl li.conf::before{background:var(--red);box-shadow:0 0 0 4px rgba(175,30,4,.35);width:13px;height:13px;left:-7px}
+.tl .d{color:var(--gold)}
+.tl .t{font-size:18px;font-weight:600;line-height:1.3;margin-top:2px}
+.tl .x{font-size:14.5px;color:var(--white-75)}
+.tl .tag{font-family:var(--btn);font-weight:700;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px dashed var(--line-gold);border-radius:999px;padding:1px 7px;margin-left:8px;vertical-align:2px}
+.key{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:22px;font-size:13px;color:var(--white-75)}
+.key span{display:inline-flex;align-items:center;gap:8px}
+.key i{width:10px;height:10px;border-radius:50%;display:inline-block;box-sizing:border-box}
+
+/* Pray + fast */
+.pray{background:var(--red-deep)}
+.points{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.points span{font-family:var(--btn);font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--red-deep);background:var(--gold);border-radius:999px;padding:6px 12px}
+.note{font-size:13.5px;color:var(--white-75);margin:18px 0 0;max-width:40ch}
+.wk{display:grid;grid-template-columns:168px minmax(0,1fr);gap:18px;padding:15px 0;border-top:1px solid var(--line-white)}
+.wk:first-child{border-top:0;padding-top:4px}
+.wk .when{color:var(--gold);padding-top:4px}
+.wk .what{font-weight:600;font-size:17px}
+.wk .sub{font-size:14.5px;color:var(--white-75)}
+.wk.fast{background:var(--gold);color:var(--ink);padding:18px 20px;border-top:0;margin:6px 0}
+.wk.fast .when{color:var(--red-deep)}
+.wk.fast .sub{color:rgba(61,37,6,.82)}
+.wk.fast + .wk{border-top:0}
+@media (max-width:560px){.wk{grid-template-columns:minmax(0,1fr);gap:2px}}
+
+/* Schedule on red paper */
+.sched{background:#c8200c url(assets/red-paper.jpg) center/cover no-repeat}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:44px;align-items:start;max-width:980px;margin:0 auto}
+.cards .fri{margin-top:110px}
+@media (max-width:760px){.cards{grid-template-columns:minmax(0,1fr);gap:28px}.cards .fri{margin-top:0}}
+.card{background:var(--gold);color:var(--ink);padding:38px 30px 28px;box-shadow:0 18px 40px rgba(60,10,0,.28)}
+.card hr{border:0;border-top:2px solid var(--ink);margin:0 0 24px}
+.card h3{font-family:var(--serif);font-weight:400;font-size:46px;line-height:.92;margin:0 0 18px;color:var(--ink)}
+.row{margin:0;padding:5px 0;font-size:16.5px}
+.row b{font-weight:700}
+.row .s{display:block;font-size:14px;opacity:.85}
+.ho{font-family:var(--btn);font-weight:700;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:0;padding:3px 0 5px 16px;position:relative}
+.ho::before{content:"";position:absolute;left:4px;top:1px;bottom:5px;border-left:2px dotted var(--red)}
+.ho.end{color:var(--red-deep)}
+.sched-cta{text-align:center;margin-top:40px}
+
+/* Owners */
+.owners{background:var(--brown-800)}
+.owners .sub-h{color:var(--white-75);margin:12px 0 30px;max-width:56ch}
+.strike{position:relative;color:var(--white-75);margin-right:.2em}
+.strike::after{content:"";position:absolute;left:-4%;right:-4%;top:55%;height:3px;background:var(--gold);border-radius:3px;transform:rotate(-4deg)}
+.over{font-family:var(--serif);color:var(--gold);font-size:1.05em}
+.own{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:860px){.own{grid-template-columns:minmax(0,1fr)}}
+.col{background:var(--brown-900);padding:24px 22px 18px;border-top:4px solid var(--gold);min-width:0}
+.col.assumed{border-top-color:var(--peri)}
+.col.open{border-top-color:var(--red)}
+.col h3{font-family:var(--serif);font-weight:400;font-size:31px;line-height:1;color:var(--gold);margin:0 0 4px;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.col.assumed h3{color:var(--peri)}
+.col.open h3{color:#ff7a5c}
+.col h3 small{font-family:var(--btn);font-weight:700;font-size:13px;letter-spacing:.08em;color:var(--white-75)}
+.col .cap{font-size:13px;color:var(--white-75);margin:0 0 10px}
+.col ul{list-style:none;margin:0;padding:0}
+.col li{padding:9px 0;border-top:1px solid var(--line-gold);display:flex;justify-content:space-between;gap:14px;font-size:14.5px}
+.col li span:first-child{font-weight:600}
+.col li span:last-child{color:var(--white-75);text-align:right}
+.col.open ul{columns:2;column-gap:18px}
+.col.open li{display:block;break-inside:avoid}
+
+/* Fixing */
+.fix{background:var(--char-2)}
+.fixes{margin-top:30px;border-top:1px solid var(--line-white)}
+.fx{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:28px;padding:20px 0;border-bottom:1px solid var(--line-white);align-items:baseline}
+.fx .p{font-family:var(--serif);color:var(--gold);font-size:28px;line-height:1.1}
+.fx .s{font-size:16px}
+.fx .s b{color:var(--peri);font-family:var(--btn);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:2px}
+@media (max-width:700px){.fx{grid-template-columns:minmax(0,1fr);gap:6px}}
+.ev{margin-top:18px}
+.ev ul{margin:16px 0 0;padding-left:20px;color:var(--white-75);display:grid;gap:6px;font-size:14.5px;max-width:70ch}
+.role{margin-top:18px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media (max-width:700px){.role{grid-template-columns:minmax(0,1fr)}}
+.role div{border:1px solid var(--line-gold);padding:20px 22px}
+.role .label{color:var(--gold)}
+.role p{margin:6px 0 0;font-size:15px;color:var(--white-75)}
+.role-h{font-family:var(--serif);font-size:30px;color:var(--white);margin:44px 0 0}
+.role-h small{font-family:var(--btn);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-left:10px}
+
+/* Questions */
+.qs{background:var(--peri);color:var(--ink);color-scheme:light}
+.qs .h-ink{font-family:var(--serif);color:var(--ink);font-size:clamp(46px,6.2vw,76px);line-height:.92;text-wrap:balance}
+.qs .lead{color:rgba(61,37,6,.78)}
+.qlist{margin-top:28px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
+@media (max-width:760px){.qlist{grid-template-columns:minmax(0,1fr)}}
+.q{display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;align-items:start;padding:12px 0;border-top:1px solid var(--line-ink);cursor:pointer;font-size:16px;font-weight:500}
+.q input{width:18px;height:18px;margin:3px 0 0;accent-color:var(--red-deep)}
+.q input:checked + span{text-decoration:line-through;opacity:.55}
+.qfoot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;margin-top:20px;font-size:13.5px;color:rgba(61,37,6,.8)}
+.qfoot b{color:var(--ink)}
+
+/* Next up */
+.next{background:#3a221f;text-align:center}
+.h-mem{font-family:var(--serif);color:var(--gold);font-size:clamp(52px,7vw,84px);line-height:.95}
+.nq{font-size:clamp(20px,2.4vw,24px);font-weight:500;max-width:34ch;margin:18px auto 0;line-height:1.35}
+.nq-sub{color:var(--white-75);margin:12px auto 0;max-width:52ch;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:26px}
+.chips span{border:1px solid var(--line-gold);color:var(--gold);border-radius:999px;padding:6px 13px;font-size:13.5px}
+
+/* CYN sign-off */
+.network{background:#141414;padding-block:70px 80px}
+.network::before{content:"";position:absolute;inset:0;background:url(assets/halftone.jpg) center/cover;opacity:.55;pointer-events:none}
+.network p{font-family:var(--serif);color:var(--white);margin:0;font-size:clamp(64px,13vw,176px);line-height:.92;letter-spacing:-.045em}
+
+/* Church footer */
+.church{background:var(--church);color:var(--cream);padding-block:60px 40px}
+.wordmark{font-family:var(--church-font);font-weight:900;text-transform:uppercase;font-size:clamp(34px,4vw,44px);line-height:.88;letter-spacing:-.045em;margin:0}
+.motto{font-family:var(--sans);font-size:15px;margin:10px 0 0;color:rgba(255,251,245,.82)}
+.cf{display:grid;grid-template-columns:repeat(2,minmax(0,280px));gap:24px;margin-top:34px}
+@media (max-width:760px){.cf{grid-template-columns:minmax(0,1fr)}}
+.cf h4{font-family:var(--church-font);font-weight:900;font-size:24px;letter-spacing:-.03em;margin:0 0 6px}
+.cf p{margin:0;font-size:14.5px;color:rgba(255,251,245,.85)}
+.cf code{font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;font-size:12.5px;word-break:break-all}
+.cmeta{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,251,245,.45);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;font-size:13px;color:rgba(255,251,245,.7)}
+.cmeta img{width:36px;height:auto;opacity:.9}
+
+/* Week by week */
+.weeks{background:var(--gold);color:var(--ink)}
+.h-ink-up{font-family:var(--serif);text-transform:uppercase;color:var(--ink);font-size:clamp(46px,6.6vw,80px);line-height:.92;text-wrap:balance}
+.weeks .lead{color:rgba(61,37,6,.78)}
+.wkgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px 28px;margin-top:36px}
+.wcol{border-top:2px solid var(--ink);padding-top:14px;min-width:0}
+.wcol .label{color:var(--red-deep)}
+.wcol h3{font-family:var(--serif);font-weight:400;font-size:31px;line-height:1;margin:6px 0 12px;color:var(--ink)}
+.wcol ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.wcol li{font-size:15px;font-weight:600;line-height:1.35}
+.wcol li small{display:block;font-family:var(--btn);font-weight:700;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(61,37,6,.6);margin-top:2px}
+.wcol li small.need{color:var(--red)}
+.wcol li.cal{font-weight:500;font-size:13.5px;color:rgba(61,37,6,.7);border-left:2px solid var(--red);padding-left:8px}
+.wcol.hot{background:var(--ink);color:var(--gold);padding:14px 18px 18px}
+.wcol.hot h3{color:var(--gold)}
+.wcol.hot .label,.wcol.hot li small{color:var(--gold-70)}
+
+/* Day flow */
+.flowcard{background:var(--gold);color:var(--ink);max-width:1000px;margin:0 auto;padding:38px 30px 26px;box-shadow:0 18px 40px rgba(60,10,0,.28)}
+.flowcard hr{border:0;border-top:2px solid var(--ink);margin:0 0 22px}
+.flowcard h2{font-family:var(--serif);font-size:clamp(42px,5.4vw,60px);line-height:.95;color:var(--ink)}
+.flowcard .sub{margin:10px 0 0;font-size:15px;color:rgba(61,37,6,.8)}
+.flow-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 8px}
+.ftab{font-family:var(--btn);font-weight:500;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:9px 18px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.ftab b{font-weight:700}
+.ftab[aria-selected="true"]{background:var(--ink);color:var(--gold)}
+.ftab:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.fkey{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:12.5px;color:rgba(61,37,6,.75);margin:4px 0 12px}
+.fkey b{color:var(--red-deep)}
+.fr{display:grid;grid-template-columns:112px minmax(0,1fr) 170px;gap:16px;align-items:baseline;padding:11px 0;border-top:1px solid var(--line-ink)}
+.fr .tm{font-family:var(--btn);font-weight:700;font-size:14px;font-variant-numeric:tabular-nums}
+.fr .tm i{display:block;font-style:normal;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--red-deep);margin-top:1px}
+.fr.prop .tm{color:rgba(61,37,6,.62)}
+.fr .sg b{font-size:16.5px;font-weight:700}
+.fr .sg span{display:block;font-size:14px;color:rgba(61,37,6,.82)}
+.fr .who{font-family:var(--btn);font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-align:right}
+.fr.unset .tm,.fr.unset .who{color:var(--red)}
+.fr.main .sg b{font-family:var(--serif);font-weight:400;font-size:25px;line-height:1.05}
+.fr.prop .sg b,.fr.unset .sg b{font-weight:600;font-size:15.5px}
+.flow-foot{text-align:center;margin-top:22px}
+@media (max-width:640px){
+  .flowcard{padding:30px 20px 22px}
+  .fr{grid-template-columns:78px minmax(0,1fr);gap:12px}
+  .fr .who{grid-column:2;text-align:left;margin-top:-2px}
+}
+
+/* Workstreams */
+.ws{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.w{background:var(--brown-900);padding:20px 20px 14px;border-top:4px solid var(--gold);min-width:0}
+.w.assumed{border-top-color:var(--peri)}
+.w.need{border-top-color:var(--red)}
+.w h3{font-family:var(--serif);font-weight:400;font-size:29px;line-height:1;color:var(--gold);margin:0}
+.w .o{font-size:13.5px;margin:6px 0 10px;color:var(--white-75)}
+.w.assumed .o{color:var(--peri)}
+.w.need .o{color:#ff7a5c;font-weight:600}
+.w ul{list-style:none;margin:0;padding:0}
+.w li{font-size:14px;padding:7px 0;border-top:1px solid var(--line-gold)}
+.wkey{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0 0 22px;font-size:13px;color:var(--white-75)}
+.wkey span{display:inline-flex;align-items:center;gap:8px}
+.wkey i{width:22px;height:4px;display:inline-block}
+
+
+/* Production: crew note */
+.w .sess{display:block;font-family:var(--btn);font-weight:700;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--white-75);margin-top:10px}
+
+/* Backgrounds */
+.bgband{background:var(--char)}
+.bgband .lead{max-width:56ch}
+.bgs{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:28px 20px;margin-top:34px}
+.bgi{min-width:0}
+.scr{position:relative;aspect-ratio:16/9;overflow:hidden;background:#000;box-shadow:0 14px 30px rgba(0,0,0,.45);display:grid;place-items:center;text-align:center}
+.scr > *{position:relative;z-index:1}
+.bgi h3{font-family:var(--serif);font-weight:400;font-size:27px;line-height:1;color:var(--gold);margin:14px 0 4px}
+.bgi .use{color:var(--peri)}
+.bgi p{margin:5px 0 0;font-size:14px;color:var(--white-75)}
+.s-txt{font-family:var(--serif);color:var(--white);font-size:clamp(20px,2.4vw,27px);line-height:1.05}
+.s-small{display:block;font-family:var(--btn);font-weight:700;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-top:7px}
+.b-brush{background:var(--red)}
+.b-brush::before{content:"";position:absolute;inset:0;background:url(assets/brush.png) 0% 50%/230% auto no-repeat;animation:drift 38s linear infinite alternate}
+@keyframes drift{from{background-position:0% 50%}to{background-position:100% 50%}}
+.b-count{background:radial-gradient(90% 90% at 50% 120%, var(--red) 0%, var(--red-deep) 60%)}
+.b-count .num{font-family:var(--serif);font-size:clamp(46px,6vw,66px);color:var(--white);line-height:.9;font-variant-numeric:lining-nums tabular-nums}
+.b-yes{background:var(--peri)}
+.b-yes .s-txt{color:var(--ink);font-size:clamp(32px,4vw,46px);text-transform:uppercase}
+.b-yes .circ{position:relative;display:inline-block}
+.b-yes .circ img{position:absolute;left:-28%;top:-34%;width:156%;height:168%;max-width:none;animation:draw 6s ease-in-out infinite}
+@keyframes draw{0%{clip-path:inset(0 100% 0 0);opacity:1}35%{clip-path:inset(0 0 0 0);opacity:1}85%{clip-path:inset(0 0 0 0);opacity:1}100%{clip-path:inset(0 0 0 0);opacity:0}}
+.b-beam{background:radial-gradient(60% 80% at 50% -10%, rgba(254,236,162,.26), transparent 62%), #150d0a}
+.b-beam::before{content:"";position:absolute;left:40%;top:-25%;width:22%;height:150%;background:linear-gradient(180deg,rgba(254,236,162,.5),rgba(254,236,162,0) 85%);filter:blur(14px);transform:rotate(9deg);animation:beam 7s ease-in-out infinite alternate}
+@keyframes beam{from{opacity:.5}to{opacity:1}}
+.b-beam .s-txt{color:var(--gold);font-size:clamp(18px,2vw,23px);margin-top:28%}
+.b-dust{background:radial-gradient(80% 70% at 50% 115%, #af1e04 0%, #7b1002 45%, #2e0701 100%)}
+.b-dust::before,.b-dust::after{content:"";position:absolute;inset:0;
+  background-image:radial-gradient(1.7px 1.7px at 20% 30%, rgba(254,236,162,.95), transparent 70%),radial-gradient(1.2px 1.2px at 70% 60%, rgba(254,236,162,.85), transparent 70%),radial-gradient(2px 2px at 45% 82%, rgba(254,236,162,.7), transparent 70%),radial-gradient(1.4px 1.4px at 86% 18%, rgba(254,236,162,.85), transparent 70%);
+  background-size:120px 120px;animation:rise1 9s linear infinite}
+.b-dust::after{background-size:190px 190px;opacity:.55;animation:rise2 15s linear infinite}
+@keyframes rise1{from{background-position:0 0}to{background-position:0 -120px}}
+@keyframes rise2{from{background-position:0 0}to{background-position:0 -190px}}
+.b-half{background:#111}
+.b-half::before{content:"";position:absolute;inset:-6%;background:url(assets/halftone.jpg) center/cover;filter:grayscale(1) brightness(.45) contrast(1.15);animation:kb 30s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.12)}}
+.b-half .lower{position:absolute;left:8%;bottom:13%;text-align:left}
+.b-half .lower .s-txt{font-size:clamp(20px,2.2vw,25px)}
+.b-streak{background:#0d0d0e}
+.b-streak::before{content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(90deg, transparent 0 38%, rgba(175,30,4,.95) 50%, transparent 62%) 0 30%/220% 3px no-repeat,
+    linear-gradient(90deg, transparent 0 30%, rgba(254,236,162,.75) 46%, transparent 56%) 0 56%/260% 2px no-repeat,
+    linear-gradient(90deg, transparent 0 34%, rgba(175,30,4,.85) 50%, transparent 66%) 0 74%/190% 5px no-repeat;
+  animation:streak 3.4s linear infinite}
+@keyframes streak{from{background-position:100% 30%,100% 56%,100% 74%}to{background-position:0% 30%,0% 56%,0% 74%}}
+.b-paper{background:#c8200c url(assets/red-paper.jpg) center/cover}
+.b-paper .mini{background:var(--gold);color:var(--ink);padding:7% 8% 7%;width:58%;text-align:left;box-shadow:0 8px 18px rgba(60,10,0,.3)}
+.b-paper .mini hr{border:0;border-top:1.5px solid var(--ink);margin:0 0 9%}
+.b-paper .mini b{font-family:var(--serif);font-weight:400;font-size:clamp(17px,2vw,22px);display:block;line-height:1}
+.b-paper .mini span{font-size:11px;display:block;margin-top:6px}
+.brand{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:30px;padding-top:18px;border-top:1px solid var(--line-white);font-size:13px;color:var(--white-75)}
+.brand span{display:inline-flex;align-items:center;gap:8px}
+.brand i{width:14px;height:14px;display:inline-block;border:1px solid rgba(255,255,255,.25)}
+.weeks .wkgrid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+@media (prefers-reduced-motion: reduce){.scr::before,.scr::after,.scr *{animation:none!important}}
+
+/* v9: page tabs, live to-do, timeline, idea samples */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--brown-900)}
+.pnav{position:sticky;top:env(safe-area-inset-top,0px);z-index:25;background:var(--brown-900);border-bottom:1px solid var(--line-gold)}
+.pnav .in{display:flex;justify-content:center;gap:10px;padding-block:12px}
+.ptab{font-family:var(--btn);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:9px 22px;border:1px solid var(--line-gold);background:transparent;color:var(--gold);cursor:pointer}
+.ptab[aria-selected="true"]{background:var(--gold);color:var(--red-deep);border-color:var(--gold)}
+.ptab:focus-visible,.tf:focus-visible,.cbtn:focus-visible,.mini:focus-visible,.fchip:focus-visible,.addf button:focus-visible{outline:2px solid var(--peri);outline-offset:2px}
+
+/* To-do */
+.weeks{color-scheme:light}
+.todo-top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin:26px 0 22px}
+.prog{flex:1 1 280px;max-width:440px}
+.prog b{font-family:var(--serif);font-weight:400;font-size:34px;line-height:1;color:var(--ink)}
+.prog span{font-size:14px;color:rgba(61,37,6,.75);margin-left:8px}
+.prog .bar{height:10px;background:rgba(61,37,6,.14);border-radius:6px;overflow:hidden;margin-top:10px}
+.prog .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--red-deep),var(--red));transition:width .4s ease}
+.tfilters{display:flex;flex-wrap:wrap;gap:8px}
+.tf{font-family:var(--btn);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:8px 15px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.tf[aria-pressed="true"]{background:var(--ink);color:var(--gold)}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:26px 28px}
+.tg{border-top:2px solid var(--ink);padding-top:12px;min-width:0}
+.tg-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.tg-h h3{font-family:var(--serif);font-weight:400;font-size:29px;line-height:1;margin:0;color:var(--ink)}
+.tg-c{font-family:var(--btn);font-weight:700;font-size:12px;letter-spacing:.1em;color:var(--red-deep)}
+.tg-bar{height:4px;background:rgba(61,37,6,.14);margin:10px 0 4px}
+.tg-bar i{display:block;height:100%;background:var(--red);transition:width .4s ease}
+.tg-none{font-size:13.5px;color:rgba(61,37,6,.7);margin:10px 0 0}
+.task{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:10px;align-items:start;padding:10px 0;border-bottom:1px solid var(--line-ink);cursor:pointer;color:var(--ink)}
+.task input{width:18px;height:18px;margin:2px 0 0;accent-color:var(--red-deep);cursor:pointer}
+.task input:disabled{cursor:default}
+.task .tt{display:block;font-weight:600;font-size:15px;line-height:1.35}
+.task .tn{display:block;font-size:13px;color:rgba(61,37,6,.75);margin-top:2px}
+.task .tm2{display:flex;flex-wrap:wrap;gap:3px 12px;margin-top:5px;font-family:var(--btn);font-weight:700;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(61,37,6,.6)}
+.task.done .tt{text-decoration:line-through;opacity:.55}
+.task.late .due{color:var(--red)}
+.task .del{background:none;border:0;color:rgba(61,37,6,.4);font-size:18px;line-height:1;cursor:pointer;padding:2px 4px;font-family:var(--btn)}
+.task .del.arm{color:var(--red);font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.emptymsg{padding:18px 20px;border:1px dashed rgba(61,37,6,.4);color:rgba(61,37,6,.85);font-size:15px;grid-column:1/-1}
+.addf{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(0,1.2fr) minmax(0,1.2fr) minmax(0,1fr) auto;gap:10px;margin-top:30px;align-items:end}
+@media (max-width:900px){.addf{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.addf .full{grid-column:1/-1}}
+.addf label{display:grid;gap:5px;font-family:var(--btn);font-weight:700;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(61,37,6,.7)}
+.addf input,.addf select{font-family:var(--sans);font-size:14.5px;padding:9px 10px;border:1px solid rgba(61,37,6,.35);background:#fff8dc;color:var(--ink);min-width:0;width:100%}
+.addf button{font-family:var(--btn);font-weight:700;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:11px 20px;border:0;background:var(--ink);color:var(--gold);cursor:pointer;white-space:nowrap}
+.addnote{font-size:13px;color:rgba(61,37,6,.7);margin:10px 0 0}
+
+/* Timeline from tasks */
+.tl .task{color:var(--white);border-bottom-color:var(--line-gold);grid-template-columns:20px minmax(0,1fr);padding:7px 0}
+.tl .task input{accent-color:var(--gold)}
+.tl .task .tt{font-size:14.5px;font-weight:500}
+.tl .task .tm2{color:var(--white-75)}
+.tl .tlist{margin-top:6px}
+.tl li.today::before{background:var(--peri)}
+.tl li.ms .t{color:var(--gold)}
+.tl .rel{font-family:var(--btn);font-weight:700;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--white-75);margin-left:8px}
+
+/* Ideas */
+.cdband{background:var(--char)}
+.ideas-note{color:var(--white-75);margin:14px 0 0;max-width:60ch}
+.cdctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:28px 0 6px}
+.cdctl .lab{font-family:var(--btn);font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--white-75);margin-right:4px}
+.cbtn{font-family:var(--btn);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:8px 14px;border:1px solid var(--line-gold);background:transparent;color:var(--gold);cursor:pointer}
+.cbtn[aria-pressed="true"]{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.cbtn.go{background:var(--red);border-color:var(--red);color:#fff}
+.picks-line{font-size:13.5px;color:var(--white-75);margin:8px 0 0}
+.picks-line b{color:var(--gold);font-weight:600}
+.tile-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.mini{font-family:var(--btn);font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:6px 12px;border:1px solid var(--line-gold);background:transparent;color:var(--gold);cursor:pointer}
+.mini[aria-pressed="true"]{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.mini:disabled{opacity:.45;cursor:default}
+.scr{container-type:inline-size}
+.scr:fullscreen{width:100vw;height:100vh;aspect-ratio:auto}
+.scr .serif{font-family:var(--serif);font-weight:400}
+.scr .sans{font-family:var(--btn);font-weight:700}
+.t-xxl{font-size:20cqw;line-height:.9}
+.t-xl{font-size:14cqw;line-height:.9}
+.t-l{font-size:8.5cqw;line-height:1}
+.t-m{font-size:5.6cqw;line-height:1.05}
+.t-s{font-size:3.4cqw;line-height:1.2}
+.t-xs{font-family:var(--btn);font-weight:700;font-size:2.5cqw;letter-spacing:.22em;text-transform:uppercase}
+.c-gold{color:var(--gold)} .c-white{color:#fff} .c-ink{color:var(--ink)} .c-peri{color:var(--peri)}
+.stack{display:grid;gap:2.2cqw;justify-items:center}
+.cd-ring{background:#150d0a}
+.cd-ring svg{position:absolute;inset:0;margin:auto;width:52%;height:auto;aspect-ratio:1;transform:rotate(-90deg)}
+.cd-ring circle{fill:none;stroke-width:3}
+.cd-ring .trk{stroke:rgba(254,236,162,.15)}
+.cd-ring .arc{stroke:var(--gold);stroke-linecap:round;transition:stroke-dashoffset .25s linear}
+.cd-brushbar{background:#0b0b0c}
+.cd-brushbar .bar{position:absolute;left:0;top:0;bottom:0;background:var(--red) url(assets/brush.png) left center/auto 170% no-repeat;transition:width .25s linear}
+.cd-brushbar .stack{z-index:2}
+.cd-split{background:#000}
+.cd-split .line{position:absolute;left:0;bottom:0;height:1.4cqw;background:var(--red);transition:width .25s linear}
+.cd-corner{background:#111}
+.cd-corner::before{content:"";position:absolute;inset:0;background:url(assets/halftone.jpg) center/cover;filter:grayscale(1) brightness(.45)}
+.cd-corner .corner{position:absolute;right:5%;bottom:7%;text-align:right}
+.spk{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:30px;align-items:center;margin-top:46px;padding-top:34px;border-top:1px solid var(--line-white)}
+@media (max-width:820px){.spk{grid-template-columns:minmax(0,1fr)}}
+.spk-scr{background:#000;transition:background .4s}
+.spk-scr .num{font-family:var(--btn);font-weight:700;font-size:21cqw;line-height:1;color:#fff;font-variant-numeric:tabular-nums}
+.spk-scr.warn .num{color:var(--gold)}
+.spk-scr.crit .num{color:#ff5a3c}
+.spk-scr.over{background:#7b1002}
+@keyframes blink{50%{opacity:.25}}
+.spk h3{font-family:var(--serif);font-weight:400;font-size:34px;line-height:1;color:var(--gold);margin:0 0 8px}
+.spk p{color:var(--white-75);margin:0 0 6px;font-size:15px}
+.spk ul{margin:10px 0 0;padding-left:18px;color:var(--white-75);font-size:14px;display:grid;gap:4px}
+.ideaband{background:var(--red-deep)}
+.fchips{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 4px}
+.fchip{font-family:var(--btn);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:8px 15px;border:1px solid rgba(254,236,162,.35);background:transparent;color:var(--gold);cursor:pointer}
+.fchip[aria-pressed="true"]{background:var(--gold);color:var(--red-deep);border-color:var(--gold)}
+.ideaband .bgi p{color:rgba(255,255,255,.82)}
+.ideaband .bgi .use{color:var(--gold)}
+.ideaband .bgi h3{color:#fff}
+.ideaband .mini{border-color:rgba(254,236,162,.4)}
+.ideaband .brand{border-top-color:rgba(255,255,255,.2)}
+.namecard{background:#221712}
+.namecard .rule{width:44%;height:.35cqw;background:var(--gold);margin:0 auto}
+.upnext{background:#36221f}
+.score{display:grid;grid-template-columns:1fr 1fr;padding:0}
+.score > div{display:grid;place-items:center;align-content:center;gap:1cqw;height:100%}
+.score .red{background:var(--red)} .score .blue{background:var(--peri)}
+.score button{font-family:var(--btn);font-weight:700;font-size:2.4cqw;letter-spacing:.1em;border-radius:999px;border:0;padding:.8cqw 2.4cqw;cursor:pointer;background:rgba(0,0,0,.25);color:#fff}
+.score .blue button{background:rgba(61,37,6,.2);color:var(--ink)}
+.winner{background:var(--gold)}
+.winner .circ{position:relative;display:inline-block}
+.winner .circ img{position:absolute;left:-22%;top:-30%;width:144%;height:160%;max-width:none}
+.lunch{background:radial-gradient(90% 90% at 50% 120%, var(--red) 0%, var(--red-deep) 65%)}
+.party{background:var(--peri)}
+.b-paper .pcard{background:var(--gold);color:var(--ink);padding:7% 8%;width:58%;text-align:left;box-shadow:0 8px 18px rgba(60,10,0,.3)}
+.b-paper .pcard hr{border:0;border-top:1.5px solid var(--ink);margin:0 0 9%}
+.b-paper .pcard b{display:block;line-height:1}
+.b-paper .pcard span{display:block;margin-top:6px}
+.score{place-items:stretch}
+.gametime{background:var(--red)}
+.gametime::before{content:"";position:absolute;inset:0;background:url(assets/brush.png) center/cover no-repeat;opacity:.9}
+.b-half .lower,.b-half .stack{z-index:1}
+@media (prefers-reduced-motion: reduce){.spk-scr.over .state{animation:none}}
+
+/* v11: polished motion */
+:root{--eo:cubic-bezier(.16,1,.3,1);--eio:cubic-bezier(.65,0,.35,1)}
+.spk-clock{position:absolute;top:5%;right:5%;font-family:var(--btn);font-weight:700;font-size:4.4cqw;color:rgba(255,255,255,.8);z-index:2;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.tvband{background:var(--char)}
+.tvband .bgi h3{color:var(--gold)}
+.fx{position:absolute;inset:0;width:100%;height:100%;display:block}
+.glt{background:#120807}
+.grain{position:absolute;inset:-50%;background-image:var(--grain);background-size:180px 180px;opacity:.11;mix-blend-mode:overlay;animation:grain .9s steps(6) infinite;pointer-events:none;z-index:6}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-6%,3%)}40%{transform:translate(4%,-5%)}60%{transform:translate(-3%,6%)}80%{transform:translate(6%,2%)}100%{transform:translate(0,0)}}
+/* letter reveal */
+.rv span,.rv2 span{display:inline-block;opacity:0;will-change:transform,filter,opacity}
+.rv span{animation:rv 8s var(--eo) infinite;animation-delay:calc(var(--i) * 55ms)}
+.rv.late span{animation-delay:calc(var(--i) * 55ms + .9s)}
+.rv.slow span{animation-duration:11s;animation-delay:calc(var(--i) * 70ms)}
+@keyframes rv{0%{opacity:0;filter:blur(14px);transform:translateY(35%) scale(1.08)}16%{opacity:1;filter:blur(0);transform:none}82%{opacity:1;filter:blur(0);transform:none}94%,100%{opacity:0;filter:blur(10px);transform:translateY(-14%)}}
+.mk{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.06em}
+.mk > span{display:inline-block}
+/* ember walk-in */
+.brushov{position:absolute;inset:0;background:url(assets/brush.png) 0% 50%/240% auto no-repeat;mix-blend-mode:multiply;opacity:.2;animation:drift 30s var(--eio) infinite alternate}
+.kin2{position:relative;z-index:3;font-size:12.5cqw;line-height:1;color:#fff;white-space:nowrap;text-shadow:0 0 5cqw rgba(254,236,162,.35),0 .6cqw 2cqw rgba(0,0,0,.35)}
+/* countdown wall */
+.cdwall .cw{z-index:3;transition:opacity .35s var(--eo),transform .6s var(--eo)}
+.cw-num{font-size:19cqw;line-height:.9;display:inline-block;text-shadow:0 0 4cqw rgba(254,236,162,.35)}
+.cdwall.final .cw-num{color:var(--gold);animation:thump 1s var(--eo) infinite}
+@keyframes thump{0%{transform:scale(1.16)}60%,100%{transform:scale(1)}}
+.cw-burst{position:absolute;inset:0;display:grid;place-items:center;font-size:13cqw;color:#fff;z-index:4;pointer-events:none;text-shadow:0 0 5cqw rgba(254,236,162,.8)}
+.rv2 span{transform:scale(.4);filter:blur(16px)}
+.cdwall.boom .cw{opacity:0;transform:scale(1.4)}
+.cdwall.boom .rv2 span{animation:rv2 1.1s var(--eo) forwards;animation-delay:calc(var(--i) * 45ms + .15s)}
+@keyframes rv2{to{opacity:1;transform:none;filter:none}}
+.cw-flash{position:absolute;inset:0;background:radial-gradient(circle at 50% 50%, #fff, rgba(254,236,162,.6) 30%, transparent 70%);opacity:0;z-index:5;pointer-events:none}
+.cdwall.boom .cw-flash{animation:cwflash 1.2s ease-out forwards}
+@keyframes cwflash{0%{opacity:0}8%{opacity:1}100%{opacity:0}}
+/* speaker wall */
+.sw{position:absolute;inset:0;z-index:2}
+.sw-slide{position:absolute;inset:0;opacity:0;animation:swc 21s var(--eio) infinite;animation-delay:var(--d)}
+@keyframes swc{0%{opacity:0}5%{opacity:1}30%{opacity:1}35%,100%{opacity:0}}
+.sw-photo{position:absolute;right:0;top:0;bottom:0;width:62%;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 34%);mask-image:linear-gradient(90deg,transparent 0,#000 34%)}
+.sw-photo img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:50% 22%;filter:url(#duoRed) contrast(1.08);animation:push 21s linear infinite;animation-delay:var(--d);transform-origin:60% 30%}
+@keyframes push{0%{transform:scale(1.04)}35%{transform:scale(1.14)}100%{transform:scale(1.14)}}
+.sweep{position:absolute;inset:0;background:linear-gradient(100deg,transparent 35%,rgba(254,236,162,.28) 48%,transparent 60%) -120% 0/250% 100% no-repeat;mix-blend-mode:screen;animation:sweep 7s var(--eio) infinite}
+@keyframes sweep{0%,30%{background-position:-120% 0}70%,100%{background-position:220% 0}}
+.sw-name{position:absolute;left:6%;top:50%;transform:translateY(-50%);display:grid;gap:1.4cqw;text-align:left;z-index:3}
+.sw-n{display:grid;font-size:10.5cqw;line-height:.92;color:#fff;text-transform:uppercase;text-shadow:0 .5cqw 3cqw rgba(0,0,0,.5)}
+.sw-n .mk > span{transform:translateY(105%);animation:rise 21s var(--eo) infinite;animation-delay:calc(var(--d) + .25s)}
+.sw-n .mk:nth-child(2) > span{animation-delay:calc(var(--d) + .4s)}
+@keyframes rise{0%{transform:translateY(105%)}6%{transform:none}29%{transform:none}33%,100%{transform:translateY(-105%)}}
+.sw-lab{opacity:0;animation:fadeup 21s var(--eo) infinite;animation-delay:calc(var(--d) + .1s)}
+@keyframes fadeup{0%{opacity:0;transform:translateY(60%);letter-spacing:.5em}6%{opacity:1;transform:none;letter-spacing:.22em}29%{opacity:1}33%,100%{opacity:0}}
+.sw-rule{height:.35cqw;width:0;background:linear-gradient(90deg,var(--gold),transparent);animation:rule2 21s var(--eo) infinite;animation-delay:calc(var(--d) + .5s)}
+@keyframes rule2{0%{width:0}8%,29%{width:30cqw}33%,100%{width:0}}
+/* rays */
+.rays-txt{position:absolute;left:0;right:0;bottom:15%;z-index:3;font-size:5.4cqw;color:var(--gold);text-shadow:0 0 3cqw rgba(254,236,162,.45)}
+/* arena */
+.slam2{position:relative;z-index:3;font-size:15cqw;color:#fff;text-transform:uppercase;animation:slam2 4.2s var(--eo) infinite;text-shadow:-.4cqw 0 0 rgba(160,191,255,.75),.4cqw 0 0 rgba(255,60,40,.75),0 1cqw 3cqw rgba(0,0,0,.45)}
+@keyframes slam2{0%{transform:scale(3);opacity:0;filter:blur(12px)}9%{transform:scale(.96);opacity:1;filter:blur(0)}12%{transform:scale(1.02) translateX(-1%)}14%{transform:translateX(1%)}17%{transform:none;text-shadow:0 0 0 rgba(160,191,255,0),0 0 0 rgba(255,60,40,0),0 1cqw 3cqw rgba(0,0,0,.45)}84%{opacity:1;transform:none;filter:none}100%{opacity:0;transform:scale(.92);filter:blur(8px)}}
+.arena2 .fx[data-gl]{animation:shake 4.2s infinite}
+@keyframes shake{0%,8%{transform:none}9%{transform:translate(-1.2%,.8%)}11%{transform:translate(1%,-.6%)}13%{transform:translate(-.5%,.4%)}15%,100%{transform:none}}
+/* wipe */
+.band2{position:absolute;inset:-5% -10%;background:var(--red) url(assets/brush.png) center/cover;z-index:2;transform:translateX(-120%) skewX(-12deg);animation:wipe2 4.6s var(--eio) infinite}
+@keyframes wipe2{0%{transform:translateX(-120%) skewX(-12deg);filter:blur(6px)}22%{transform:translateX(0) skewX(-12deg);filter:blur(0)}64%{transform:translateX(0) skewX(-12deg);filter:blur(0)}88%,100%{transform:translateX(120%) skewX(-12deg);filter:blur(6px)}}
+.wtxt2{z-index:3}
+.wtxt2 .t-xs{opacity:0;animation:wl 4.6s var(--eo) infinite}
+@keyframes wl{0%,20%{opacity:0;letter-spacing:.6em}30%,62%{opacity:1;letter-spacing:.22em}70%,100%{opacity:0}}
+.wtxt2 .mk > span{transform:translateY(105%);animation:wr 4.6s var(--eo) infinite}
+@keyframes wr{0%,22%{transform:translateY(105%)}32%,62%{transform:none}72%,100%{transform:translateY(-105%)}}
+/* opener */
+.op2{position:relative;z-index:3;font-size:11.5cqw;color:#fff;text-transform:uppercase;white-space:nowrap;text-shadow:0 0 4cqw rgba(254,236,162,.35)}
+.op2 .circ{position:relative;display:inline-block}
+.op2 .circ img{position:absolute;left:-26%;top:-32%;width:152%;height:164%;max-width:none;clip-path:inset(0 100% 0 0);animation:draw2 8s var(--eio) infinite}
+@keyframes draw2{0%,8%{clip-path:inset(0 100% 0 0);opacity:1}22%{clip-path:inset(0 0 0 0);opacity:1}82%{clip-path:inset(0 0 0 0);opacity:1}94%,100%{clip-path:inset(0 0 0 0);opacity:0}}
+.op-flash{position:absolute;inset:0;background:radial-gradient(circle at 70% 50%, rgba(255,255,255,.9), rgba(254,236,162,.35) 30%, transparent 65%);opacity:0;z-index:5;animation:opf 8s ease-out infinite;pointer-events:none}
+@keyframes opf{0%,16%{opacity:0}18%{opacity:.85}30%,100%{opacity:0}}
+/* tv speaker card */
+.sc-slide{position:absolute;inset:0;z-index:2;display:flex;align-items:center;gap:5cqw;padding:0 8cqw;opacity:0;animation:swc 21s var(--eio) infinite;animation-delay:var(--d)}
+.sc-ring{position:relative;width:28cqw;aspect-ratio:1;border-radius:50%;padding:.8cqw;background:conic-gradient(from 0deg,var(--gold),rgba(254,236,162,.15) 30%,var(--gold) 55%,rgba(254,236,162,.15) 80%,var(--gold));animation:spin2 6s linear infinite;flex:none;box-shadow:0 1.5cqw 4cqw rgba(0,0,0,.5)}
+@keyframes spin2{to{transform:rotate(360deg)}}
+.sc-pic{width:100%;height:100%;border-radius:50%;overflow:hidden;background:#221712;animation:spin2 6s linear infinite reverse}
+.sc-pic img{width:100%;height:100%;max-width:none;object-fit:cover;object-position:50% 20%;filter:url(#duoRed) contrast(1.08);transform:scale(1.1)}
+.sc-txt{display:grid;gap:1.3cqw;text-align:left;justify-items:start}
+.sc-n{font-size:7.4cqw;line-height:1;color:#fff}
+.sc-n .mk > span{transform:translateY(105%);animation:rise 21s var(--eo) infinite;animation-delay:calc(var(--d) + .3s)}
+.sc-lab,.sc-sub{opacity:0;animation:fadeup 21s var(--eo) infinite;animation-delay:calc(var(--d) + .15s)}
+.sc-sub{animation-delay:calc(var(--d) + .7s)}
+.sc-rule{height:.45cqw;background:linear-gradient(90deg,var(--gold),transparent);width:0;animation:rule2 21s var(--eo) infinite;animation-delay:calc(var(--d) + .5s)}
+/* up next */
+.un-time{font-family:var(--btn);font-weight:700;font-size:4cqw;color:var(--peri)}
+.un-bar2{position:absolute;left:0;bottom:0;height:1.1cqw;background:linear-gradient(90deg,rgba(254,236,162,.4),var(--gold));transition:width .25s linear;z-index:3}
+.un-bar2 i{position:absolute;right:-1cqw;top:50%;width:3cqw;height:3cqw;transform:translateY(-50%);border-radius:50%;background:radial-gradient(circle,#fff,rgba(254,236,162,.6) 40%,transparent 70%)}
+/* roll digits */
+.rd{display:inline-block}
+.rd.in{animation:rollin .55s var(--eo)}
+@keyframes rollin{from{transform:translateY(-60%);opacity:0;filter:blur(6px)}to{transform:none;opacity:1;filter:none}}
+/* workshops */
+.wsx2{background:#c8200c url(assets/red-paper.jpg) center/cover;perspective:80cqw}
+.paper-sweep{position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,240,200,.22) 50%,transparent 65%) -120% 0/250% 100% no-repeat;animation:sweep 6s var(--eio) infinite;z-index:1}
+.ws-wrap{position:relative;z-index:2;display:grid;gap:3cqw;justify-items:center}
+.ws-title{font-size:8cqw;color:#fff;text-shadow:0 .4cqw 1.6cqw rgba(60,10,0,.55)}
+.ws-title em{font-style:normal;color:var(--gold)}
+.ws-cards{display:flex;gap:2.4cqw;transform-style:preserve-3d}
+.wc2{background:var(--gold);color:var(--ink);padding:2.4cqw 3cqw;min-width:19cqw;display:grid;gap:.6cqw;text-align:left;transform-origin:50% 0;opacity:0;animation:hinge 8s var(--eo) infinite;animation-delay:calc(var(--i) * 140ms + .5s);box-shadow:0 1.2cqw 2.4cqw rgba(60,10,0,.4)}
+.wc2 b{font-family:var(--serif);font-weight:400;font-size:4cqw;line-height:1}
+.wc2 span{font-family:var(--btn);font-weight:700;font-size:1.9cqw;letter-spacing:.12em;text-transform:uppercase}
+@keyframes hinge{0%{opacity:0;transform:rotateX(-95deg) translateY(-10%)}14%{opacity:1;transform:rotateX(8deg)}20%{transform:rotateX(0)}82%{opacity:1;transform:none}94%,100%{opacity:0;transform:translateY(12%) scale(.96)}}
+/* lunch + party */
+.lunch-t{font-size:9cqw;line-height:1;text-shadow:0 0 4cqw rgba(254,236,162,.3)}
+.pop2{display:inline-block;animation:pop2 4.5s var(--eo) infinite}
+@keyframes pop2{0%{transform:scale(.7);filter:blur(10px);opacity:0}12%{transform:scale(1.04);filter:none;opacity:1}18%,88%{transform:scale(1);opacity:1}100%{opacity:0;transform:scale(.96)}}
+/* scoreboard */
+.score2{display:grid;grid-template-columns:1fr 1fr;padding:0;place-items:stretch;background:#000}
+.score2 > div{position:relative;display:grid;place-items:center;align-content:center;gap:1cqw;height:100%;overflow:hidden}
+.score2 .red{background:radial-gradient(90% 90% at 50% 40%, #c82508, #7b1002)}
+.score2 .blue{background:radial-gradient(90% 90% at 50% 40%, #c0d3ff, #7f9fe6)}
+.score2 > div::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 45%, rgba(255,255,255,.7), transparent 60%);opacity:0;pointer-events:none}
+.score2 > div.hit::after{animation:hit .6s ease-out}
+@keyframes hit{0%{opacity:.9}100%{opacity:0}}
+.score2 button{position:relative;z-index:2;font-family:var(--btn);font-weight:700;font-size:2.4cqw;letter-spacing:.1em;border-radius:999px;border:0;padding:.8cqw 2.6cqw;cursor:pointer;background:rgba(0,0,0,.28);color:#fff}
+.score2 .blue button{background:rgba(61,37,6,.2);color:var(--ink)}
+.score2 [data-score]{position:relative;z-index:2;font-variant-numeric:tabular-nums}
+/* tag us */
+.tagus2{background:#0d0d0d}
+.tagus2::before{content:"";position:absolute;inset:-6%;background:url(assets/halftone.jpg) center/cover;filter:grayscale(1) brightness(.32);animation:kb 24s ease-in-out infinite alternate}
+.vf2{position:absolute;inset:9%;z-index:2;animation:hunt 5s var(--eo) infinite;background:linear-gradient(#fff,#fff) left top/6cqw .45cqw no-repeat,linear-gradient(#fff,#fff) left top/.45cqw 6cqw no-repeat,linear-gradient(#fff,#fff) right top/6cqw .45cqw no-repeat,linear-gradient(#fff,#fff) right top/.45cqw 6cqw no-repeat,linear-gradient(#fff,#fff) left bottom/6cqw .45cqw no-repeat,linear-gradient(#fff,#fff) left bottom/.45cqw 6cqw no-repeat,linear-gradient(#fff,#fff) right bottom/6cqw .45cqw no-repeat,linear-gradient(#fff,#fff) right bottom/.45cqw 6cqw no-repeat}
+@keyframes hunt{0%{transform:scale(1.08);opacity:.6}12%{transform:scale(.97);opacity:1}18%{transform:scale(1.01)}24%,90%{transform:scale(1);opacity:1}100%{transform:scale(1.08);opacity:.6}}
+.tagus2 .stack{z-index:3}
+.rec{position:absolute;left:12%;top:13%;font-family:var(--btn);font-weight:700;font-size:2.4cqw;letter-spacing:.12em;color:#fff;display:flex;align-items:center;gap:1cqw;z-index:3}
+.rec i{width:1.8cqw;height:1.8cqw;border-radius:50%;background:#ff3b2f;box-shadow:0 0 1.2cqw #ff3b2f;animation:blink 1.2s steps(1) infinite}
+.rec .tc{font-weight:500;letter-spacing:.06em;opacity:.85;font-variant-numeric:tabular-nums}
+.flash{position:absolute;inset:0;background:#fff;opacity:0;animation:flash 5s infinite;z-index:5;pointer-events:none}
+@keyframes flash{0%,90%{opacity:0}91%{opacity:.9}100%{opacity:0}}
+@media (prefers-reduced-motion: reduce){
+  .scr *,.scr::before,.scr::after{animation:none!important}
+  .rv span,.wc2,.sw-slide:first-child,.sc-slide:first-child,.sw-lab,.sc-lab,.sc-sub,.wtxt2 .t-xs,.pop2,.slam2{opacity:1!important;filter:none!important;transform:none!important}
+  .mk > span{transform:none!important}
+  .sw-rule,.sc-rule{width:30cqw}
+  .band2{transform:translateX(120%)}
+  .op2 .circ img{clip-path:none}
+}
+
+/* v12: moments layout, LED composition */
+.scr .fx{padding:0;border:0;gap:0}
+.moments{display:grid;gap:46px;margin-top:30px}
+.moment{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(0,1fr);gap:16px 22px;align-items:start}
+@media (max-width:820px){.moment{grid-template-columns:minmax(0,1fr)}}
+.mhead{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:8px}
+.mhead h3{font-family:var(--serif);font-weight:400;font-size:32px;line-height:1;color:#fff;margin:0}
+.mhead .label{color:var(--gold)}
+.stype{display:block;font-family:var(--btn);font-weight:700;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:12px 0 2px}
+.ideaband .bgi p{margin:4px 0 0;font-size:14px}
+.zone-ctl{margin-top:18px}
+.hdr{position:absolute;left:6%;top:9%;z-index:3;display:grid;gap:1.2cqw;text-align:left;justify-items:start}
+.hdr-t{font-size:6.6cqw;line-height:.95;color:#fff;text-transform:uppercase;text-shadow:0 .4cqw 2cqw rgba(0,0,0,.35)}
+.hdr-s{letter-spacing:.3em}
+.mark{position:absolute;right:5%;top:9%;z-index:3;display:flex;align-items:center;gap:1.2cqw;font-family:var(--church-font);font-weight:900;font-size:1.5cqw;line-height:1;letter-spacing:-.01em;text-transform:uppercase;color:#fff;text-align:left;opacity:.92}
+.mark img{width:4cqw;height:auto}
+.mark.ink{color:var(--ink)}
+.mark.ink img{filter:invert(.85) sepia(1) saturate(2) hue-rotate(-10deg) brightness(.35)}
+.tvmark{position:absolute;right:4%;bottom:6%;width:5cqw;height:auto;opacity:.85;z-index:3}
+.zone{display:none;position:absolute;left:30%;right:30%;bottom:0;height:62%;border:.3cqw dashed rgba(255,255,255,.75);border-bottom:0;background:rgba(0,0,0,.28);z-index:7;place-items:end center;padding-bottom:3cqw;pointer-events:none}
+.zone span{font-family:var(--btn);font-weight:700;font-size:1.9cqw;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+.show-zone .zone{display:grid}
+.op2s{font-size:10cqw}
+.slam-hi{margin-bottom:12%}
+.wtxt2.hi{margin-bottom:10%}
+.swall .sw-name{top:14%;transform:none}
+.score3{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:100%;padding:0;place-items:stretch}
+.score3 > div{position:relative;display:grid;place-items:center;align-content:center;gap:1cqw;height:100%;overflow:hidden;z-index:2}
+.score3 .red{background:linear-gradient(180deg,rgba(175,30,4,.35),rgba(123,16,2,.6))}
+.score3 .blue{background:linear-gradient(180deg,rgba(160,191,255,.28),rgba(90,120,200,.55))}
+.score3 > div::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 45%, rgba(255,255,255,.7), transparent 60%);opacity:0;pointer-events:none}
+.score3 > div.hit::after{animation:hit .6s ease-out}
+.score3 button{position:relative;z-index:2;font-family:var(--btn);font-weight:700;font-size:2.4cqw;letter-spacing:.1em;border-radius:999px;border:1px solid rgba(255,255,255,.4);padding:.8cqw 2.6cqw;cursor:pointer;background:rgba(0,0,0,.3);color:#fff}
+.score3 [data-score]{position:relative;z-index:2;text-shadow:0 0 3cqw rgba(0,0,0,.35)}
+
+/* v13: painted strokes, worship countdown, sharp backgrounds */
+.pw-txt{z-index:3;margin-bottom:10%}
+.pw-txt .t-xs{opacity:0;animation:pwl 6.4s var(--eo) infinite}
+.pw-txt .mk > span{transform:translateY(105%);animation:pwr 6.4s var(--eo) infinite}
+.pw-txt .serif,.pw-tv .serif{text-shadow:0 .5cqw 2.4cqw rgba(40,4,0,.45)}
+@keyframes pwl{0%,15%{opacity:0;letter-spacing:.6em}26%,70%{opacity:1;letter-spacing:.22em}77%,100%{opacity:0;letter-spacing:.22em}}
+@keyframes pwr{0%,17%{transform:translateY(105%)}28%,71%{transform:none}79%,100%{transform:translateY(-105%)}}
+.pw-tv{z-index:3}
+.cd-corner::before,.tagus2::before{content:none}
+.wsx2{background:#7b1002}
+.lunch-t{font-size:15cqw}
+.swall .sw-photo{width:auto;height:100%;bottom:auto;aspect-ratio:var(--ar,.75);-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 28%);mask-image:linear-gradient(90deg,transparent 0,#000 28%)}
+.swall .sw-photo img{object-position:50% 30%;animation-name:push2}
+@keyframes push2{0%{transform:scale(1)}35%{transform:scale(1.06)}100%{transform:scale(1.06)}}
+.sc-pic img{transform:none}
+.swall .mark{text-shadow:0 .2cqw 1.2cqw rgba(20,4,0,.55)}
+.rd.rin{animation:rollin .55s var(--eo)}
+.cdband .bgs{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:820px){.cdband .bgs{grid-template-columns:minmax(0,1fr)}}
+.swall .sw-n{font-size:6cqw}
+.swall .sw-rule{animation-name:rule3}
+@keyframes rule3{0%{width:0}8%,29%{width:16cqw}33%,100%{width:0}}
+.sc-n{font-size:5.6cqw}
+.wsh{--k:0}
+.ws-cam{position:absolute;inset:-4%;z-index:1;will-change:transform}
+.ws-rays{opacity:.1;mix-blend-mode:screen}
+.ws-mid{position:absolute;left:0;right:0;top:36%;transform:translateY(-50%);display:grid;place-items:center;z-index:3;pointer-events:none}
+.tvw .ws-mid{top:50%}
+.ws-big{grid-area:1/1;font-size:17cqw;line-height:1;color:#fff;text-shadow:0 1cqw 4cqw rgba(30,4,0,.5);transition:opacity .3s var(--eo),transform .5s var(--eo)}
+.wsh.words .ws-big{opacity:0;transform:scale(.6)}
+.ws-word{grid-area:1/1;font-family:var(--church-font);font-weight:900;text-transform:uppercase;letter-spacing:-.03em;line-height:.9;white-space:nowrap;color:#fff;font-size:calc(9cqw + 6cqw * var(--k));opacity:0;text-shadow:calc(-1cqw * var(--k)) 0 0 rgba(160,191,255,.75),calc(1cqw * var(--k)) 0 0 rgba(255,70,40,.8),0 .8cqw 3cqw rgba(30,4,0,.55)}
+.ws-word.last{color:var(--gold)}
+.ws-word.go{animation:wsslam .85s var(--eo) forwards}
+@keyframes wsslam{0%{opacity:0;transform:scale(2);filter:blur(1.2cqw)}14%{opacity:1;transform:scale(.93);filter:blur(0)}28%{transform:scale(1.01)}100%{opacity:1;transform:scale(1.05)}}
+.wsh.boom .ws-word{animation:wsboom .9s var(--eo) forwards}
+@keyframes wsboom{0%{opacity:1;transform:scale(1.05);filter:blur(0)}100%{opacity:0;transform:scale(2.6);filter:blur(2.4cqw)}}
+.ws-flash{position:absolute;inset:0;z-index:5;pointer-events:none;opacity:0;background:radial-gradient(ellipse at 50% 40%,#fff 0,rgba(254,236,162,.9) 35%,rgba(254,236,162,.35) 75%);mix-blend-mode:screen}
+.ws-now,.ws-ttl{display:none}
+.wsh.boom .ws-ttl{display:block;animation:wsin 1.6s var(--eo) .25s both}
+@keyframes wsin{0%{opacity:0;transform:translateY(30%);filter:blur(.8cqw)}100%{opacity:1;transform:none;filter:none}}
+.ws-calm{position:absolute;inset:0;z-index:3;display:none;place-items:center;pointer-events:none}
+.ws-calm span{font-size:9cqw;line-height:1;color:#fff;text-shadow:0 .6cqw 3cqw rgba(30,4,0,.5)}
+.wsh.boom .ws-calm{display:grid}
+.wsh.boom .ws-calm span{animation:wsin 1.6s var(--eo) .25s both}
+.wsh.boom .ws-cnt{display:none}
+.wsh.boom .ws-now{display:inline}
+.ws-lab{position:absolute;left:0;right:0;top:11%;z-index:3;text-align:center}
+.ws-cnt b{font-weight:700;font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion: reduce){
+  .ws-word{opacity:1!important;filter:none!important;transform:none!important}
+  .pw-txt .t-xs{opacity:1!important}
+}
+
+/* website: the to-do list is read-only here */
+.task{cursor:default}
+</style>
+</head>
+<body>
+<header class="band hero">
+  <div class="in">
+    <h1><span class="l1">CYN</span><span class="l2">Conference</span><span class="l3">2026</span></h1>
+    <p class="date">NOV. 13 &amp; 14</p>
+    <p class="count label" id="count">18 days out</p>
+    <span class="pill gold">Production plan · <b>Draft</b></span>
+    <p class="byline">Corey · CYN production lead · Updated Oct 26, 2026</p>
+    <img class="logo" src="assets/cyn-logo.png" alt="CYN logo" width="64" height="49">
+  </div>
+</header>
+
+<nav class="pnav" aria-label="Pages">
+  <div class="in" role="tablist">
+    <button class="ptab" role="tab" type="button" data-page="plan" aria-selected="true" aria-controls="page-plan">Plan</button>
+    <button class="ptab" role="tab" type="button" data-page="ideas" aria-selected="false" aria-controls="page-ideas">Ideas</button>
+  </div>
+</nav>
+
+<div id="page-plan" role="tabpanel">
+
+<section class="band owners" aria-labelledby="h-crew">
+  <div class="in">
+    <h2 class="h-sans" id="h-crew">The production <span class="over">crew</span></h2>
+    <p class="sub-h">The pastor leads the production department. Martin runs production for the church. Corey runs it for CYN.</p>
+    <div class="wkey"><span><i style="background:var(--gold)"></i>Has a name</span><span><i style="background:var(--red)"></i>Open</span></div>
+    <div class="ws">
+      <div class="w "><h3>Producer</h3><p class="o">Corey</p><ul><li>Calls every cue</li><li>Owns the cue sheet</li><li>Runs the crew</li></ul><span class="sess">Needed Fri night, Sat AM, Sat PM</span></div>
+      <div class="w "><h3>Church systems</h3><p class="o">Martin</p><ul><li>The church's gear and setup</li><li>Helps rebuild the light presets</li><li>Backup when something breaks</li></ul></div>
+      <div class="w "><h3>Sound</h3><p class="o">Lourdes</p><ul><li>Band, host and speaker mics</li><li>Playback and walk-out music</li><li>Outdoor speaker, Fri 9:45pm</li></ul><span class="sess">Needed Fri night, Sat AM, Sat PM</span></div>
+      <div class="w "><h3>Backgrounds + slides</h3><p class="o">Pastor + Corey</p><ul><li>Countdowns and timers</li><li>Lyric slides and backgrounds</li><li>Speaker, game and info slides</li></ul></div>
+      <div class="w "><h3>Photos + video</h3><p class="o">Mary</p><ul><li>Photos and video both days</li><li>Social media</li><li>The 2026 recap</li></ul></div>
+      <div class="w need"><h3>Lights</h3><p class="o">Open</p><ul><li>Run the 8 presets</li><li>Presets need rebuilding after the outage</li></ul><span class="sess">Needed Fri night, Sat AM, Sat PM</span></div>
+      <div class="w need"><h3>Screens</h3><p class="o">Open</p><ul><li>Runs the presentation computer</li><li>Lyrics, slides and countdowns on time</li></ul><span class="sess">Needed Fri night, Sat AM, Sat PM</span></div>
+      <div class="w need"><h3>Stage manager</h3><p class="o">Open</p><ul><li>Mics in hands</li><li>Stage resets</li><li>Guests on and off stage</li></ul><span class="sess">Needed Fri night, Sat AM, Sat PM</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band weeks" aria-labelledby="h-todo">
+  <div class="in">
+    <h2 class="h-ink-up" id="h-todo">To-do</h2>
+    <p class="lead">Everything production needs before doors open. Corey keeps this list up to date.</p>
+    <div class="todo-top">
+      <div class="prog"><b id="pDone">0</b><span id="pText">of 0 done</span><div class="bar"><i id="pBar"></i></div></div>
+      <div class="tfilters" role="group" aria-label="Show">
+        <button class="tf" type="button" data-f="all" aria-pressed="true">All</button>
+        <button class="tf" type="button" data-f="open" aria-pressed="false">Open only</button>
+      </div>
+    </div>
+    <div class="tgrid" id="todo"><div class="emptymsg">Loading the to-do list.</div></div>
+    <form class="addf" id="addf" hidden>
+      <label class="full">New task<input id="nTitle" type="text" maxlength="120" placeholder="What needs to happen" required></label>
+      <label>Area<select id="nGroup"></select></label>
+      <label>Owner<input id="nOwner" type="text" maxlength="60" placeholder="Corey"></label>
+      <label>Due<input id="nDue" type="date" min="2026-10-01" max="2026-11-30"></label>
+      <button type="submit">Add</button>
+    </form>
+    <p class="addnote" id="addnote"></p>
+  </div>
+</section>
+
+<section class="band road" aria-labelledby="h-road">
+  <div class="in split">
+    <div>
+      <h2 class="h-gold" id="h-road">Road to<br>Nov. <span class="circled">13<img src="assets/scribble.png" alt=""></span></h2>
+      <p class="lead">The to-do list by due date. Dates are proposed until the call.</p>
+      <div class="key">
+        <span><i style="background:var(--peri)"></i>Today</span>
+        <span><i style="background:var(--gold)"></i>Due date</span>
+        <span><i style="background:var(--red)"></i>Conference days</span>
+      </div>
+    </div>
+    <ol class="tl" id="tline"></ol>
+  </div>
+</section>
+
+<section class="band sched" aria-labelledby="h-flow">
+  <div class="in">
+    <div class="flowcard">
+      <hr>
+      <h2 id="h-flow">Cue sheet</h2>
+      <p class="sub">What production does at every moment, with the lighting preset for each.</p>
+      <div class="flow-tabs" role="tablist" aria-label="Day">
+        <button class="ftab" role="tab" id="t-fri" aria-controls="p-fri" aria-selected="true" type="button">Friday · <b>Nov 13</b></button>
+        <button class="ftab" role="tab" id="t-sat" aria-controls="p-sat" aria-selected="false" type="button">Saturday · <b>Nov 14</b></button>
+        <button class="ftab" role="tab" id="t-run" aria-controls="p-run" aria-selected="false" type="button">Training · <b>Nov 5</b></button>
+      </div>
+      <div class="fkey"><span>Serif = published schedule</span><span><b>Proposed</b> = our suggestion</span></div>
+      <div id="p-fri" role="tabpanel" aria-labelledby="t-fri">
+        <div class="fr prop"><span class="tm">4:30pm<i>Proposed</i></span><div class="sg"><b>Production call</b><span>Power on, screens up, house full preset, line check.</span></div><span class="who">Production</span></div>
+        <div class="fr prop"><span class="tm">5:30pm<i>Proposed</i></span><div class="sg"><b>Sound check</b><span>Band and host mics.</span></div><span class="who">Sound</span></div>
+        <div class="fr prop"><span class="tm">6:30pm<i>Proposed</i></span><div class="sg"><b>Pre-brief + prayer</b><span>Whole team, one room.</span></div><span class="who">All team</span></div>
+        <div class="fr prop"><span class="tm">6:45pm<i>Proposed</i></span><div class="sg"><b>Walk-in</b><span>Walk-in loop, house music, walk-in preset.</span></div><span class="who">Screens, Sound, Lights</span></div>
+        <div class="fr main"><span class="tm">7:00pm</span><div class="sg"><b>Hangout</b><span>Walk-in loop and music keep running.</span></div><span class="who">Screens, Sound</span></div>
+        <div class="fr main"><span class="tm">7:45pm</span><div class="sg"><b>Doors open</b><span>2025 recap video loops. House full preset.</span></div><span class="who">Screens, Lights</span></div>
+        <div class="fr prop"><span class="tm">7:55pm<i>Proposed</i></span><div class="sg"><b>Countdown</b><span>5-minute countdown on screens.</span></div><span class="who">Screens</span></div>
+        <div class="fr main"><span class="tm">8:00pm</span><div class="sg"><b>Session 01</b><span>At zero: blackout, fast worship preset, lyrics up. Speaker preset when the speaker walks up.</span></div><span class="who">All production</span></div>
+        <div class="fr main"><span class="tm">9:00pm</span><div class="sg"><b>Session 02</b><span>Stage reset. Speaker name card, speaker preset, mic and slides.</span></div><span class="who">Stage, Screens, Lights</span></div>
+        <div class="fr prop"><span class="tm">9:40pm<i>Proposed</i></span><div class="sg"><b>Close</b><span>Walk-out music. House full by 9:45.</span></div><span class="who">Sound, Lights</span></div>
+        <div class="fr main"><span class="tm">9:45pm</span><div class="sg"><b>Front yard party</b><span>Outdoor speaker and playlist.</span></div><span class="who">Sound</span></div>
+        <div class="fr prop"><span class="tm">After<i>Proposed</i></span><div class="sg"><b>Shutdown</b><span>Batteries charging, media backed up for Saturday.</span></div><span class="who">Production</span></div>
+      </div>
+      <div id="p-sat" role="tabpanel" aria-labelledby="t-sat" hidden>
+        <div class="fr prop"><span class="tm">8:00am<i>Proposed</i></span><div class="sg"><b>Production call</b><span>Power on, line check.</span></div><span class="who">Production</span></div>
+        <div class="fr prop"><span class="tm">9:30am<i>Proposed</i></span><div class="sg"><b>Pre-brief + prayer</b><span>Whole team, one room.</span></div><span class="who">All team</span></div>
+        <div class="fr prop"><span class="tm">9:45am<i>Proposed</i></span><div class="sg"><b>Walk-in</b><span>Walk-in loop, house music, walk-in preset.</span></div><span class="who">Screens, Sound, Lights</span></div>
+        <div class="fr main"><span class="tm">10:00am</span><div class="sg"><b>Breakfast snack bar</b><span>Walk-in loop keeps running.</span></div><span class="who">Screens</span></div>
+        <div class="fr main"><span class="tm">10:30am</span><div class="sg"><b>Prayer session</b><span>Prayer preset, prayer background, quiet music.</span></div><span class="who">Lights, Screens, Sound</span></div>
+        <div class="fr main"><span class="tm">12:00pm</span><div class="sg"><b>Lunch</b><span>Lunch slide.</span></div><span class="who">Screens</span></div>
+        <div class="fr main"><span class="tm">1:00pm</span><div class="sg"><b>Workshops</b><span>Info slide: rooms. Room tech if needed.</span></div><span class="who">Screens</span></div>
+        <div class="fr main"><span class="tm">2:30pm</span><div class="sg"><b>Snack bar</b><span>Countdown to Session 03.</span></div><span class="who">Screens</span></div>
+        <div class="fr main"><span class="tm">3:00pm</span><div class="sg"><b>Session 03</b><span>Blackout, fast worship preset, lyrics. Speaker preset and slides.</span></div><span class="who">All production</span></div>
+        <div class="fr main"><span class="tm">4:30pm</span><div class="sg"><b>Session 04</b><span>Stage reset. Speaker card, speaker preset.</span></div><span class="who">Stage, Screens, Lights</span></div>
+        <div class="fr prop"><span class="tm">End<i>Proposed</i></span><div class="sg"><b>Close + teardown</b><span>Walk-out music, house full, strike the stage.</span></div><span class="who">Production</span></div>
+      </div>
+      <div id="p-run" role="tabpanel" aria-labelledby="t-run" hidden>
+        <div class="fr prop"><span class="tm">7:00pm<i>Proposed</i></span><div class="sg"><b>Production set up</b><span>Mics, screens, test each lighting preset.</span></div><span class="who">Production</span></div>
+        <div class="fr main"><span class="tm">7:30pm</span><div class="sg"><b>Fellowship + worship</b><span>On the flyer.</span></div><span class="who">All team</span></div>
+        <div class="fr main"><span class="tm">Time TBD</span><div class="sg"><b>Walk the flow</b><span>Corey calls each cue out loud.</span></div><span class="who">All team</span></div>
+        <div class="fr main"><span class="tm">Time TBD</span><div class="sg"><b>Department meetings</b><span>Production crew: positions, call times, questions.</span></div><span class="who">Production</span></div>
+        <div class="fr main"><span class="tm">Time TBD</span><div class="sg"><b>Training by the Pastors</b><span>Expectations for the whole team.</span></div><span class="who">Pastors</span></div>
+        <div class="fr prop"><span class="tm">End<i>Proposed</i></span><div class="sg"><b>Kinks list</b><span>What broke, who fixes it, by when.</span></div><span class="who">Corey</span></div>
+      </div>
+    </div>
+    <div class="flow-foot"><span class="pill dark">Presets rebuilt <b>Nov 4</b> · tested <b>Nov 5</b> · final check <b>Nov 12</b></span></div>
+  </div>
+</section>
+
+<section class="band qs" aria-labelledby="h-qs">
+  <div class="in">
+    <h2 class="h-ink" id="h-qs">For the call</h2>
+    <p class="lead">Pastor, Martin, Corey. Leave with a timeline and a rehearsal date.</p>
+    <div class="qlist" id="qlist"></div>
+    <div class="qfoot"><span>Tuesday, Thursday or Friday this week.</span><span><b id="qcount">0 of 12</b> answered · saved on this device</span></div>
+  </div>
+</section>
+
+<section class="band next" aria-labelledby="h-next">
+  <div class="in">
+    <h2 class="h-mem" id="h-next">next up</h2>
+    <p class="nq">The call with the pastor and Martin.</p>
+    <p class="nq-sub">Leave with: a lighting operator, who rebuilds the presets, every due date on the to-do list, and the rehearsal date.</p>
+    <div class="chips"><span>Lights</span><span>Presets</span><span>Song list</span><span>Countdown look</span><span>Rehearsal</span></div>
+  </div>
+</section>
+
+</div>
+
+<div id="page-ideas" role="tabpanel" hidden>
+
+<section class="band cdband" aria-labelledby="h-cd">
+  <div class="in">
+    <h2 class="h-peri" id="h-cd">Countdowns</h2>
+    <p class="ideas-note">Five looks, all running live. Pick the ones you like for the call. Full screen shows how it reads on the big screen.</p>
+    <div class="cdctl" role="group" aria-label="Countdown controls">
+      <span class="lab">Length</span>
+      <button class="cbtn" type="button" data-len="300" aria-pressed="true">5:00</button>
+      <button class="cbtn" type="button" data-len="120" aria-pressed="false">2:00</button>
+      <button class="cbtn" type="button" data-len="60" aria-pressed="false">1:00</button>
+      <button class="cbtn" type="button" data-len="30" aria-pressed="false">0:30</button>
+      <button class="cbtn go" type="button" id="cdGo">Pause</button>
+      <button class="cbtn" type="button" id="cdReset">Reset</button>
+    </div>
+    <p class="picks-line" id="pickLine">Picks save on this device.</p>
+    <div class="bgs">
+      <div class="bgi" data-cat="cd"><div class="scr b-count" id="scr-cd-serif"><div class="stack"><span class="serif t-xxl c-white" data-cd>5:00</span><span class="t-xs c-gold">CYN Conference starts</span></div></div><h3>Big serif</h3><span class="label use">Before each session</span><p>Big numbers on deep red. Simple and readable from the back row.</p><div class="tile-actions"><button class="mini" type="button" data-pick="cd-serif" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-cd-serif">Full screen</button></div></div>
+      <div class="bgi" data-cat="cd"><div class="scr cd-ring" id="scr-cd-ring"><svg viewBox="0 0 120 120" aria-hidden="true"><circle class="trk" cx="60" cy="60" r="54" pathLength="100"/><circle class="arc" cx="60" cy="60" r="54" pathLength="100" stroke-dasharray="100" stroke-dashoffset="0" data-ring/></svg><div class="stack"><span class="serif t-l c-white" data-cd>5:00</span><span class="t-xs c-gold">Session 02</span></div></div><h3>Gold ring</h3><span class="label use">Before each session</span><p>A gold ring empties as time runs out. Calm, easy to read at a glance.</p><div class="tile-actions"><button class="mini" type="button" data-pick="cd-ring" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-cd-ring">Full screen</button></div></div>
+      <div class="bgi" data-cat="cd"><div class="scr cd-brushbar" id="scr-cd-brush"><canvas class="fx" data-gl="ember" data-pal="deep" style="opacity:.55"></canvas><canvas class="fx" data-fx="bar" data-src="cd" data-y=".5" data-th=".26"></canvas><div class="stack"><span class="serif t-xxl c-white" data-cd>5:00</span><span class="t-xs c-gold">Up next: Session 03</span></div></div><h3>Brush bar</h3><span class="label use">Transitions</span><p>A painted CYN red stroke burns down with the time, embers coming off the end. Drawn live, so it stays sharp on the big wall.</p><div class="tile-actions"><button class="mini" type="button" data-pick="cd-brush" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-cd-brush">Full screen</button></div></div>
+      <div class="bgi" data-cat="cd"><div class="scr cd-split" id="scr-cd-split"><div class="stack"><span class="sans t-xxl c-white" style="letter-spacing:-.02em" data-cd>5:00</span><span class="t-xs c-gold">Next round</span></div><div class="line" data-bar style="width:100%"></div></div><h3>Clean digits</h3><span class="label use">Games · quick resets</span><p>Bold digits on black with a red line running down. Fast, sporty feel.</p><div class="tile-actions"><button class="mini" type="button" data-pick="cd-split" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-cd-split">Full screen</button></div></div>
+      <div class="bgi" data-cat="cd"><div class="scr cd-corner glt" id="scr-cd-corner"><canvas class="fx" data-gl="halftone" data-pal="brown"></canvas><span class="serif t-l c-white">YES, NOW.</span><div class="corner"><span class="t-xs c-gold">Starts in</span><br><span class="serif t-m c-gold" data-cd>5:00</span></div></div><h3>Corner timer</h3><span class="label use">Walk-in</span><p>The theme stays big over a live gold halftone. A small timer sits in the corner.</p><div class="tile-actions"><button class="mini" type="button" data-pick="cd-corner" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-cd-corner">Full screen</button></div></div>
+    </div>
+
+    <div class="spk">
+      <div>
+        <div class="scr spk-scr" id="scr-speaker"><span class="spk-clock" id="spClock" aria-label="Time now"></span><div class="stack"><span class="num" id="spNum">20:00</span><span class="t-xs c-gold state" id="spState">Speaker time</span></div></div>
+        <div class="tile-actions">
+          <button class="mini" type="button" data-sp="1200" aria-pressed="true">20 min</button>
+          <button class="mini" type="button" data-sp="600" aria-pressed="false">10 min</button>
+          <button class="mini" type="button" data-sp="70" aria-pressed="false">Demo</button>
+          <button class="mini" type="button" id="spGo">Start</button>
+          <button class="mini" type="button" id="spReset">Reset</button>
+          <button class="mini" type="button" data-pick="speaker-timer" aria-pressed="false">Pick</button>
+          <button class="mini" type="button" data-fs="scr-speaker">Full screen</button>
+        </div>
+      </div>
+      <div>
+        <h3>Speaker timer</h3>
+        <p>For a screen only the speaker sees. The real time sits in the corner, and the timer changes color so they know when to land it.</p>
+        <ul>
+          <li>White: plenty of time</li>
+          <li>Gold: 5 minutes left</li>
+          <li>Red: 1 minute left, stops at 0:00</li>
+        </ul>
+        <p style="margin-top:10px">Tap Demo, then Start, to watch it change.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="duoRed" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values=".3 .59 .11 0 0 .3 .59 .11 0 0 .3 .59 .11 0 0 0 0 0 1 0"/><feComponentTransfer><feFuncR type="table" tableValues=".07 .45 .69 1"/><feFuncG type="table" tableValues=".03 .06 .2 .93"/><feFuncB type="table" tableValues=".02 .02 .06 .66"/></feComponentTransfer></filter></svg>
+<section class="band ideaband" id="moments" aria-labelledby="h-led">
+  <div class="in">
+    <h2 class="h-gold" id="h-led">Screens by moment</h2>
+    <p class="lead" style="color:rgba(255,255,255,.88);max-width:62ch">Each moment has an LED wall version and a matching side TV version made from the same art, so the room always looks like one thing. Like the church's series slides, LED words sit top-left with the logo top-right, and the lower middle stays clear for whoever is on stage.</p>
+    <div class="zone-ctl"><button class="mini" type="button" id="zoneBtn" aria-pressed="false">Show where people stand</button></div>
+    <div class="moments">
+      <div class="moment"><div class="mhead"><h3>Walk-in</h3><span class="label">Doors 7:45pm Fri · 9:45am Sat</span></div><div class="bgi"><div class="scr glt" id="scr-led-walkin"><canvas class="fx" data-gl="ember" data-pal="red"></canvas><div class="brushov"></div><div class="hdr"><span class="hdr-t serif"><span class="rv"><span style="--i:0">Y</span><span style="--i:1">E</span><span style="--i:2">S</span><span style="--i:3">,</span> <span style="--i:4">N</span><span style="--i:5">O</span><span style="--i:6">W</span><span style="--i:7">.</span></span></span><span class="t-xs c-gold hdr-s">Nov 13 &amp; 14</span></div><div class="mark"><img src="assets/cyn-logo.png" alt=""><span>CYN Conference<br>2026</span></div><div class="zone"><span>Speaker + band</span></div><div class="grain"></div></div><span class="stype">LED wall</span><p>Liquid fire in CYN red and gold. Title top-left, logo top-right, middle left clear.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-walkin" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-walkin">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-tv-walkin"><canvas class="fx" data-gl="ember" data-pal="red"></canvas><div class="brushov"></div><div class="stack"><span class="t-xs c-gold">Welcome to</span><span class="serif t-l c-white"><span class="rv"><span style="--i:0">C</span><span style="--i:1">Y</span><span style="--i:2">N</span> <span style="--i:3">C</span><span style="--i:4">o</span><span style="--i:5">n</span><span style="--i:6">f</span><span style="--i:7">e</span><span style="--i:8">r</span><span style="--i:9">e</span><span style="--i:10">n</span><span style="--i:11">c</span><span style="--i:12">e</span></span></span><span class="t-xs c-gold">Nov 13 &amp; 14</span></div><img class="tvmark" src="assets/cyn-logo.png" alt=""><div class="grain"></div></div><span class="stype">Side TVs</span><p>Same fire, words centered for the seats.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-walkin" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-walkin">Full screen</button></div></div></div>
+      <div class="moment"><div class="mhead"><h3>Countdown</h3><span class="label">Last 5 minutes before a session</span></div><div class="bgi"><div class="scr glt cdwall" id="scr-led-countdown"><canvas class="fx" data-gl="plasma" data-pal="deep" data-k="cd"></canvas><canvas class="fx" data-fx="sparks"></canvas><div class="stack cw"><span class="serif cw-num c-white" data-cd>5:00</span><span class="t-xs c-gold">CYN Conference starts</span></div><div class="cw-burst serif"><span class="rv2"><span style="--i:0">Y</span><span style="--i:1">E</span><span style="--i:2">S</span><span style="--i:3">,</span> <span style="--i:4">N</span><span style="--i:5">O</span><span style="--i:6">W</span><span style="--i:7">.</span></span></div><div class="cw-flash"></div><div class="mark"><img src="assets/cyn-logo.png" alt=""><span>CYN Conference<br>2026</span></div><div class="grain"></div></div><span class="stype">LED wall</span><p>A liquid gold ring drains with the time and swirls faster near the end. At zero: flash, sparks, YES, NOW.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-countdown" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-countdown">Full screen</button><button class="mini" type="button" data-finish>Watch the finish</button></div></div><div class="bgi"><div class="scr glt cdwall" id="scr-tv-countdown"><canvas class="fx" data-gl="plasma" data-pal="deep" data-k="cd"></canvas><div class="stack cw"><span class="serif cw-num c-white" data-cd>5:00</span><span class="t-xs c-gold">Starts in</span></div><div class="cw-burst serif"><span class="rv2"><span style="--i:0">Y</span><span style="--i:1">E</span><span style="--i:2">S</span><span style="--i:3">,</span> <span style="--i:4">N</span><span style="--i:5">O</span><span style="--i:6">W</span><span style="--i:7">.</span></span></div><div class="grain"></div></div><span class="stype">Side TVs</span><p>Same ring and digits, no sparks.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-countdown" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-countdown">Full screen</button></div></div></div>
+      <div class="moment"><div class="mhead"><h3>Opener</h3><span class="label">Session 01 starts</span></div><div class="bgi"><div class="scr glt opwall2" id="scr-led-opener"><canvas class="fx" data-gl="ember" data-pal="red" data-ts="2.2"></canvas><span class="serif op2"><span class="circ"><span class="rv"><span style="--i:0">Y</span><span style="--i:1">E</span><span style="--i:2">S</span><span style="--i:3">,</span></span><img class="draw2" src="assets/scribble.png" alt=""></span> <span class="rv late"><span style="--i:0">N</span><span style="--i:1">O</span><span style="--i:2">W</span><span style="--i:3">.</span></span></span><div class="op-flash"></div><div class="mark"><img src="assets/cyn-logo.png" alt=""><span>CYN Conference<br>2026</span></div><div class="grain"></div></div><span class="stype">LED wall</span><p>Faster fire, the gold circle draws around YES, a light hit on NOW.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-opener" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-opener">Full screen</button></div></div><div class="bgi"><div class="scr glt opwall2" id="scr-tv-opener"><canvas class="fx" data-gl="ember" data-pal="red" data-ts="2.2"></canvas><span class="serif op2 op2s"><span class="circ"><span class="rv"><span style="--i:0">Y</span><span style="--i:1">E</span><span style="--i:2">S</span><span style="--i:3">,</span></span><img class="draw2" src="assets/scribble.png" alt=""></span> <span class="rv late"><span style="--i:0">N</span><span style="--i:1">O</span><span style="--i:2">W</span><span style="--i:3">.</span></span></span><div class="op-flash"></div><div class="grain"></div></div><span class="stype">Side TVs</span><p>Same moment, same timing.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-opener" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-opener">Full screen</button></div></div></div>
+      <div class="moment"><div class="mhead"><h3>Into worship</h3><span class="label">Last 10 seconds before worship</span></div><div class="bgi"><div class="scr glt wsh" id="scr-led-worship"><div class="ws-cam"><canvas class="fx" data-gl="ember" data-pal="red"></canvas><canvas class="fx ws-rays" data-gl="rays" data-pal="brown"></canvas><canvas class="fx" data-fx="bar" data-src="ws" data-y=".36" data-th=".12"></canvas><div class="ws-mid"><span class="serif ws-big" data-wsd>0:13</span><span class="ws-word" data-wsw></span></div></div><div class="hdr"><span class="hdr-t serif"><span class="ws-ttl">YES, NOW.</span></span><span class="t-xs c-gold hdr-s"><span class="ws-cnt">Worship in <b data-wst>0:13</b></span><span class="ws-now">Worship</span></span></div><div class="mark"><img src="assets/cyn-logo.png" alt=""><span>CYN Conference<br>2026</span></div><div class="ws-flash"></div><div class="grain"></div></div><span class="stype">LED wall</span><p>The brush bar burns down throwing sparks. At 10 the words take over, one a second: GET UP ON YOUR FEET AND GET READY TO WORSHIP. Every hit is bigger: faster fire, more shake, brighter flashes. At zero it blows out into light.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-worship" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-worship">Full screen</button><button class="mini" type="button" data-wsgo>Replay</button></div></div><div class="bgi"><div class="scr glt wsh tvw" id="scr-tv-worship"><div class="ws-cam"><canvas class="fx" data-gl="ember" data-pal="red"></canvas><canvas class="fx ws-rays" data-gl="rays" data-pal="brown"></canvas><canvas class="fx" data-fx="bar" data-src="ws" data-y=".5" data-th=".17"></canvas><div class="ws-mid"><span class="serif ws-big" data-wsd>0:13</span><span class="ws-word" data-wsw></span></div></div><div class="ws-lab t-xs c-gold"><span class="ws-cnt">Worship in <b data-wst>0:13</b></span><span class="ws-now">Worship</span></div><div class="ws-calm"><span class="serif">YES, NOW.</span></div><img class="tvmark" src="assets/cyn-logo.png" alt=""><div class="ws-flash"></div><div class="grain"></div></div><span class="stype">Side TVs</span><p>Same words on the same beat, with less shake.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-worship" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-worship">Full screen</button></div></div></div>
+      <div class="moment"><div class="mhead"><h3>Speaker walk-up</h3><span class="label">Before each teaching</span></div><div class="bgi"><div class="scr glt swall" id="scr-led-speaker"><canvas class="fx" data-gl="ember" data-pal="deep" style="opacity:.75"></canvas><div class="sw"><div class="sw-slide" style="--d:0s"><div class="sw-photo" style="--ar:.762"><img src="assets/spk-zane.jpg" alt=""><div class="sweep"></div></div><div class="sw-name"><span class="t-xs c-gold sw-lab">Guest speaker</span><span class="serif sw-n"><span class="mk"><span>Zane</span></span><span class="mk"><span>Hughes</span></span></span><span class="sw-rule"></span></div></div><div class="sw-slide" style="--d:7s"><div class="sw-photo" style="--ar:.561"><img src="assets/spk-emy.jpg" alt=""><div class="sweep"></div></div><div class="sw-name"><span class="t-xs c-gold sw-lab">Guest speaker</span><span class="serif sw-n"><span class="mk"><span>Emy</span></span><span class="mk"><span>Brookins</span></span></span><span class="sw-rule"></span></div></div><div class="sw-slide" style="--d:14s"><div class="sw-photo" style="--ar:.757"><img src="assets/spk-malik.jpg" alt=""><div class="sweep"></div></div><div class="sw-name"><span class="t-xs c-gold sw-lab">Guest speaker</span><span class="serif sw-n"><span class="mk"><span>Malik</span></span><span class="mk"><span>Brookins</span></span></span><span class="sw-rule"></span></div></div></div><div class="mark"><img src="assets/cyn-logo.png" alt=""><span>CYN Conference<br>2026</span></div><div class="zone"><span>Speaker + band</span></div><div class="grain"></div></div><span class="stype">LED wall</span><p>Red-and-gold photo in a tall panel on the right, a slow push-in and a light sweep. Name rises top-left.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-speaker" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-speaker">Full screen</button></div></div><div class="bgi"><div class="scr glt scard2" id="scr-tv-speaker"><canvas class="fx" data-gl="ember" data-pal="deep" style="opacity:.75"></canvas><div class="sc-slide" style="--d:0s"><div class="sc-ring"><div class="sc-pic"><img src="assets/spk-zane.jpg" alt=""></div></div><div class="sc-txt"><span class="t-xs c-gold sc-lab">Guest speaker</span><span class="serif sc-n"><span class="mk"><span>Zane Hughes</span></span></span><span class="sc-rule"></span><span class="t-xs c-peri sc-sub">CYN Conference 2026</span></div></div><div class="sc-slide" style="--d:7s"><div class="sc-ring"><div class="sc-pic"><img src="assets/spk-emy.jpg" alt=""></div></div><div class="sc-txt"><span class="t-xs c-gold sc-lab">Guest speaker</span><span class="serif sc-n"><span class="mk"><span>Emy Brookins</span></span></span><span class="sc-rule"></span><span class="t-xs c-peri sc-sub">CYN Conference 2026</span></div></div><div class="sc-slide" style="--d:14s"><div class="sc-ring"><div class="sc-pic"><img src="assets/spk-malik.jpg" alt=""></div></div><div class="sc-txt"><span class="t-xs c-gold sc-lab">Guest speaker</span><span class="serif sc-n"><span class="mk"><span>Malik Brookins</span></span></span><span class="sc-rule"></span><span class="t-xs c-peri sc-sub">CYN Conference 2026</span></div></div><div class="grain"></div></div><span class="stype">Side TVs</span><p>Same fire behind a gold ring photo and the same name reveal.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-speaker" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-speaker">Full screen</button></div></div></div>
+      <div class="moment"><div class="mhead"><h3>Teaching</h3><span class="label">While the speaker talks</span></div><div class="bgi"><div class="scr glt" id="scr-led-teaching"><canvas class="fx" data-gl="halftone" data-pal="brown"></canvas><div class="hdr"><span class="hdr-t serif">YES, NOW.</span><span class="t-xs c-gold hdr-s">Session 01</span></div><div class="mark"><img src="assets/cyn-logo.png" alt=""><span>CYN Conference<br>2026</span></div><div class="zone"><span>Speaker + band</span></div><div class="grain"></div></div><span class="stype">LED wall</span><p>Gold halftone moving like a slow tide. Small title top-left, like the church's series slides.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-teaching" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-teaching">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-tv-teaching"><canvas class="fx" data-gl="halftone" data-pal="brown"></canvas><div class="stack"><span class="t-xs c-gold">Session 01</span><span class="serif t-l c-white">YES, NOW.</span></div><img class="tvmark" src="assets/cyn-logo.png" alt=""><div class="grain"></div></div><span class="stype">Side TVs</span><p>Same halftone when the camera isn't up.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-teaching" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-teaching">Full screen</button></div></div></div>
+      <div class="moment"><div class="mhead"><h3>Prayer</h3><span class="label">Ministry time · Saturday 10:30am</span></div><div class="bgi"><div class="scr glt" id="scr-led-prayer"><canvas class="fx" data-gl="rays" data-pal="brown"></canvas><div class="hdr"><span class="hdr-t serif"><span class="rv slow"><span style="--i:0">H</span><span style="--i:1">e</span><span style="--i:2">r</span><span style="--i:3">e</span> <span style="--i:4">I</span> <span style="--i:5">a</span><span style="--i:6">m</span><span style="--i:7">.</span> <span style="--i:8">S</span><span style="--i:9">e</span><span style="--i:10">n</span><span style="--i:11">d</span> <span style="--i:12">m</span><span style="--i:13">e</span><span style="--i:14">.</span></span></span><span class="t-xs c-gold hdr-s">Isaiah 6:8</span></div><div class="mark"><img src="assets/cyn-logo.png" alt=""><span>CYN Conference<br>2026</span></div><div class="zone"><span>Speaker + band</span></div><div class="grain"></div></div><span class="stype">LED wall</span><p>Light rays through haze, dust drifting in the beams.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-prayer" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-prayer">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-tv-prayer"><canvas class="fx" data-gl="rays" data-pal="brown"></canvas><div class="stack"><span class="serif t-m c-gold"><span class="rv slow"><span style="--i:0">H</span><span style="--i:1">e</span><span style="--i:2">r</span><span style="--i:3">e</span> <span style="--i:4">I</span> <span style="--i:5">a</span><span style="--i:6">m</span><span style="--i:7">.</span> <span style="--i:8">S</span><span style="--i:9">e</span><span style="--i:10">n</span><span style="--i:11">d</span> <span style="--i:12">m</span><span style="--i:13">e</span><span style="--i:14">.</span></span></span><span class="t-xs c-white">Isaiah 6:8</span></div><div class="grain"></div></div><span class="stype">Side TVs</span><p>Same light, the verse centered.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-prayer" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-prayer">Full screen</button></div></div></div>
+      <div class="moment"><div class="mhead"><h3>Games</h3><span class="label">Hangout · front yard party</span></div><div class="bgi"><div class="scr glt arena2" id="scr-led-games"><canvas class="fx" data-gl="arena" data-pal="red"></canvas><span class="serif slam2 slam-hi">Game time</span><div class="mark"><img src="assets/cyn-logo.png" alt=""><span>CYN Conference<br>2026</span></div><div class="grain"></div></div><span class="stype">LED wall</span><p>Sweeping stage beams, a beat flash, and GAME TIME slams in.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-games" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-games">Full screen</button></div></div><div class="bgi"><div class="scr glt score3" id="scr-tv-games"><canvas class="fx" data-gl="arena" data-pal="red"></canvas><div class="red"><span class="t-xs c-gold">Team red</span><span class="serif t-xxl c-white" data-score="r">0</span><button type="button" data-add="r">+1</button></div><div class="blue"><span class="t-xs c-white">Team blue</span><span class="serif t-xxl c-white" data-score="b">0</span><button type="button" data-add="b">+1</button></div><div class="grain"></div></div><span class="stype">Side TVs</span><p>The scoreboard over the same beams. Tap +1.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-games" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-games">Full screen</button></div></div></div>
+      <div class="moment"><div class="mhead"><h3>Up next</h3><span class="label">Between segments</span></div><div class="bgi"><div class="scr glt pwall" id="scr-led-upnext"><canvas class="fx" data-gl="ember" data-pal="deep" style="opacity:.75"></canvas><canvas class="fx" data-fx="paint" data-n="7"></canvas><div class="stack pw-txt"><span class="t-xs c-gold">Up next</span><span class="serif t-l c-white"><span class="mk"><span data-sync>Session 02</span></span></span></div><div class="mark"><img src="assets/cyn-logo.png" alt=""><span>CYN Conference<br>2026</span></div><div class="grain"></div></div><span class="stype">LED wall</span><p>Seven brush strokes paint across the wall, the next segment rises out of the paint, then the paint wipes off. Drawn live at the wall's real size, so it stays sharp.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-upnext" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-upnext">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-tv-upnext"><canvas class="fx" data-gl="ember" data-pal="deep" style="opacity:.75"></canvas><canvas class="fx" data-fx="paint" data-n="4" data-mode="hold"></canvas><div class="stack pw-tv"><span class="t-xs c-gold">Up next</span><span class="serif t-l c-white">Session 02</span><span class="un-time">in <b data-cd>5:00</b></span></div><div class="un-bar2" data-bar style="width:100%"><i></i></div><div class="grain"></div></div><span class="stype">Side TVs</span><p>The same paint, a live countdown and a bar that drains.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-upnext" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-upnext">Full screen</button></div></div></div>
+      <div class="moment"><div class="mhead"><h3>Front yard party</h3><span class="label">Friday 9:45pm</span></div><div class="bgi"><div class="scr glt" id="scr-led-party"><canvas class="fx" data-gl="silk" data-pal="peri"></canvas><div class="hdr"><span class="hdr-t serif"><span class="c-ink">Front yard party</span></span><span class="t-xs c-gold hdr-s"><span class="c-ink">Friday · 9:45pm</span></span></div><div class="mark ink"><img src="assets/cyn-logo.png" alt=""><span>CYN Conference<br>2026</span></div><div class="zone"><span>Speaker + band</span></div><div class="grain"></div></div><span class="stype">LED wall</span><p>Blue silk moving in CYN colors.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-party" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-party">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-tv-party"><canvas class="fx" data-gl="silk" data-pal="peri"></canvas><div class="stack"><span class="t-xs c-ink">Friday · 9:45pm</span><span class="serif t-l c-ink pop2">Front yard party</span><span class="t-s c-ink">Pizza, ice cream, games and prizes</span></div><div class="grain"></div></div><span class="stype">Side TVs</span><p>Same silk, the details for the seats.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-party" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-party">Full screen</button></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band tvband" aria-labelledby="h-tv">
+  <div class="in">
+    <h2 class="h-peri" id="h-tv">Side TV extras</h2>
+    <p class="lead">Info slides for the side TVs only, in the same look.</p>
+    <div class="bgs">
+      <div class="bgi" data-cat="tv"><div class="scr wsx2" id="scr-tv-workshops"><canvas class="fx" data-fx="paint" data-n="5" data-mode="hold"></canvas><div class="paper-sweep"></div><div class="ws-wrap"><span class="serif ws-title"><span class="rv"><span style="--i:0">W</span><span style="--i:1">o</span><span style="--i:2">r</span><span style="--i:3">k</span><span style="--i:4">s</span><span style="--i:5">h</span><span style="--i:6">o</span><span style="--i:7">p</span><span style="--i:8">s</span></span> <em>1:00pm</em></span><div class="ws-cards"><div class="wc2" style="--i:0"><b>Workshop 1</b><span>Room TBD</span></div><div class="wc2" style="--i:1"><b>Workshop 2</b><span>Room TBD</span></div><div class="wc2" style="--i:2"><b>Workshop 3</b><span>Room TBD</span></div></div></div><div class="grain"></div></div><h3>Workshops</h3><span class="label use">Lunch · before 1:00pm</span><p>Cards swing in on a 3D hinge over painted CYN red. Sample names until we have the real ones.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-workshops" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-workshops">Full screen</button></div></div>
+      <div class="bgi" data-cat="tv"><div class="scr glt" id="scr-tv-lunch"><canvas class="fx" data-gl="silk" data-pal="red"></canvas><div class="stack"><span class="t-xs c-gold">Saturday · 12:00pm</span><span class="rv serif lunch-t c-white"><span style="--i:0">L</span><span style="--i:1">u</span><span style="--i:2">n</span><span style="--i:3">c</span><span style="--i:4">h</span></span></div><div class="grain"></div></div><h3>Lunch</h3><span class="label use">Saturday noon</span><p>Red silk in motion, the word blurs in letter by letter.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-lunch" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-lunch">Full screen</button></div></div>
+      <div class="bgi" data-cat="tv"><div class="scr tagus2" id="scr-tv-tag"><canvas class="fx" data-gl="halftone" data-pal="brown"></canvas><div class="vf2"></div><span class="rec"><i></i>REC <b class="tc" data-tc>00:00:00</b></span><div class="stack"><span class="t-xs c-gold">Post it</span><span class="serif t-l c-white">Tag @communityyn</span></div><div class="flash"></div><div class="grain"></div></div><h3>Tag us</h3><span class="label use">Hangout · breaks</span><p>A viewfinder hunting for focus, a running timecode, a shutter flash.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-tag" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-tag">Full screen</button></div></div>
+    </div>
+    <div class="brand">
+      <span><i style="background:#af1e04"></i>Red #AF1E04</span>
+      <span><i style="background:#7b1002"></i>Deep red #7B1002</span>
+      <span><i style="background:#221712"></i>Brown #221712</span>
+      <span><i style="background:#feeca2"></i>Gold #FEECA2</span>
+      <span><i style="background:#a0bfff"></i>Blue #A0BFFF</span>
+      <span>Worship song backgrounds come later.</span>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<section class="band network" aria-label="Community Youth Network">
+  <div class="in"><p>Community<br>Youth<br>Network</p></div>
+</section>
+
+<footer class="church">
+  <div class="in">
+    <p class="wordmark">Community<br>Church</p>
+    <p class="motto">God's way</p>
+    <div class="cf">
+      <div><h4>Office</h4><p>8569 Pines Blvd.<br>Pembroke Pines, FL 33024</p></div>
+      <div><h4>Sunday services</h4><p>10am (bilingual)<br>and 12:30pm (Spanish)</p></div>
+    </div>
+    <div class="cmeta"><span>Production planning draft prepared by Corey for the CYN team. Not an official church announcement.</span><img src="assets/cyn-logo.png" alt=""></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function $(s, r){ return (r || document).querySelector(s); }
+  function $$(s, r){ return [].slice.call((r || document).querySelectorAll(s)); }
+  function el(tag, cls, text){ var e = document.createElement(tag); if(cls) e.className = cls; if(text != null) e.textContent = text; return e; }
+
+  /* ---------- dates ---------- */
+  var now = new Date(), t0 = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  var MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var DOW = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  var todayIso = t0.getFullYear() + '-' + pad(t0.getMonth() + 1) + '-' + pad(t0.getDate());
+  function parseDue(s){ if(!s || !/^\d{4}-\d{2}-\d{2}$/.test(s)) return null; var p = s.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); }
+  function dueLabel(s){ var d = parseDue(s); return d ? DOW[d.getDay()] + ' ' + MON[d.getMonth()] + ' ' + d.getDate() : 'Date TBD'; }
+  function daysAway(s){ var d = parseDue(s); return d ? Math.round((d - t0) / 86400000) : null; }
+  function rel(n){ if(n === null) return ''; if(n < 0) return (-n) + (n === -1 ? ' day late' : ' days late'); if(n === 0) return 'today'; if(n === 1) return 'tomorrow'; return 'in ' + n + ' days'; }
+
+  var doorDays = Math.round((new Date(2026, 10, 13) - t0) / 86400000);
+  var c = $('#count');
+  if(doorDays > 1) c.textContent = doorDays + ' days out';
+  else if(doorDays === 1) c.textContent = 'Tomorrow';
+  else if(doorDays === 0 || doorDays === -1) c.textContent = 'This weekend';
+  else c.textContent = 'Done. Thank you, team.';
+
+  /* ---------- page tabs ---------- */
+  var ptabs = $$('.ptab');
+  function showPage(name){
+    ptabs.forEach(function(b){
+      var on = b.getAttribute('data-page') === name;
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+      $('#page-' + b.getAttribute('data-page')).hidden = !on;
+    });
+  }
+  ptabs.forEach(function(b){
+    b.addEventListener('click', function(){
+      var name = b.getAttribute('data-page');
+      showPage(name);
+      if(name === 'ideas' && window.__cynStatic) setTimeout(window.__cynStatic, 50);
+      try { history.replaceState(null, '', '#' + name); } catch(e){}
+      var nav = $('.pnav'); if(nav && nav.getBoundingClientRect().top < 0) nav.scrollIntoView();
+    });
+  });
+  showPage(location.hash === '#ideas' ? 'ideas' : 'plan');
+
+  /* ---------- cue sheet tabs ---------- */
+  var ftabs = $$('.ftab');
+  function day(i){
+    ftabs.forEach(function(t, j){
+      t.setAttribute('aria-selected', j === i ? 'true' : 'false'); t.tabIndex = j === i ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = j !== i;
+    });
+  }
+  ftabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ day(i); });
+    t.addEventListener('keydown', function(e){
+      if(e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
+        var n = (i + (e.key === 'ArrowRight' ? 1 : ftabs.length - 1)) % ftabs.length; day(n); ftabs[n].focus();
+      }
+    });
+  });
+  day(0);
+
+  /* The to-do list. Edit here, then run tools/cyn_page/publish.py. done: true checks it off. */
+  var TASKS = [
+    {"id": "t01", "title": "Find a lighting operator", "note": "All 3 sessions.", "group": "Lights", "owner": "Corey + Pastor", "due": "2026-10-30", "done": false, "order": 1},
+    {"id": "t02", "title": "Rebuild the lighting presets lost in the power outage", "note": "Walk-in, fast worship, slow worship, speaker, prayer, games, house full, blackout.", "group": "Lights", "owner": "Lights + Martin", "due": "2026-11-04", "done": false, "order": 2},
+    {"id": "t03", "title": "Test every preset in the room", "note": "At the Nov 5 training.", "group": "Lights", "owner": "Lights", "due": "2026-11-05", "done": false, "order": 3},
+    {"id": "t04", "title": "Pick a countdown look", "note": "From the Ideas tab.", "group": "Screens + slides", "owner": "Pastor + Corey", "due": "2026-10-30", "done": false, "order": 4},
+    {"id": "t05", "title": "Build the countdowns and timers", "note": "5-minute pre-session, transition timers, speaker timer.", "group": "Screens + slides", "owner": "Corey", "due": "2026-11-04", "done": false, "order": 5},
+    {"id": "t06", "title": "Walk-in loop and opener", "note": "", "group": "Screens + slides", "owner": "Pastor + Corey", "due": "2026-11-04", "done": false, "order": 6},
+    {"id": "t07", "title": "Speaker slides: name cards and session titles", "note": "Zane Hughes, Emy Brookins, Malik Brookins.", "group": "Screens + slides", "owner": "Corey", "due": "2026-11-06", "done": false, "order": 7},
+    {"id": "t08", "title": "Info slides", "note": "Schedule, workshops, lunch, front yard party.", "group": "Screens + slides", "owner": "Corey", "due": "2026-11-06", "done": false, "order": 8},
+    {"id": "t09", "title": "Collect guest slides and videos", "note": "", "group": "Screens + slides", "owner": "Corey", "due": "2026-11-06", "done": false, "order": 9},
+    {"id": "t10", "title": "Load everything on the presentation computer, plus a backup USB", "note": "", "group": "Screens + slides", "owner": "Corey", "due": "2026-11-10", "done": false, "order": 10},
+    {"id": "t11", "title": "Get the song list from the worship leader", "note": "", "group": "Worship", "owner": "Corey", "due": "2026-11-02", "done": false, "order": 11},
+    {"id": "t12", "title": "Lyric slides for every song", "note": "", "group": "Worship", "owner": "Pastor + Corey", "due": "2026-11-09", "done": false, "order": 12},
+    {"id": "t13", "title": "Song backgrounds", "note": "", "group": "Worship", "owner": "Pastor + Corey", "due": "2026-11-09", "done": false, "order": 13},
+    {"id": "t14", "title": "Get the game list from Diego", "note": "", "group": "Games", "owner": "Corey", "due": "2026-11-02", "done": false, "order": 14},
+    {"id": "t15", "title": "Game backgrounds", "note": "Title cards, scoreboard, round timer, winner card.", "group": "Games", "owner": "Corey", "due": "2026-11-06", "done": false, "order": 15},
+    {"id": "t16", "title": "Fill the screens operator", "note": "All 3 sessions.", "group": "People", "owner": "Corey + Pastor", "due": "2026-11-02", "done": false, "order": 16},
+    {"id": "t17", "title": "Fill the stage manager", "note": "All 3 sessions.", "group": "People", "owner": "Corey + Pastor", "due": "2026-11-02", "done": false, "order": 17},
+    {"id": "t18", "title": "Crew chat and call times", "note": "", "group": "People", "owner": "Corey", "due": "2026-11-02", "done": false, "order": 18},
+    {"id": "t19", "title": "Mic and input list", "note": "Band, host, speakers.", "group": "Sound", "owner": "Lourdes", "due": "2026-11-04", "done": false, "order": 19},
+    {"id": "t20", "title": "Outdoor speaker for the front yard party", "note": "Friday 9:45pm.", "group": "Sound", "owner": "Lourdes", "due": "2026-11-06", "done": false, "order": 20},
+    {"id": "t21", "title": "Call with the Pastor and Martin", "note": "Tuesday, Thursday or Friday this week.", "group": "Rehearsals", "owner": "Corey", "due": "2026-10-30", "done": false, "order": 21},
+    {"id": "t22", "title": "Worship + full tech rehearsal", "note": "Date set on the call. Suggest Tue Nov 10.", "group": "Rehearsals", "owner": "All production", "due": "2026-11-10", "done": false, "order": 22},
+    {"id": "t23", "title": "Final tech check", "note": "Every cue, every mic, backups ready.", "group": "Rehearsals", "owner": "Production", "due": "2026-11-12", "done": false, "order": 23},
+    {"id": "t24", "title": "Photo and video plan for both days", "note": "", "group": "Photos + video", "owner": "Mary", "due": "2026-11-06", "done": false, "order": 24},
+    {"id": "t25", "title": "Get the LED wall's size and resolution", "note": "So the LED backgrounds fit the wall exactly.", "group": "Screens + slides", "owner": "Corey + Martin", "due": "2026-10-30", "done": false, "order": 25},
+    {"id": "t26", "title": "How the side TVs switch between camera and slides", "note": "Who switches, and from where.", "group": "Screens + slides", "owner": "Martin", "due": "2026-10-30", "done": false, "order": 26}
+  ];
+
+  /* ---------- to-do state ---------- */
+  var GROUPS = ['Lights', 'Screens + slides', 'Worship', 'Games', 'People', 'Sound', 'Rehearsals', 'Photos + video'];
+  var S = { db: null, state: 'loading', canWrite: null, tasks: [], loaded: false, filter: 'all', picks: {} };
+
+  var gsel = $('#nGroup');
+  GROUPS.forEach(function(g){ var o = el('option', null, g); o.value = g; gsel.appendChild(o); });
+
+  function groupsInUse(){
+    var extra = [];
+    S.tasks.forEach(function(t){ var g = t.group || 'Other'; if(GROUPS.indexOf(g) < 0 && extra.indexOf(g) < 0) extra.push(g); });
+    return GROUPS.concat(extra);
+  }
+  function byDue(a, b){
+    var da = a.due || '9999-99-99', dbb = b.due || '9999-99-99';
+    if(da !== dbb) return da < dbb ? -1 : 1;
+    return (a.order || 0) - (b.order || 0);
+  }
+  function passes(t){
+    if(S.filter === 'mine') return /corey/i.test(t.owner || '');
+    if(S.filter === 'open') return !t.done;
+    return true;
+  }
+  function writable(){ return !!S.db && S.canWrite !== false; }
+
+  function note(msg){ $('#addnote').textContent = msg || ''; }
+  function writeFailed(e){
+    var code = e && e.code;
+    if(code === 'invalid_argument' || code === 'not_granted' || code === 'revoked'){
+      S.canWrite = false; note('This view is read-only, so changes are not saved.'); renderAll();
+    } else if(code === 'quota_exceeded'){
+      note('The list is full. Remove a few finished tasks, then try again.');
+    } else {
+      note('That did not save. Try again in a moment.');
+    }
+  }
+
+  var busy = {};
+  function toggle(t, cb){
+    if(!writable() || busy[t.id]){ cb.checked = !!t.done; return; }
+    busy[t.id] = true;
+    S.db.collection('tasks').doc(t.id).update({ done: cb.checked, doneAt: cb.checked ? new Date().toISOString() : null })
+      .catch(function(e){ cb.checked = !!t.done; writeFailed(e); })
+      .then(function(){ busy[t.id] = false; });
+  }
+  function removeTask(t){
+    if(!writable()) return;
+    S.db.collection('tasks').doc(t.id).delete().catch(writeFailed);
+  }
+
+  function taskRow(t, compact){
+    var n = daysAway(t.due);
+    var row = el('label', 'task' + (t.done ? ' done' : '') + (!t.done && n !== null && n < 0 ? ' late' : ''));
+    var cb = el('input'); cb.type = 'checkbox'; cb.checked = !!t.done; cb.disabled = !writable();
+    cb.setAttribute('aria-label', t.title || 'Task');
+    cb.addEventListener('change', function(){ toggle(t, cb); });
+    var body = el('span', 'tb');
+    body.appendChild(el('span', 'tt', t.title || 'Untitled'));
+    if(t.note && !compact) body.appendChild(el('span', 'tn', t.note));
+    var meta = el('span', 'tm2');
+    meta.appendChild(el('span', 'own', t.owner || 'Owner needed'));
+    if(!compact) meta.appendChild(el('span', 'due', dueLabel(t.due) + (n !== null && !t.done ? ' · ' + rel(n) : '')));
+    body.appendChild(meta);
+    row.appendChild(cb); row.appendChild(body);
+    if(!compact && writable()){
+      var x = el('button', 'del', '×'); x.type = 'button';
+      x.setAttribute('aria-label', 'Remove ' + (t.title || 'task'));
+      x.addEventListener('click', function(e){
+        e.preventDefault(); e.stopPropagation();
+        if(x.classList.contains('arm')) removeTask(t);
+        else { x.classList.add('arm'); x.textContent = 'Remove?'; setTimeout(function(){ x.classList.remove('arm'); x.textContent = '×'; }, 3000); }
+      });
+      row.appendChild(x);
+    }
+    return row;
+  }
+
+  function renderTodo(){
+    var wrap = $('#todo'); wrap.textContent = '';
+    var total = S.tasks.length, done = S.tasks.filter(function(t){ return t.done; }).length;
+    $('#pDone').textContent = done;
+    $('#pText').textContent = 'of ' + total + ' done';
+    $('#pBar').style.width = (total ? done / total * 100 : 0) + '%';
+    $('#addf').hidden = !writable();
+    if(S.state === 'none'){ wrap.appendChild(el('div', 'emptymsg', 'The to-do list did not load. Reload the page.')); return; }
+    if(!S.loaded){ wrap.appendChild(el('div', 'emptymsg', 'Loading the to-do list.')); return; }
+    if(!total){ wrap.appendChild(el('div', 'emptymsg', writable() ? 'No tasks yet. Add the first one below.' : 'No tasks yet.')); return; }
+    groupsInUse().forEach(function(g){
+      var all = S.tasks.filter(function(t){ return (t.group || 'Other') === g; });
+      if(!all.length) return;
+      var gd = all.filter(function(t){ return t.done; }).length;
+      var list = all.filter(passes).sort(byDue);
+      var card = el('div', 'tg');
+      var hd = el('div', 'tg-h'); hd.appendChild(el('h3', null, g)); hd.appendChild(el('span', 'tg-c', gd + ' / ' + all.length)); card.appendChild(hd);
+      var bar = el('div', 'tg-bar'); var fill = el('i'); fill.style.width = (gd / all.length * 100) + '%'; bar.appendChild(fill); card.appendChild(bar);
+      if(!list.length) card.appendChild(el('p', 'tg-none', S.filter === 'mine' ? 'Nothing here is yours.' : 'All done here.'));
+      list.forEach(function(t){ card.appendChild(taskRow(t, false)); });
+      wrap.appendChild(card);
+    });
+  }
+
+  var MILESTONES = [
+    { due: '2026-11-05', title: 'Team Night + Training, 7:30pm', note: 'Mandatory. Walk the flow, test the presets.' },
+    { due: '2026-11-13', title: 'Conference day 1', note: 'Production call 4:30pm (proposed).', show: true },
+    { due: '2026-11-14', title: 'Conference day 2', note: 'Production call 8:00am (proposed).', show: true }
+  ];
+  function renderTimeline(){
+    var ol = $('#tline'); ol.textContent = '';
+    var open = S.tasks.filter(function(t){ return !t.done; }).length;
+    var li0 = el('li', 'today');
+    li0.appendChild(el('div', 'd label', 'Today · ' + dueLabel(todayIso)));
+    li0.appendChild(el('div', 't', S.loaded ? open + ' open ' + (open === 1 ? 'task' : 'tasks') : 'Live to-do list'));
+    li0.appendChild(el('div', 'x', doorDays > 0 ? doorDays + ' days until doors open.' : 'Conference weekend.'));
+    ol.appendChild(li0);
+    var dates = {};
+    function slot(k){ return dates[k] || (dates[k] = { tasks: [], ms: [] }); }
+    S.tasks.forEach(function(t){ slot(t.due && parseDue(t.due) ? t.due : 'zzzz').tasks.push(t); });
+    MILESTONES.forEach(function(m){ slot(m.due).ms.push(m); });
+    Object.keys(dates).sort().forEach(function(k){
+      var g = dates[k];
+      var isShow = g.ms.some(function(m){ return m.show; });
+      var li = el('li', (isShow ? 'conf' : '') + (g.ms.length ? ' ms' : ''));
+      var d = el('div', 'd label', k === 'zzzz' ? 'Date TBD' : dueLabel(k));
+      if(k !== 'zzzz'){ var n = daysAway(k); if(n !== null && n >= 0) d.appendChild(el('span', 'rel', rel(n))); }
+      li.appendChild(d);
+      g.ms.forEach(function(m){ li.appendChild(el('div', 't', m.title)); li.appendChild(el('div', 'x', m.note)); });
+      if(g.tasks.length){
+        var box = el('div', 'tlist');
+        g.tasks.sort(byDue).forEach(function(t){ box.appendChild(taskRow(t, true)); });
+        li.appendChild(box);
+      }
+      ol.appendChild(li);
+    });
+  }
+
+  var PICK_KEY = 'cyn26-picks';
+  function renderPicks(){
+    var n = Object.keys(S.picks).length;
+    $$('[data-pick]').forEach(function(b){
+      var on = !!S.picks[b.getAttribute('data-pick')];
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      b.textContent = on ? 'Picked' : 'Pick';
+    });
+    var line = $('#pickLine'); line.textContent = '';
+    line.appendChild(el('b', null, n ? n + ' picked' : 'Nothing picked yet'));
+    line.appendChild(document.createTextNode('. Picks save on this device.'));
+  }
+  $$('[data-pick]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var id = b.getAttribute('data-pick');
+      if(S.picks[id]) delete S.picks[id]; else S.picks[id] = true;
+      try { localStorage.setItem(PICK_KEY, JSON.stringify(S.picks)); } catch(e){}
+      renderPicks();
+    });
+  });
+
+  function renderAll(){ renderTodo(); renderTimeline(); renderPicks(); }
+
+  /* filters */
+  $$('.tf').forEach(function(b){
+    b.addEventListener('click', function(){
+      S.filter = b.getAttribute('data-f');
+      $$('.tf').forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      renderTodo();
+    });
+  });
+
+  /* add task */
+  $('#addf').addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!writable()) return;
+    var title = $('#nTitle').value.trim();
+    if(!title){ $('#nTitle').focus(); return; }
+    var data = { title: title, group: $('#nGroup').value, owner: $('#nOwner').value.trim() || 'Corey', due: $('#nDue').value || '', note: '', done: false, doneAt: null, order: Date.now() };
+    var btn = $('#addf button'); btn.disabled = true;
+    S.db.collection('tasks').add(data).then(function(){
+      $('#nTitle').value = ''; $('#nOwner').value = ''; $('#nDue').value = ''; note('Added.');
+    }).catch(writeFailed).then(function(){ btn.disabled = false; });
+  });
+
+  renderAll();
+
+  /* the to-do list comes from TASKS above; picks stay on this device */
+  S.tasks = TASKS.map(function(t){ return Object.assign({}, t); });
+  S.loaded = true; S.state = 'static';
+  try { S.picks = JSON.parse(localStorage.getItem(PICK_KEY) || '{}') || {}; } catch(e){ S.picks = {}; }
+  renderAll();
+
+  /* ---------- call checklist (this device) ---------- */
+  var qs = [
+    'What is Martin’s part and what is mine?',
+    'Who runs lights?',
+    'Rebuilding the lighting presets: who, and by when?',
+    'Gear: what do we have, what’s missing?',
+    'Crew comms. Radios or headsets?',
+    'Who runs screens and stage manager, all 3 sessions?',
+    'Countdown look and backgrounds: pick from the Ideas tab.',
+    'Who sends the song list, and by when?',
+    'Rehearsal: worship + full tech. Which date?',
+    'Final tech check Nov 12?',
+    'Guests: mic type, slides, videos. Who collects them?',
+    'Front yard party sound and workshop rooms?'
+  ];
+  var KEY = 'cyn26-production-call-v2', saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch(e){ saved = {}; }
+  var list = $('#qlist'), cnt = $('#qcount');
+  function upd(){ var n = 0; $$('input', list).forEach(function(x){ if(x.checked) n++; }); cnt.textContent = n + ' of ' + qs.length; }
+  qs.forEach(function(q, i){
+    var l = el('label', 'q'); l.setAttribute('for', 'q' + i);
+    var inp = el('input'); inp.type = 'checkbox'; inp.id = 'q' + i; inp.checked = !!saved[i];
+    l.appendChild(inp); l.appendChild(el('span', null, q));
+    inp.addEventListener('change', function(){ saved[i] = inp.checked; try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch(e){} upd(); });
+    list.appendChild(l);
+  });
+  upd();
+
+  /* ---------- countdown samples ---------- */
+  function fmt(s){ s = Math.max(0, Math.ceil(s)); var m = Math.floor(s / 60), r = s % 60; return m + ':' + pad(r); }
+  var CD = { total: 300, left: 300, running: !reduce };
+  var cdGo = $('#cdGo');
+  function paintCD(){
+    var txt = fmt(CD.left), frac = CD.total ? Math.max(0, CD.left) / CD.total : 0;
+    $$('[data-cd]').forEach(function(e){ setRoll(e, txt); });
+    $$('[data-bar]').forEach(function(e){ e.style.width = (frac * 100).toFixed(2) + '%'; });
+    $$('[data-ring]').forEach(function(e){ e.setAttribute('stroke-dashoffset', (100 - frac * 100).toFixed(2)); });
+    $$('.cdwall').forEach(function(t){
+      t.classList.toggle('final', CD.left > 0 && CD.left <= 10);
+      t.classList.toggle('boom', CD.left <= 0);
+    });
+    cdGo.textContent = CD.running ? 'Pause' : (CD.left <= 0 ? 'Restart' : 'Start');
+  }
+  $$('[data-finish]').forEach(function(b){
+    b.addEventListener('click', function(){ CD.left = Math.min(12, CD.total); CD.running = true; paintCD(); });
+  });
+  $$('[data-len]').forEach(function(b){
+    b.addEventListener('click', function(){
+      CD.total = +b.getAttribute('data-len'); CD.left = CD.total;
+      $$('[data-len]').forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      paintCD();
+    });
+  });
+  cdGo.addEventListener('click', function(){ if(CD.left <= 0) CD.left = CD.total; CD.running = !CD.running; paintCD(); });
+  $('#cdReset').addEventListener('click', function(){ CD.left = CD.total; paintCD(); });
+
+  /* speaker timer */
+  var SP = { total: 1200, left: 1200, running: false };
+  var spScr = $('#scr-speaker'), spNum = $('#spNum'), spState = $('#spState'), spGo = $('#spGo');
+  function paintSP(){
+    var s = SP.left, cls = 'scr spk-scr', label = 'Speaker time', txt;
+    if(s <= 0){ cls += ' crit'; txt = '0:00'; }
+    else { txt = fmt(s); if(s <= 60){ cls += ' crit'; label = '1 minute left'; } else if(s <= 300){ cls += ' warn'; label = '5 minutes left'; } }
+    if(spScr.className !== cls) spScr.className = cls;
+    if(spNum.textContent !== txt) spNum.textContent = txt;
+    if(spState.textContent !== label) spState.textContent = label;
+    spGo.textContent = SP.running ? 'Pause' : 'Start';
+  }
+  $$('[data-sp]').forEach(function(b){
+    b.addEventListener('click', function(){
+      SP.total = +b.getAttribute('data-sp'); SP.left = SP.total; SP.running = false;
+      $$('[data-sp]').forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      paintSP();
+    });
+  });
+  spGo.addEventListener('click', function(){ if(SP.left <= 0) SP.left = SP.total; SP.running = !SP.running; paintSP(); });
+  $('#spReset').addEventListener('click', function(){ SP.left = SP.total; SP.running = false; paintSP(); });
+
+  var spClock = $('#spClock');
+  function paintClock(){
+    var d = new Date(), hh = d.getHours(), ap = hh >= 12 ? 'PM' : 'AM';
+    var txt = ((hh % 12) || 12) + ':' + pad(d.getMinutes()) + ' ' + ap;
+    if(spClock && spClock.textContent !== txt) spClock.textContent = txt;
+  }
+  var last = Date.now();
+  setInterval(function(){
+    var t = Date.now(), dt = (t - last) / 1000; last = t;
+    if(CD.running){ CD.left -= dt; if(CD.left <= 0){ CD.left = 0; CD.running = false; } paintCD(); }
+    if(SP.running){ SP.left -= dt; if(SP.left <= 0){ SP.left = 0; SP.running = false; } paintSP(); }
+    paintClock();
+  }, 250);
+  paintCD(); paintSP(); paintClock();
+
+  /* ---------- rolling digits ---------- */
+  function setRoll(e, txt){
+    var prev = e.getAttribute('data-txt');
+    if(prev === txt) return;
+    e.setAttribute('data-txt', txt);
+    if(reduce || prev === null || prev.length !== txt.length || e.children.length !== prev.length){
+      e.textContent = '';
+      for(var i = 0; i < txt.length; i++) e.appendChild(el('span', 'rd', txt.charAt(i)));
+      return;
+    }
+    for(var j = 0; j < txt.length; j++){
+      if(prev.charAt(j) !== txt.charAt(j)) e.replaceChild(el('span', 'rd rin', txt.charAt(j)), e.children[j]);
+    }
+  }
+
+  /* ---------- film grain texture ---------- */
+  (function(){
+    try {
+      var c = document.createElement('canvas'); c.width = c.height = 160;
+      var x = c.getContext('2d'), id = x.createImageData(160, 160);
+      for(var i = 0; i < id.data.length; i += 4){ var v = (Math.random() * 255) | 0; id.data[i] = id.data[i + 1] = id.data[i + 2] = v; id.data[i + 3] = 255; }
+      x.putImageData(id, 0, 0);
+      document.documentElement.style.setProperty('--grain', 'url(' + c.toDataURL('image/png') + ')');
+    } catch(e){}
+  })();
+
+  /* ---------- live shaders (one shared WebGL context) ---------- */
+  var COMMON = [
+    '#ifdef GL_FRAGMENT_PRECISION_HIGH', 'precision highp float;', '#else', 'precision mediump float;', '#endif',
+    'uniform vec2 r; uniform float t; uniform float k; uniform vec3 ca; uniform vec3 cb; uniform vec3 cc;',
+    'float hash(vec2 p){ p = fract(p * vec2(123.34, 456.21)); p += dot(p, p + 45.32); return fract(p.x * p.y); }',
+    'float noise(vec2 p){ vec2 i = floor(p), f = fract(p); vec2 u = f * f * (3.0 - 2.0 * f); return mix(mix(hash(i), hash(i + vec2(1.0, 0.0)), u.x), mix(hash(i + vec2(0.0, 1.0)), hash(i + vec2(1.0, 1.0)), u.x), u.y); }',
+    'float fbm(vec2 p){ float v = 0.0, a = 0.5; mat2 m = mat2(1.6, 1.2, -1.2, 1.6); for(int i = 0; i < 5; i++){ v += a * noise(p); p = m * p; a *= 0.5; } return v; }',
+    'float vig(vec2 uv){ vec2 d = uv - 0.5; return 1.0 - 1.1 * dot(d, d); }'
+  ].join('\n') + '\n';
+  var SH = {
+    ember: [
+      'void main(){',
+      ' vec2 uv = gl_FragCoord.xy / r; vec2 p = (gl_FragCoord.xy - 0.5 * r) / r.y; float tt = t * 0.06;',
+      ' vec2 q = vec2(fbm(p * 1.5 + tt), fbm(p * 1.5 - tt + 3.1));',
+      ' vec2 w = vec2(fbm(p * 1.3 + 2.0 * q + vec2(1.7, 9.2) + tt * 1.4), fbm(p * 1.3 + 2.0 * q + vec2(8.3, 2.8) - tt * 1.1));',
+      ' float f = fbm(p * 1.1 + 2.4 * w);',
+      ' vec3 col = mix(ca, cb * 0.75, smoothstep(0.1, 0.55, f));',
+      ' col = mix(col, cb * 1.15, smoothstep(0.28, 0.72, f * length(q) * 1.8));',
+      ' col += cc * pow(smoothstep(0.42, 0.88, f * (0.7 + w.x)), 2.4) * 0.95;',
+      ' gl_FragColor = vec4(col * vig(uv), 1.0);',
+      '}'].join('\n'),
+    rays: [
+      'void main(){',
+      ' vec2 uv = gl_FragCoord.xy / r; vec2 p = uv - vec2(0.5, 1.12); p.x *= r.x / r.y;',
+      ' float ang = atan(p.x, -p.y); float d = length(p);',
+      ' float n = fbm(vec2(ang * 4.0, t * 0.08));',
+      ' float rays = pow(0.5 + 0.5 * sin(ang * 16.0 + t * 0.1 + n * 5.0), 5.0) + 0.7 * pow(0.5 + 0.5 * sin(ang * 27.0 - t * 0.07 + n * 3.0), 9.0);',
+      ' rays *= (1.0 - smoothstep(0.15, 1.8, d)) * (1.0 - smoothstep(0.2, 1.05, abs(ang)));',
+      ' float haze = fbm(uv * vec2(3.0, 2.0) + vec2(t * 0.015, -t * 0.02));',
+      ' vec3 col = mix(ca, cb, uv.y * 0.8) + cc * rays * (0.18 + 0.42 * haze);',
+      ' col += cc * 0.18 * (1.0 - smoothstep(0.0, 1.0, d)) * (0.6 + 0.4 * haze);',
+      ' vec2 g = gl_FragCoord.xy / (r.y / 36.0); vec2 gp = g + vec2(sin(t * 0.3 + g.y * 0.2) * 0.3, t * 0.5);',
+      ' vec2 gi = floor(gp); float h = hash(gi);',
+      ' vec2 gf = fract(gp) - 0.5 - (vec2(hash(gi + 1.3), hash(gi + 7.1)) - 0.5) * 0.5;',
+      ' float dust = (1.0 - smoothstep(0.0, 0.07, length(gf))) * step(0.88, h) * (0.4 + 0.6 * sin(t * 1.7 + h * 40.0));',
+      ' col += cc * dust * 0.9 * smoothstep(0.0, 0.7, uv.y);',
+      ' gl_FragColor = vec4(col * vig(uv), 1.0);',
+      '}'].join('\n'),
+    halftone: [
+      'void main(){',
+      ' vec2 uv = gl_FragCoord.xy / r; float cs = r.x / 44.0; vec2 g = gl_FragCoord.xy / cs; vec2 c = floor(g) + 0.5; vec2 f = g - c;',
+      ' vec2 cu = c * cs / r.y;',
+      ' float v = smoothstep(0.2, 0.85, fbm(cu * 1.8 + vec2(t * 0.05, -t * 0.035)));',
+      ' float wv = 0.5 + 0.5 * sin(cu.x * 3.5 - t * 0.5 + sin(cu.y * 2.4 + t * 0.25) * 1.5);',
+      ' float rad = 0.5 * mix(v, wv, 0.5); float aa = 1.4 / cs;',
+      ' float dt = 1.0 - smoothstep(rad - aa, rad, length(f));',
+      ' vec3 col = mix(ca, cb * 0.5, uv.y) + mix(cb, cc, v) * dt * 0.6;',
+      ' float sw = fract(t * 0.035);',
+      ' col += cc * 0.06 * (1.0 - smoothstep(0.0, 0.22, abs(uv.x + uv.y * 0.3 - sw * 1.8 + 0.2)));',
+      ' gl_FragColor = vec4(col * vig(uv), 1.0);',
+      '}'].join('\n'),
+    arena: [
+      'void main(){',
+      ' vec2 uv = gl_FragCoord.xy / r; float ar = r.x / r.y; vec2 p = vec2(uv.x * ar, uv.y);',
+      ' vec3 col = mix(ca, cb * 0.6, uv.y * 0.7);',
+      ' float hz = 0.65 + 0.6 * fbm(uv * vec2(4.0, 2.5) + vec2(t * 0.08, t * 0.05));',
+      ' for(int i = 0; i < 6; i++){',
+      '  float fi = float(i); vec2 o = vec2((fi + 0.5) / 6.0 * ar, -0.08);',
+      '  float a = sin(t * (0.55 + fi * 0.11) + fi * 1.9) * 0.6; vec2 d = p - o; float an = atan(d.x, d.y) - a;',
+      '  float bm = (1.0 - smoothstep(0.0, 0.075, abs(an))) * (1.0 - smoothstep(0.05, 1.5, length(d)));',
+      '  vec3 bc = mix(cc, vec3(0.63, 0.75, 1.0), mod(fi, 2.0));',
+      '  col += bc * bm * 0.5 * hz;',
+      ' }',
+      ' float beat = pow(max(0.0, sin(t * 6.2832)), 30.0); col += cc * beat * 0.1;',
+      ' gl_FragColor = vec4(col * vig(uv), 1.0);',
+      '}'].join('\n'),
+    plasma: [
+      'void main(){',
+      ' vec2 uv = gl_FragCoord.xy / r; vec2 p = (gl_FragCoord.xy - 0.5 * r) / r.y;',
+      ' float sp = 1.0 + (1.0 - k) * 3.0; float tt = t * 0.12 * sp;',
+      ' float a = atan(p.y, p.x); float d = length(p);',
+      ' float sw = fbm(vec2(a * 1.2 + tt * 0.7 + d * 2.5, d * 3.5 - tt));',
+      ' vec3 col = mix(ca, cb * 0.8, smoothstep(0.25, 0.9, sw) * (1.0 - smoothstep(0.05, 1.0, d)));',
+      ' float R = 0.38; float wob = 0.012 * sin(a * 7.0 + tt * 3.0); float rd = abs(d - R - wob);',
+      ' col += cc * (1.0 - smoothstep(0.0, 0.05, rd)) * (0.25 + 0.5 * sw);',
+      ' float a01 = fract(atan(p.x, p.y) / 6.2832 + 1.0); float on = step(a01, k);',
+      ' col += cc * on * ((1.0 - smoothstep(0.0, 0.012, rd)) * 1.1 + (1.0 - smoothstep(0.0, 0.06, rd)) * 0.25);',
+      ' gl_FragColor = vec4(col * vig(uv), 1.0);',
+      '}'].join('\n'),
+    silk: [
+      'void main(){',
+      ' vec2 uv = gl_FragCoord.xy / r; vec2 p = uv * vec2(r.x / r.y, 1.0); float tt = t * 0.07;',
+      ' float n = fbm(p * 1.2 + vec2(tt, -tt * 0.6));',
+      ' float fo = sin((p.x * 1.8 + p.y * 1.2 + n * 3.2) * 3.1416 + tt * 2.0);',
+      ' float sh = pow(0.5 + 0.5 * fo, 7.0);',
+      ' vec3 col = mix(ca, cb, clamp(n * 1.1, 0.0, 1.0)) + cc * sh * 0.16;',
+      ' gl_FragColor = vec4(col * vig(uv), 1.0);',
+      '}'].join('\n')
+  };
+  var GLR = (function(){
+    var cv = document.createElement('canvas'), gl = null;
+    try { gl = cv.getContext('webgl', { antialias: false, preserveDrawingBuffer: true, alpha: false, premultipliedAlpha: false }); } catch(e){}
+    if(!gl) return null;
+    var vs = gl.createShader(gl.VERTEX_SHADER);
+    gl.shaderSource(vs, 'attribute vec2 p; void main(){ gl_Position = vec4(p, 0.0, 1.0); }'); gl.compileShader(vs);
+    var buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1]), gl.STATIC_DRAW);
+    var progs = {};
+    function prog(name){
+      if(progs.hasOwnProperty(name)) return progs[name];
+      progs[name] = null;
+      if(!SH[name]) return null;
+      var fs = gl.createShader(gl.FRAGMENT_SHADER); gl.shaderSource(fs, COMMON + SH[name]); gl.compileShader(fs);
+      if(!gl.getShaderParameter(fs, gl.COMPILE_STATUS)){ if(window.console) console.warn('shader ' + name, gl.getShaderInfoLog(fs)); return null; }
+      var p = gl.createProgram(); gl.attachShader(p, vs); gl.attachShader(p, fs); gl.linkProgram(p);
+      if(!gl.getProgramParameter(p, gl.LINK_STATUS)) return null;
+      var u = function(n){ return gl.getUniformLocation(p, n); };
+      progs[name] = { p: p, a: gl.getAttribLocation(p, 'p'), r: u('r'), t: u('t'), k: u('k'), ca: u('ca'), cb: u('cb'), cc: u('cc') };
+      return progs[name];
+    }
+    return function(name, w, h, t, k, pal){
+      if(gl.isContextLost()) return null;
+      var o = prog(name); if(!o) return null;
+      if(cv.width !== w || cv.height !== h){ cv.width = w; cv.height = h; }
+      gl.viewport(0, 0, w, h); gl.useProgram(o.p);
+      gl.bindBuffer(gl.ARRAY_BUFFER, buf); gl.enableVertexAttribArray(o.a); gl.vertexAttribPointer(o.a, 2, gl.FLOAT, false, 0, 0);
+      gl.uniform2f(o.r, w, h); gl.uniform1f(o.t, t); gl.uniform1f(o.k, k || 0);
+      gl.uniform3fv(o.ca, pal[0]); gl.uniform3fv(o.cb, pal[1]); gl.uniform3fv(o.cc, pal[2]);
+      gl.drawArrays(gl.TRIANGLES, 0, 6);
+      return cv;
+    };
+  })();
+
+  var PAL = {
+    red:   [[0.08, 0.03, 0.02], [0.69, 0.12, 0.02], [1.0, 0.9, 0.62]],
+    deep:  [[0.05, 0.015, 0.01], [0.5, 0.07, 0.015], [1.0, 0.86, 0.52]],
+    brown: [[0.06, 0.03, 0.02], [0.22, 0.09, 0.05], [1.0, 0.86, 0.56]],
+    peri:  [[0.42, 0.52, 0.84], [0.66, 0.77, 1.0], [1.0, 1.0, 1.0]]
+  };
+  function rgb(c){ return 'rgb(' + Math.round(c[0] * 255) + ',' + Math.round(c[1] * 255) + ',' + Math.round(c[2] * 255) + ')'; }
+
+  var SURF = [];
+  $$('canvas[data-gl], canvas[data-fx]').forEach(function(cv){
+    var ctx = cv.getContext && cv.getContext('2d'); if(!ctx) return;
+    SURF.push({ cv: cv, ctx: ctx, gl: cv.getAttribute('data-gl'), fx: cv.getAttribute('data-fx'),
+      pal: PAL[cv.getAttribute('data-pal')] || PAL.red, ts: parseFloat(cv.getAttribute('data-ts') || '1') || 1,
+      kcd: cv.getAttribute('data-k') === 'cd', vis: false, w: 0, h: 0, parts: [], next: 0, lastBoom: false });
+  });
+  function sizeS(o, inFs){
+    var dpr = Math.min(inFs ? 2 : 1.5, window.devicePixelRatio || 1);
+    var w = Math.max(2, Math.round(o.cv.offsetWidth * dpr)), h = Math.max(2, Math.round(o.cv.offsetHeight * dpr));
+    if(o.cv.width !== w || o.cv.height !== h){ o.cv.width = w; o.cv.height = h; }
+    o.w = w; o.h = h;
+  }
+  function drawGL(o, t){
+    var k = o.kcd ? (CD.total ? Math.max(0, CD.left) / CD.total : 0) : 0;
+    var tt = (o.wt && o.acc) ? o.acc : (t / 1000) * o.ts + 7;
+    var src = GLR ? GLR(o.gl, o.w, o.h, tt, k, o.pal) : null;
+    if(src){ o.ctx.drawImage(src, 0, 0); return; }
+    var g = o.ctx.createLinearGradient(0, 0, o.w, o.h);
+    g.addColorStop(0, rgb(o.pal[0])); g.addColorStop(1, rgb(o.pal[1]));
+    o.ctx.fillStyle = g; o.ctx.fillRect(0, 0, o.w, o.h);
+  }
+
+  /* confetti cannons with drag and flutter */
+  var CC = ['#feeca2', '#ffffff', '#a0bfff', '#af1e04', '#3d2506', '#feeca2'];
+  function cannon(o, x, dir, n){
+    var H = o.h;
+    for(var i = 0; i < n; i++){
+      var ang = -Math.PI / 2 + dir * (0.25 + Math.random() * 0.5);
+      var sp = (2.1 + Math.random() * 1.0) * H;
+      var w = H * (0.011 + Math.random() * 0.011);
+      o.parts.push({ x: x, y: H + 4, vx: Math.cos(ang) * sp, vy: Math.sin(ang) * sp, rot: Math.random() * 6.28, vr: (Math.random() - 0.5) * 10,
+        ph: Math.random() * 6.28, vp: 5 + Math.random() * 7, w: w, h: w * 1.7, c: CC[(Math.random() * CC.length) | 0], life: 0 });
+    }
+  }
+  function drawConfetti(o, dt, t){
+    var c = o.ctx, H = o.h; c.clearRect(0, 0, o.w, H);
+    if(t > o.next){ cannon(o, 0, 1, 60); cannon(o, o.w, -1, 60); o.next = t + 5200; }
+    var kx = Math.pow(0.2, dt), ky = Math.pow(0.04, dt);
+    for(var i = o.parts.length - 1; i >= 0; i--){
+      var p = o.parts[i];
+      p.vy = p.vy * ky + 1.2 * H * dt; p.vx *= kx;
+      p.x += (p.vx + Math.sin(p.ph) * 0.06 * H) * dt; p.y += p.vy * dt;
+      p.rot += p.vr * dt; p.ph += p.vp * dt; p.life += dt;
+      if(p.y > H + 30 || p.life > 9){ o.parts.splice(i, 1); continue; }
+      var sc = Math.cos(p.ph);
+      c.save(); c.translate(p.x, p.y); c.rotate(p.rot); c.scale(1, sc);
+      c.globalAlpha = 0.6 + 0.4 * Math.abs(sc); c.fillStyle = p.c;
+      c.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+      c.restore();
+    }
+    c.globalAlpha = 1;
+  }
+  /* countdown sparks at zero */
+  function drawSparks(o, dt){
+    var c = o.ctx, H = o.h; c.clearRect(0, 0, o.w, H);
+    var boom = CD.left <= 0;
+    if(boom && !o.lastBoom){
+      for(var i = 0; i < 220; i++){
+        var a = Math.random() * 6.283, sp = (0.5 + Math.random() * 1.5) * H;
+        o.parts.push({ x: o.w / 2, y: H / 2, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp, life: 0, max: 0.9 + Math.random() * 1.4, z: (0.004 + Math.random() * 0.007) * H });
+      }
+    }
+    o.lastBoom = boom;
+    c.globalCompositeOperation = 'lighter'; c.lineCap = 'round';
+    var kd = Math.pow(0.15, dt);
+    for(var j = o.parts.length - 1; j >= 0; j--){
+      var p = o.parts[j]; p.life += dt;
+      if(p.life > p.max){ o.parts.splice(j, 1); continue; }
+      p.vx *= kd; p.vy = p.vy * kd + 0.3 * H * dt;
+      var px = p.x, py = p.y; p.x += p.vx * dt; p.y += p.vy * dt;
+      var al = 1 - p.life / p.max;
+      c.strokeStyle = 'rgba(254,236,162,' + al.toFixed(3) + ')'; c.lineWidth = p.z;
+      c.beginPath(); c.moveTo(px - (p.x - px) * 2, py - (p.y - py) * 2); c.lineTo(p.x, p.y); c.stroke();
+    }
+    c.globalCompositeOperation = 'source-over';
+  }
+
+  /* ---------- painted brush strokes, drawn at the screen's real size so they stay sharp ---------- */
+  function rng(seed){ var s = seed % 2147483647; if(s <= 0) s += 2147483646; return function(){ s = s * 16807 % 2147483647; return (s - 1) / 2147483646; }; }
+  function clamp01(v){ return v < 0 ? 0 : (v > 1 ? 1 : v); }
+  function makeStroke(s, seed){
+    var R = rng(seed), len = s.xb - s.xa, rise = s.slope * len;
+    var ox = Math.floor(s.xa), oy = Math.floor(s.yc + Math.min(0, rise) - s.amp - s.th * 1.3);
+    var w = Math.ceil(len) + 2, h = Math.ceil(Math.abs(rise) + 2 * s.amp + s.th * 2.6) + 2;
+    var cv = document.createElement('canvas'); cv.width = w; cv.height = h;
+    var c = cv.getContext('2d'); c.translate(-ox, -oy);
+    function yAt(x){ var u = (x - s.xa) / len; return s.yc + rise * u + s.amp * Math.sin(u * s.fq + s.ph); }
+    var pq = 2.5 + R() * 3, pp = R() * 6.28;
+    function tAt(x){ var u = (x - s.xa) / len; return s.th * (1 + 0.13 * Math.sin(u * pq + pp) + 0.05 * Math.sin(u * 13 + pp * 2)); }
+    var N = 64, i, x;
+    var load = c.createLinearGradient(s.xa, 0, s.xb, 0);
+    for(i = 0; i <= 6; i++) load.addColorStop(i / 6, i % 2 ? s.col : s.col2);
+    c.fillStyle = load; c.beginPath();
+    for(i = 0; i <= N; i++){ x = s.xa + len * i / N; c.lineTo(x, yAt(x) - tAt(x) * (0.68 + 0.08 * R())); }
+    for(i = N; i >= 0; i--){ x = s.xa + len * i / N; c.lineTo(x, yAt(x) + tAt(x) * (0.68 + 0.08 * R())); }
+    c.closePath();
+    c.shadowColor = 'rgba(12,2,0,.55)'; c.shadowBlur = s.th * 0.22; c.shadowOffsetY = s.th * 0.1;
+    c.fill();
+    c.shadowColor = 'transparent'; c.shadowBlur = 0; c.shadowOffsetY = 0;
+    var nb = Math.max(30, Math.min(150, Math.round(s.th * 0.9)));
+    for(var b = 0; b < nb; b++){
+      var o = R() * 2 - 1, e = Math.abs(o), wob = R() * 6.28;
+      var tone = R(), col = tone < 0.4 ? s.dark : (tone < 0.75 ? s.col : s.light);
+      var al = (tone < 0.4 ? 0.1 + R() * 0.22 : 0.25 + R() * 0.45) * (1 - 0.3 * e * e);
+      c.lineWidth = Math.max(0.7, s.th * (0.006 + R() * R() * 0.07)); c.strokeStyle = col;
+      x = s.xa + len * R() * 0.02 * (1 + 3 * e);
+      var end = s.xb - len * R() * 0.03 * (1 + 3 * e);
+      while(x < end){
+        var xe = Math.min(end, x + len * (0.06 + R() * 0.22)), st = Math.max(2, Math.ceil((xe - x) / len * 36));
+        c.globalAlpha = al * (0.6 + 0.4 * R());
+        c.beginPath(); c.moveTo(x, yAt(x) + o * tAt(x) * 1.08);
+        for(var j = 1; j <= st; j++){ var xx = x + (xe - x) * j / st; c.lineTo(xx, yAt(xx) + o * tAt(xx) * 1.08 + Math.sin(xx / len * 11 + wob) * s.th * 0.025); }
+        c.stroke();
+        x = xe + (R() < s.dry * (0.2 + 1.6 * e * e) ? len * (0.004 + R() * 0.035) : 0);
+      }
+    }
+    for(i = Math.round(len / 7); i > 0; i--){
+      x = s.xa + R() * len; var sd = R() < 0.5 ? -1 : 1, d = tAt(x) * (0.9 + R() * 0.35), z = s.th * (0.008 + R() * 0.03);
+      c.globalAlpha = 0.25 + R() * 0.55; c.fillStyle = R() < 0.65 ? s.col : s.dark;
+      c.fillRect(x, yAt(x) + sd * d, z * (1 + R() * 3), z);
+    }
+    c.globalAlpha = 1; c.setTransform(1, 0, 0, 1, 0, 0);
+    c.globalCompositeOperation = 'source-atop';
+    var g = c.createLinearGradient(0, 0, 0, h);
+    g.addColorStop(0, 'rgba(255,205,175,.16)'); g.addColorStop(0.45, 'rgba(255,205,175,0)'); g.addColorStop(1, 'rgba(24,4,2,.3)');
+    c.fillStyle = g; c.fillRect(0, 0, w, h);
+    c.globalCompositeOperation = 'source-over';
+    var jh = [], jt = [], n = Math.max(24, Math.min(140, Math.round(h / 3))), p1 = R() * 6.28, p2 = R() * 6.28;
+    for(i = 0; i < n; i++){
+      jh.push(0.45 * Math.sin(i * 0.31 + p1) + 0.3 * Math.sin(i * 1.7 + p2) + 0.25 * (R() * 2 - 1));
+      jt.push(0.45 * Math.sin(i * 0.27 + p2) + 0.3 * Math.sin(i * 1.3 + p1) + 0.25 * (R() * 2 - 1));
+    }
+    return { cv: cv, ox: ox, oy: oy, w: w, h: h, jh: jh, jt: jt, yAt: yAt, th: s.th };
+  }
+  /* show the part of a stroke between x0 and x1, with ragged bristle ends */
+  function showStroke(c, S, x0, x1, dx, dy, F){
+    var L = S.ox, Rr = S.ox + S.w, n = S.jh.length;
+    if(x1 + F <= L || x0 - F >= Rr) return;
+    var cy = S.yAt(Math.min(Rr, Math.max(L, x1))) - S.oy, ty = S.yAt(Math.min(Rr, Math.max(L, x0))) - S.oy;
+    for(var r = 0; r < n; r++){
+      var ya = Math.round(r * S.h / n), yb = Math.round((r + 1) * S.h / n), ym = (ya + yb) / 2;
+      var dh = Math.min(1.4, Math.abs(ym - cy) / (S.th * 1.1)), dt2 = Math.min(1.4, Math.abs(ym - ty) / (S.th * 1.1));
+      var a = Math.max(L, x0 + F * (S.jt[r] + 1.2 * dt2 * dt2)), b = Math.min(Rr, x1 + F * (S.jh[r] - 1.6 * dh * dh));
+      if(b - a < 0.5 || yb <= ya) continue;
+      c.drawImage(S.cv, a - L, ya, b - a, yb - ya, a + dx, S.oy + ya + dy, b - a, yb - ya);
+    }
+  }
+
+  /* Up next wall: strokes paint across, hold, wipe off. 'hold' mode paints once and stays. */
+  var PCOL = ['#b3220a', '#9e1a05', '#c22a0c', '#8a1504', '#ad1f07', '#a51d06', '#7b1002'];
+  var PORD = [3, 0, 5, 2, 6, 1, 4];
+  function buildPaint(o){
+    var W = o.w, H = o.h, n = o.n, list = [], band = H * 1.04 / n;
+    for(var i = 0; i < n; i++){
+      var R = rng(101 + i * 7919);
+      list.push(makeStroke({ xa: -0.12 * W, xb: 1.12 * W, yc: -0.02 * H + band * (i + 0.5), th: band * 0.62,
+        slope: (R() - 0.5) * 0.045, amp: H * 0.012 * (0.5 + R()), fq: 2 + R() * 3.5, ph: R() * 6.28,
+        col: PCOL[(i * 3) % PCOL.length], col2: PCOL[(i * 3 + 2) % PCOL.length], dark: '#2e0a04', light: '#e0482a', dry: 0.4 }, 977 + i * 131));
+    }
+    o.strokes = list; o.bw = W; o.bh = H; o.t0 = 0;
+  }
+  function drawPaint(o, t, still){
+    var c = o.ctx, W = o.w, H = o.h;
+    if(!o.strokes || o.bw !== W || o.bh !== H) buildPaint(o);
+    c.clearRect(0, 0, W, H);
+    var ph, hold = o.mode === 'hold', F = W * 0.03, x0 = -0.12 * W - F, span = 1.24 * W + 2 * F;
+    if(still) ph = 2.5;
+    else if(hold){ if(!o.t0) o.t0 = t; ph = (t - o.t0) / 1000; }
+    else {
+      var an = o.sync && o.sync.getAnimations ? o.sync.getAnimations()[0] : null;
+      ph = ((an && an.currentTime != null ? an.currentTime : t) / 1000) % 6.4;
+    }
+    for(var i = 0; i < o.strokes.length; i++){
+      var q = PORD[i % PORD.length] * 0.06;
+      var hin = 1 - Math.pow(1 - clamp01((ph - 0.05 - q) / 0.75), 3);
+      var tout = hold ? 0 : Math.pow(clamp01((ph - 4.85 - q) / 0.75), 3);
+      if(hin <= 0 || tout >= 1) continue;
+      var dx = Math.round(hold ? W * 0.012 * Math.sin(ph * 0.25 + i * 1.7) : W * 0.004 * ph * (i % 2 ? 1 : -1));
+      showStroke(c, o.strokes[i], tout > 0 ? x0 + span * tout : x0 - W, x0 + span * hin, dx, 0, F);
+    }
+  }
+
+  /* brush bar: one painted stroke that burns down, embers off the end */
+  function buildBar(o){
+    var W = o.w, H = o.h, yc = o.byc * H, th = o.bth * H;
+    o.bar = [
+      makeStroke({ xa: -0.06 * W, xb: 1.06 * W, yc: yc + th * 0.14, th: th * 0.9, slope: -0.008, amp: H * 0.008, fq: 3.4, ph: 1.1, col: '#7b1002', col2: '#8a1504', dark: '#2a0803', light: '#b3220a', dry: 0.45 }, 4242),
+      makeStroke({ xa: -0.06 * W, xb: 1.06 * W, yc: yc - th * 0.06, th: th, slope: 0.005, amp: H * 0.01, fq: 2.6, ph: 0.3, col: '#b3220a', col2: '#c22a0c', dark: '#2e0a04', light: '#e0482a', dry: 0.35 }, 1717)
+    ];
+    o.bw = W; o.bh = H;
+  }
+  function spark(o, x, y, a, sp, life, z){ o.parts.push({ x: x, y: y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp, life: 0, max: life, z: z }); }
+  function drawBar(o, dt, t, still){
+    var c = o.ctx, W = o.w, H = o.h, ws = o.src === 'ws', T = o.wt;
+    if(!o.bar || o.bw !== W || o.bh !== H) buildBar(o);
+    if(ws && T && !still) wsTile(T, W, t);
+    var frac, I, boom;
+    if(ws){ frac = WS.boom ? 0 : Math.max(0, WS.left) / WS.lead; I = WS.I; boom = WS.boom; }
+    else { frac = CD.total ? Math.max(0, CD.left) / CD.total : 0; boom = CD.left <= 0; I = CD.left > 0 && CD.left <= 10 ? (10 - CD.left) / 20 : 0; }
+    if(still){ frac = ws ? 0.6 : 1; I = 0; boom = false; }
+    var m = T && T.tv ? 0.5 : 1, yc = o.byc * H, th = o.bth * H;
+    c.clearRect(0, 0, W, H);
+    var F = W * 0.03, hx, lx;
+    if(ws){ var half = (0.56 * W + F) * frac; hx = W / 2 + half; lx = W / 2 - half; }
+    else { hx = -0.06 * W - F + (1.12 * W + 2 * F) * frac; lx = -W; }
+    var jy = Math.round((Math.random() - 0.5) * H * 0.014 * I * m);
+    if(frac > 0 && !boom){
+      c.globalAlpha = ws && !still ? clamp01(WS.left / 1.2) : 1;   // the worship bar fades out in the last second
+      for(var i = 0; i < o.bar.length; i++) showStroke(c, o.bar[i], lx, hx, 0, i ? jy : -jy, F);
+      c.globalAlpha = 1;
+    }
+    if(still) return;
+    if(frac > 0.002 && !boom){
+      o.acc2 = (o.acc2 || 0) + (5 + 260 * I * I) * m * dt;
+      while(o.acc2 >= 1){
+        o.acc2 -= 1;
+        var left = ws && Math.random() < 0.5, aa = -Math.PI * (0.03 + Math.random() * 0.5);
+        spark(o, left ? lx : hx, yc + (Math.random() - 0.5) * th * 1.5, left ? -Math.PI - aa : aa, (0.25 + Math.random() * 0.8) * H * (0.6 + I), 0.35 + Math.random() * 0.7, (0.002 + Math.random() * 0.004) * H);
+      }
+    }
+    var beat = ws ? WS.idx : -1;
+    if(beat !== o.lastIdx && beat >= 0 && beat < 10){
+      for(var b = Math.round((10 + 40 * I) * m); b > 0; b--) spark(o, b % 2 ? hx : lx, yc + (Math.random() - 0.5) * th * 1.5, -Math.PI * Math.random(), (0.3 + Math.random()) * H * (0.6 + I), 0.4 + Math.random() * 0.6, (0.002 + Math.random() * 0.004) * H);
+    }
+    o.lastIdx = beat;
+    if(boom && !o.lastBoom){ for(var k = Math.round(260 * m); k > 0; k--) spark(o, W / 2, yc, Math.random() * 6.283, (0.4 + Math.random() * 1.6) * H, 0.9 + Math.random() * 1.5, (0.002 + Math.random() * 0.004) * H); }
+    o.lastBoom = boom;
+    c.globalCompositeOperation = 'lighter'; c.lineCap = 'round';
+    var kd = Math.pow(0.2, dt);
+    for(var j = o.parts.length - 1; j >= 0; j--){
+      var p = o.parts[j]; p.life += dt;
+      if(p.life > p.max){ o.parts.splice(j, 1); continue; }
+      p.vx *= kd; p.vy = p.vy * kd + 0.5 * H * dt;
+      var px = p.x, py = p.y; p.x += p.vx * dt; p.y += p.vy * dt;
+      var al = 1 - p.life / p.max;
+      c.strokeStyle = 'rgba(255,' + (200 + Math.round(40 * al)) + ',' + Math.round(120 + 60 * al) + ',' + al.toFixed(3) + ')'; c.lineWidth = p.z;
+      c.beginPath(); c.moveTo(px - (p.x - px) * 2, py - (p.y - py) * 2); c.lineTo(p.x, p.y); c.stroke();
+    }
+    c.globalCompositeOperation = 'source-over';
+  }
+
+  /* ---------- worship countdown: the last 10 seconds are words ---------- */
+  var WSW = ['Get', 'up', 'on', 'your', 'feet', 'and', 'get', 'ready', 'to', 'worship'];
+  var WS = { lead: 13, calm: 5, t0: 0, left: 13, I: 0, beat: 0, idx: -1, boom: false };
+  var WST = $$('.wsh').map(function(s){
+    return { s: s, tv: s.classList.contains('tvw'), cam: $('.ws-cam', s), word: $('[data-wsw]', s), big: $('[data-wsd]', s), sub: $('[data-wst]', s),
+      fl: $('.ws-flash', s), em: $('canvas[data-gl="ember"]', s), rays: $('.ws-rays', s), idx: -2 };
+  });
+  SURF.forEach(function(o){
+    var a = function(k, d){ var v = o.cv.getAttribute(k); return v == null ? d : v; };
+    o.n = +a('data-n', 7); o.mode = a('data-mode', 'wipe'); o.src = a('data-src', 'cd');
+    o.byc = parseFloat(a('data-y', '.5')); o.bth = parseFloat(a('data-th', '.25'));
+    var s = o.cv.closest('.scr'); o.sync = s ? s.querySelector('[data-sync]') : null;
+    WST.forEach(function(T){ if(T.s.contains(o.cv)) o.wt = T; });
+  });
+  $$('[data-wsgo]').forEach(function(b){ b.addEventListener('click', function(){ WS.t0 = performance.now(); }); });
+  function wsClock(t){
+    if(!WS.t0) WS.t0 = t;
+    var cyc = WS.lead + WS.calm, e = (((t - WS.t0) / 1000) % cyc + cyc) % cyc, left = WS.lead - e, sec = Math.ceil(left);
+    WS.left = left; WS.boom = left <= 0;
+    WS.idx = WS.boom ? 10 : (sec <= 10 ? 10 - sec : -1);
+    WS.beat = WS.boom ? -left : sec - left;
+    var u = clamp01((10.6 - left) / 10.6);
+    WS.I = WS.boom ? 1 : u * u;
+  }
+  function wsTile(T, W, t){
+    var I = WS.I, kick = Math.exp(-WS.beat * 6), s = T.s, m = T.tv ? 0.45 : 1;
+    if(T.idx !== WS.idx){
+      T.idx = WS.idx;
+      if(WS.idx >= 0 && WS.idx < 10){
+        T.word.textContent = WSW[WS.idx];
+        T.word.className = 'ws-word' + (WS.idx === 9 ? ' last' : '');
+        void T.word.offsetWidth; T.word.classList.add('go');
+      } else if(WS.idx < 0){ T.word.className = 'ws-word'; T.word.textContent = ''; }
+      s.classList.toggle('words', WS.idx >= 0);
+      s.classList.toggle('boom', WS.boom);
+    }
+    if(!WS.boom){ var txt = fmt(WS.left); if(T.sub.textContent !== txt) T.sub.textContent = txt; if(WS.idx < 0) setRoll(T.big, txt); }
+    s.style.setProperty('--k', I.toFixed(3));
+    var a = W * (WS.boom ? 0.016 * Math.exp(-WS.beat * 4) : (0.001 + 0.012 * I) * (0.35 + 0.65 * kick)) * m, f = 1 + I * 1.5;
+    var rx = a * (Math.sin(t * 0.041 * f) * 0.6 + Math.sin(t * 0.093 * f + 2) * 0.4);
+    var ry = a * (Math.sin(t * 0.053 * f + 1) * 0.6 + Math.sin(t * 0.117 * f) * 0.4);
+    var rot = (a / W) * 28 * Math.sin(t * 0.029 * f);
+    var sc = 1 + m * (WS.boom ? 0.05 * Math.exp(-WS.beat * 3) : 0.035 * I * kick);
+    T.cam.style.transform = 'translate3d(' + rx.toFixed(1) + 'px,' + ry.toFixed(1) + 'px,0) rotate(' + rot.toFixed(3) + 'deg) scale(' + sc.toFixed(4) + ')';
+    T.fl.style.opacity = (WS.boom ? Math.max(0, 1 - WS.beat * 1.3) : (WS.idx >= 0 ? (0.04 + 0.42 * I) * Math.exp(-WS.beat * 7) * (T.tv ? 0.8 : 1) : 0)).toFixed(3);
+    // ease toward the target so the loop restart doesn't jump-cut
+    var rt = WS.boom ? Math.min(1, 0.35 + WS.beat * 0.5) : 0.08 + 0.4 * I + 0.3 * I * kick, et = WS.boom ? Math.max(0.3, 1 - WS.beat * 0.35) : 1;
+    T.ro = T.ro == null ? rt : T.ro + (rt - T.ro) * 0.12; T.eo = T.eo == null ? et : T.eo + (et - T.eo) * 0.12;
+    if(T.rays) T.rays.style.opacity = T.ro.toFixed(3);
+    if(T.em) T.em.style.opacity = T.eo.toFixed(3);
+  }
+
+  if('IntersectionObserver' in window){
+    var io2 = new IntersectionObserver(function(es){ es.forEach(function(e){ SURF.forEach(function(o){ if(o.cv === e.target) o.vis = e.isIntersecting; }); }); }, { rootMargin: '120px' });
+    SURF.forEach(function(o){ io2.observe(o.cv); });
+  } else SURF.forEach(function(o){ o.vis = true; });
+
+  var lastT = 0, frameN = 0;
+  function frame(t){
+    var dt = Math.min(0.05, ((t - lastT) / 1000) || 0.016); lastT = t; frameN++;
+    if(!$('#page-ideas').hidden && !document.hidden){
+      var fsEl = document.fullscreenElement;
+      if(WST.length) wsClock(t);
+      SURF.forEach(function(o){
+        var inFs = !!(fsEl && fsEl.contains(o.cv));
+        if(fsEl && !inFs) return;
+        if(!o.vis && !inFs) return;
+        sizeS(o, inFs);
+        if(o.gl){
+          if(o.wt) o.acc = (o.acc || 7) + dt * (o.gl === 'rays' ? 1 + 2 * WS.I : (WS.boom ? 0.5 : 1 + 7 * WS.I));
+          if(inFs || frameN % 2 === 0) drawGL(o, t);
+        }
+        else if(o.fx === 'paint') drawPaint(o, t);
+        else if(o.fx === 'bar') drawBar(o, dt, t);
+        else if(o.fx === 'confetti') drawConfetti(o, dt, t);
+        else if(o.fx === 'sparks') drawSparks(o, dt);
+      });
+    }
+    requestAnimationFrame(frame);
+  }
+  if(reduce){
+    WST.forEach(function(T){ T.word.textContent = 'Worship'; T.word.className = 'ws-word last'; T.s.classList.add('words'); });
+    window.__cynStatic = function(){
+      SURF.forEach(function(o){
+        sizeS(o, false);
+        if(o.gl) drawGL(o, 4000);
+        else if(o.fx === 'paint') drawPaint(o, 0, true);
+        else if(o.fx === 'bar') drawBar(o, 0, 0, true);
+      });
+    };
+  } else requestAnimationFrame(frame);
+
+  /* running timecode on the Tag us slide */
+  var tc0 = Date.now();
+  setInterval(function(){
+    var s = Math.floor((Date.now() - tc0) / 1000);
+    var txt = pad(Math.floor(s / 3600)) + ':' + pad(Math.floor(s / 60) % 60) + ':' + pad(s % 60);
+    $$('[data-tc]').forEach(function(e){ e.textContent = txt; });
+  }, 1000);
+
+  /* show where people stand on the LED wall */
+  var zb = $('#zoneBtn');
+  if(zb) zb.addEventListener('click', function(){
+    var sec = $('#moments'), on = !sec.classList.contains('show-zone');
+    sec.classList.toggle('show-zone', on);
+    zb.setAttribute('aria-pressed', on ? 'true' : 'false');
+    zb.textContent = on ? 'Hide where people stand' : 'Show where people stand';
+  });
+
+  /* scoreboard sample */
+  var score = { r: 0, b: 0 };
+  $$('[data-add]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var k = b.getAttribute('data-add'); score[k]++;
+      var n = $('[data-score="' + k + '"]');
+      setRoll(n, String(score[k]));
+      var side = n.parentNode; side.classList.remove('hit'); void side.offsetWidth; side.classList.add('hit');
+    });
+  });
+
+  /* full screen */
+  $$('[data-fs]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var t = document.getElementById(b.getAttribute('data-fs'));
+      var fail = function(){ b.textContent = 'Not available here'; b.disabled = true; };
+      if(t && t.requestFullscreen){ try { var p = t.requestFullscreen(); if(p && p.catch) p.catch(fail); } catch(e){ fail(); } }
+      else fail();
+    });
+  });
+
+  /* background filters */
+  $$('.fchip').forEach(function(b){
+    b.addEventListener('click', function(){
+      var cat = b.getAttribute('data-cat');
+      $$('.fchip').forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      $$('#bgGrid .bgi').forEach(function(t){ t.hidden = !(cat === 'all' || t.getAttribute('data-cat') === cat); });
+    });
+  });
+})();
+
+</script>
+</body>
+</html>
