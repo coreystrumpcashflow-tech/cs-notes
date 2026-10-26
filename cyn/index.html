@@ -47,17 +47,23 @@ body{background:var(--brown-900);color:var(--white);font-family:var(--sans);font
 .pill:focus-visible,.q input:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 
 /* Hero */
-.hero{background:var(--red);text-align:center;padding-block:104px 64px}
+.hero{background:var(--red);padding-block:26px}
 .hero::before{content:"";position:absolute;inset:0;background:url(assets/brush.png) center/cover no-repeat;opacity:.92;pointer-events:none}
-.hero h1{font-family:var(--serif);font-weight:400;color:var(--white);margin:0;line-height:.84;text-transform:uppercase;text-wrap:balance}
-.hero h1 span{display:block}
-.hero .l1{font-size:clamp(64px,11vw,132px)}
-.hero .l2{font-size:clamp(40px,10.4vw,128px);letter-spacing:-.035em}
-.hero .l3{font-size:clamp(42px,6.8vw,86px);margin-top:.14em;letter-spacing:-.02em}
-.date{font-weight:500;color:var(--gold);font-size:20px;margin:36px 0 4px}
-.count{color:var(--gold-70);margin:0 0 26px}
-.byline{margin:16px 0 0;font-size:13px;color:var(--white-75)}
-.logo{display:block;width:64px;height:auto;margin:40px auto 0}
+.hero .in{display:flex;align-items:center;justify-content:space-between;gap:16px 32px;flex-wrap:wrap}
+.hero-id{display:flex;align-items:center;gap:16px;min-width:0}
+.hero h1{font-family:var(--serif);font-weight:400;color:var(--white);margin:0;line-height:1;text-transform:uppercase;font-size:clamp(30px,4.2vw,46px);letter-spacing:-.01em;text-wrap:balance}
+.byline{margin:6px 0 0;font-size:13px;color:var(--white-75)}
+.logo{display:block;width:44px;height:auto;flex:none}
+.hero-meta{display:flex;align-items:center;gap:10px 18px;flex-wrap:wrap}
+.date{font-weight:500;color:var(--gold);font-size:18px;margin:0;white-space:nowrap}
+.count{color:var(--gold-70);margin:0;white-space:nowrap}
+@media (max-width:700px){
+  .hero{padding-block:22px}
+  .hero .in{flex-direction:column;text-align:center}
+  .hero-id{flex-direction:column;gap:10px}
+  .logo{width:38px}
+  .hero-meta{justify-content:center}
+}
 
 /* Yes, now */
 .yes{background:var(--char);text-align:center;padding-block:76px}
@@ -715,12 +721,18 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <body>
 <header class="band hero">
   <div class="in">
-    <h1><span class="l1">CYN</span><span class="l2">Conference</span><span class="l3">2026</span></h1>
-    <p class="date">NOV. 13 &amp; 14</p>
-    <p class="count label" id="count">18 days out</p>
-    <span class="pill gold">Production plan · <b>Draft</b></span>
-    <p class="byline">Corey · CYN production lead · Updated Oct 26, 2026</p>
-    <img class="logo" src="assets/cyn-logo.png" alt="CYN logo" width="64" height="49">
+    <div class="hero-id">
+      <img class="logo" src="assets/cyn-logo.png" alt="CYN logo" width="64" height="49">
+      <div>
+        <h1>CYN Conference 2026</h1>
+        <p class="byline">Corey · CYN production lead · Updated Oct 26, 2026</p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <p class="date">NOV. 13 &amp; 14</p>
+      <p class="count label" id="count">18 days out</p>
+      <span class="pill gold">Production plan · <b>Draft</b></span>
+    </div>
   </div>
 </header>
 
