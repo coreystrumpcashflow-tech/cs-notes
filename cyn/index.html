@@ -256,24 +256,18 @@ h2{margin:0;font-weight:400}
   .fr .who{grid-column:2;text-align:left;margin-top:-2px}
 }
 
-/* Workstreams */
-.ws{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
-.w{background:var(--brown-900);padding:20px 20px 14px;border-top:4px solid var(--gold);min-width:0}
-.w.assumed{border-top-color:var(--peri)}
-.w.need{border-top-color:var(--red)}
-.w h3{font-family:var(--serif);font-weight:400;font-size:29px;line-height:1;color:var(--gold);margin:0}
-.w .o{font-size:13.5px;margin:6px 0 10px;color:var(--white-75)}
-.w.assumed .o{color:var(--peri)}
-.w.need .o{color:#ff7a5c;font-weight:600}
-.w ul{list-style:none;margin:0;padding:0}
-.w li{font-size:14px;padding:7px 0;border-top:1px solid var(--line-gold)}
-.wkey{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0 0 22px;font-size:13px;color:var(--white-75)}
-.wkey span{display:inline-flex;align-items:center;gap:8px}
-.wkey i{width:22px;height:4px;display:inline-block}
-
-
-/* Production: crew note */
-.w .sess{display:block;font-family:var(--btn);font-weight:700;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--white-75);margin-top:10px}
+/* Crew roster */
+.owners{padding-block:52px}
+.crew-h{font-family:var(--sans);font-weight:500;color:var(--white);font-size:clamp(28px,3.4vw,36px);line-height:1.1;letter-spacing:-.02em}
+.owners .sub-h{margin:8px 0 22px;font-size:14.5px}
+.crew-n{font-family:var(--btn);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-70);margin-left:12px;vertical-align:middle}
+.crew{columns:2;column-gap:44px;border-top:1px solid var(--line-gold)}
+.crew-row{break-inside:avoid;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:2px 14px;padding:11px 0;border-bottom:1px solid var(--line-gold);min-width:0}
+.crew-role{font-family:var(--serif);font-size:21px;line-height:1.15;color:var(--gold)}
+.crew-who{font-size:14px;font-weight:600;text-align:right}
+.crew-row.need .crew-who{color:#ff7a5c}
+.crew-do{grid-column:1/-1;margin:0;font-size:13.5px;line-height:1.45;color:var(--white-75)}
+@media (max-width:760px){.owners{padding-block:40px}.crew{columns:1}}
 
 /* Backgrounds */
 .bgband{background:var(--char)}
@@ -747,21 +741,21 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 <section class="band owners" aria-labelledby="h-crew">
   <div class="in">
-    <h2 class="h-sans" id="h-crew">The production <span class="over">crew</span></h2>
-    <p class="sub-h">The pastor leads the production department. Martin runs production for the church. Corey runs it for CYN.</p>
-    <div class="wkey"><span><i style="background:var(--gold)"></i>Has a name</span><span><i style="background:var(--red)"></i>Open</span></div>
-    <div class="ws">
-      <div class="w "><h3>Producer</h3><p class="o">Corey</p><ul><li>Calls every cue</li><li>Owns the cue sheet</li><li>Runs the crew</li></ul><span class="sess">Needed Fri night, Sat AM, Sat PM</span></div>
-      <div class="w need"><h3>Church systems</h3><p class="o">Open</p><ul><li>The church's gear and setup</li><li>Helps rebuild the light presets</li><li>Backup when something breaks</li></ul></div>
-      <div class="w "><h3>Sound</h3><p class="o">Lourdes</p><ul><li>Band, host and speaker mics</li><li>Walk-in and walk-out playlist</li><li>Outdoor speaker, Fri 9:45pm</li></ul><span class="sess">Needed Fri night, Sat AM, Sat PM</span></div>
-      <div class="w "><h3>Backgrounds + slides</h3><p class="o">Pastor + Corey</p><ul><li>Countdowns and timers</li><li>Lyric slides and backgrounds</li><li>Speaker, game and info slides</li></ul></div>
-      <div class="w "><h3>Photos + video</h3><p class="o">Mary</p><ul><li>Photos and video both days</li><li>Social media</li><li>The 2026 recap</li></ul></div>
-      <div class="w need"><h3>Lights</h3><p class="o">Open</p><ul><li>Run the 8 presets</li><li>Presets need rebuilding after the outage</li></ul><span class="sess">Needed Fri night, Sat AM, Sat PM</span></div>
-      <div class="w need"><h3>LED wall</h3><p class="o">Open</p><ul><li>Runs Arena on the big LED wall</li><li>Backgrounds and countdowns, cue by cue</li></ul><span class="sess">Needed Fri night, Sat AM, Sat PM</span></div>
-      <div class="w need"><h3>Lyrics + TVs</h3><p class="o">Open</p><ul><li>Runs ProPresenter</li><li>Lyrics, side TVs, recap video</li><li>Clicks the camera to put it on the TVs</li><li>Speaker timer on the stage monitor</li></ul><span class="sess">Needed Fri night, Sat AM, Sat PM</span></div>
-      <div class="w need"><h3>Camera</h3><p class="o">Open</p><ul><li>One camera to the side TVs</li><li>Records every session</li></ul><span class="sess">Needed Fri night, Sat AM, Sat PM</span></div>
-      <div class="w need"><h3>Stage manager</h3><p class="o">Open</p><ul><li>Mics in hands</li><li>Stage resets</li><li>Guests on and off stage</li></ul><span class="sess">Needed Fri night, Sat AM, Sat PM</span></div>
+    <h2 class="crew-h" id="h-crew">Crew <span class="crew-n" id="crewN">4 filled · 6 open</span></h2>
+    <p class="sub-h">The pastor leads the production department. Martin runs production for the church. Corey runs it for CYN. Live roles are needed Fri night, Sat AM and Sat PM.</p>
+    <div class="crew">
+      <div class="crew-row"><span class="crew-role">Producer</span><span class="crew-who">Corey</span><p class="crew-do">Calls every cue, owns the cue sheet, runs the crew</p></div>
+      <div class="crew-row"><span class="crew-role">Sound</span><span class="crew-who">Lourdes</span><p class="crew-do">Band, host and speaker mics, walk-in and walk-out playlist, outdoor speaker Fri 9:45pm</p></div>
+      <div class="crew-row"><span class="crew-role">Backgrounds + slides</span><span class="crew-who">Pastor + Corey</span><p class="crew-do">Countdowns, timers, lyric slides, backgrounds, speaker, game and info slides</p></div>
+      <div class="crew-row"><span class="crew-role">Photos + video</span><span class="crew-who">Mary</span><p class="crew-do">Photos and video both days, social media, the 2026 recap</p></div>
+      <div class="crew-row need"><span class="crew-role">Church systems</span><span class="crew-who">Open</span><p class="crew-do">The church's gear and setup, helps rebuild the light presets, backup when something breaks</p></div>
+      <div class="crew-row need"><span class="crew-role">Lights</span><span class="crew-who">Open</span><p class="crew-do">Runs the 8 presets, which need rebuilding after the outage</p></div>
+      <div class="crew-row need"><span class="crew-role">LED wall</span><span class="crew-who">Open</span><p class="crew-do">Runs Arena on the big LED wall: backgrounds and countdowns, cue by cue</p></div>
+      <div class="crew-row need"><span class="crew-role">Lyrics + TVs</span><span class="crew-who">Open</span><p class="crew-do">Runs ProPresenter: lyrics, side TVs, recap video, clicks the camera onto the TVs, speaker timer on the stage monitor</p></div>
+      <div class="crew-row need"><span class="crew-role">Camera</span><span class="crew-who">Open</span><p class="crew-do">One camera to the side TVs, records every session</p></div>
+      <div class="crew-row need"><span class="crew-role">Stage manager</span><span class="crew-who">Open</span><p class="crew-do">Mics in hands, stage resets, guests on and off stage</p></div>
     </div>
+    <script>(function(){var all=document.querySelectorAll('.crew-row').length,open=document.querySelectorAll('.crew-row.need').length;document.getElementById('crewN').textContent=(all-open)+' filled · '+open+' open';})();</script>
   </div>
 </section>
 
