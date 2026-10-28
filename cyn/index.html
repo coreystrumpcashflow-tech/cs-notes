@@ -332,6 +332,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .pnav .in{display:flex;justify-content:center;gap:10px;padding-block:12px}
 .ptab{font-family:var(--btn);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:9px 22px;border:1px solid var(--line-gold);background:transparent;color:var(--gold);cursor:pointer}
 .ptab[aria-selected="true"]{background:var(--gold);color:var(--red-deep);border-color:var(--gold)}
+@media (max-width:520px){.pnav .in{gap:6px}.ptab{padding:8px 11px;font-size:11px;letter-spacing:.06em}}
 .ptab:focus-visible,.tf:focus-visible,.cbtn:focus-visible,.mini:focus-visible,.fchip:focus-visible,.addf button:focus-visible{outline:2px solid var(--peri);outline-offset:2px}
 
 /* To-do */
@@ -822,6 +823,18 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 /* Regala una Sonrisa: photos fill the wall */
 .rus-photos.wide{inset:0;width:auto;-webkit-mask-image:none;mask-image:none;z-index:1}
 .rus-photos.wide::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,3,2,.88) 0,rgba(12,3,2,.55) 38%,rgba(12,3,2,.12) 70%),linear-gradient(180deg,rgba(12,3,2,.35),transparent 40%)}
+
+/* worship tab */
+.wsets{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:26px}
+@media (max-width:860px){.wsets{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.wset{display:grid;gap:2px;padding:12px 14px;border:1px solid rgba(255,255,255,.18);border-radius:10px;background:rgba(0,0,0,.18)}
+.wset b{font-family:var(--btn);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.wset span{font-size:14px;color:#fff}
+.wset i{font-style:normal;font-size:12.5px;color:rgba(255,255,255,.6)}
+.wpack{margin-top:40px}
+.wgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 20px;margin-top:16px}
+@media (max-width:760px){.wgrid{grid-template-columns:minmax(0,1fr)}}
+.lead .pill{margin-right:8px;vertical-align:middle;padding:6px 12px}
 </style>
 </head>
 <body>
@@ -847,6 +860,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <button class="ptab" role="tab" type="button" data-page="plan" aria-selected="true" aria-controls="page-plan">Plan</button>
     <button class="ptab" role="tab" type="button" data-page="cue" aria-selected="false" aria-controls="page-cue">Cue sheet</button>
     <button class="ptab" role="tab" type="button" data-page="ideas" aria-selected="false" aria-controls="page-ideas">Ideas</button>
+    <button class="ptab" role="tab" type="button" data-page="worship" aria-selected="false" aria-controls="page-worship">Worship</button>
   </div>
 </nav>
 
@@ -1096,6 +1110,22 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <div class="in"><p>Community<br>Youth<br>Network</p></div>
 </section>
 
+<div id="page-worship" role="tabpanel" hidden>
+
+<section class="band ideaband" aria-labelledby="h-wor">
+  <div class="in">
+    <h2 class="h-gold" id="h-wor">Worship backgrounds</h2>
+    <p class="lead" style="color:rgba(255,255,255,.88);max-width:64ch"><span class="pill gold">Tentative</span> Waiting on the song list. Each song gets 3 looks on the LED wall, changed by hand when the song moves: verse, chorus, then the bridge or a tempo change. The side TVs stay calm and dark under the lyrics. No words or logo on any of them.</p>
+    <div class="wsets"><div class="wset"><b>Fri 7:45pm</b><span>Worship · 3 songs</span><i>Songs TBD</i></div><div class="wset"><b>Fri 8:20pm</b><span>Worship into the speaker</span><i>Songs TBD</i></div><div class="wset"><b>Sat 11:00am</b><span>Worship</span><i>Songs TBD</i></div><div class="wset"><b>Sat 3:20pm</b><span>Worship</span><i>Songs TBD</i></div><div class="wset"><b>Sat 5:20pm</b><span>Praise party</span><i>Songs TBD</i></div></div>
+    <p class="ideas-note" style="margin-top:28px">Three starting packs to pick from. Once the songs are in, each song gets a pack or its own mix.</p>
+<div class="wpack"><div class="mhead"><h3>Pack 1 · Fire</h3><span class="label">Upbeat songs</span></div><div class="wgrid"><div class="bgi"><div class="scr glt" id="scr-led-w1v"><canvas class="fx" data-gl="ember" data-pal="deep" data-ts="0.9"></canvas><div class="grain"></div></div><span class="stype">LED wall · Verse</span><p>Flames in deep red.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w1v" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w1v">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w1c"><canvas class="fx" data-gl="ember" data-pal="red" data-ts="1.5"></canvas><div class="grain"></div></div><span class="stype">LED wall · Chorus</span><p>Flames in CYN red, fast.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w1c" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w1c">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w1b"><canvas class="fx" data-gl="ember" data-pal="gold" data-ts="1.2"></canvas><div class="grain"></div></div><span class="stype">LED wall · Bridge</span><p>Flames in gold.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w1b" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w1b">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-tv-w1"><canvas class="fx" data-gl="ambient" data-pal="deep"></canvas><div class="grain"></div></div><span class="stype">Side TVs · whole song</span><p>Calm and dark under the lyrics.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-w1" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-w1">Full screen</button></div></div></div></div>
+<div class="wpack"><div class="mhead"><h3>Pack 2 · Glory</h3><span class="label">Anthems that build</span></div><div class="wgrid"><div class="bgi"><div class="scr glt" id="scr-led-w2v"><canvas class="fx" data-gl="smoke" data-pal="deep"></canvas><div class="grain"></div></div><span class="stype">LED wall · Verse</span><p>Smoke in deep red.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w2v" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w2v">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w2c"><canvas class="fx" data-gl="smoke" data-pal="gold"></canvas><div class="grain"></div></div><span class="stype">LED wall · Chorus</span><p>Smoke in gold.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w2c" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w2c">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w2b"><canvas class="fx" data-gl="tunnel" data-pal="deep" data-ts="0.8"></canvas><div class="grain"></div></div><span class="stype">LED wall · Bridge</span><p>Ring tunnel in deep red.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w2b" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w2b">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-tv-w2"><canvas class="fx" data-gl="ambient" data-pal="gold"></canvas><div class="grain"></div></div><span class="stype">Side TVs · whole song</span><p>Calm and dark under the lyrics.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-w2" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-w2">Full screen</button></div></div></div></div>
+<div class="wpack"><div class="mhead"><h3>Pack 3 · Still</h3><span class="label">Slow and close</span></div><div class="wgrid"><div class="bgi"><div class="scr glt" id="scr-led-w3v"><canvas class="fx" data-gl="smoke" data-pal="brown" data-ts="0.6"></canvas><div class="grain"></div></div><span class="stype">LED wall · Verse</span><p>Smoke in warm brown, slow.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w3v" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w3v">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w3c"><canvas class="fx" data-gl="ember" data-pal="deep" data-ts="0.5"></canvas><div class="grain"></div></div><span class="stype">LED wall · Chorus</span><p>Flames in deep red, slow.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w3c" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w3c">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w3b"><canvas class="fx" data-gl="smoke" data-pal="gold" data-ts="0.7"></canvas><div class="grain"></div></div><span class="stype">LED wall · Bridge</span><p>Smoke in gold, slow.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w3b" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w3b">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-tv-w3"><canvas class="fx" data-gl="ambient" data-pal="brown"></canvas><div class="grain"></div></div><span class="stype">Side TVs · whole song</span><p>Calm and dark under the lyrics.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-w3" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-w3">Full screen</button></div></div></div></div>
+  </div>
+</section>
+
+</div>
+
 <footer class="church">
   <div class="in">
     <p class="wordmark">Community<br>Church</p>
@@ -1147,12 +1177,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     b.addEventListener('click', function(){
       var name = b.getAttribute('data-page');
       showPage(name);
-      if(name === 'ideas' && window.__cynStatic) setTimeout(window.__cynStatic, 50);
+      if((name === 'ideas' || name === 'worship') && window.__cynStatic) setTimeout(window.__cynStatic, 50);
       try { history.replaceState(null, '', '#' + name); } catch(e){}
       var nav = $('.pnav'); if(nav && nav.getBoundingClientRect().top < 0) nav.scrollIntoView();
     });
   });
-  showPage(location.hash === '#ideas' ? 'ideas' : (location.hash === '#cue' ? 'cue' : 'plan'));
+  showPage({'#ideas': 'ideas', '#cue': 'cue', '#worship': 'worship'}[location.hash] || 'plan');
 
   /* ---------- cue sheet tabs ---------- */
   var ftabs = $$('.ftab');
@@ -2043,7 +2073,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   var lastT = 0, frameN = 0;
   function frame(t){
     var dt = Math.min(0.05, ((t - lastT) / 1000) || 0.016); lastT = t; frameN++;
-    if(!$('#page-ideas').hidden && !document.hidden){
+    if((!$('#page-ideas').hidden || !$('#page-worship').hidden) && !document.hidden){
       var fsEl = document.fullscreenElement;
       if(WST.length) wsClock(t);
       SURF.forEach(function(o){
