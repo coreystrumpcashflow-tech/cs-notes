@@ -271,6 +271,26 @@ h2{margin:0;font-weight:400}
 .stg-ctl{margin:10px 0 0}
 .sbtn i{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--a);box-shadow:0 0 6px var(--a);margin-right:6px;vertical-align:-1px}
 
+/* Lights tab: Daslight layout mock */
+.dlband{background:#151312;padding-block:52px}
+.dlband .sub-h{color:var(--white-75);margin:8px 0 20px;font-size:14.5px;max-width:66ch}
+.dl{background:#2b2725;border:1px solid #3d3835;border-radius:8px;overflow:hidden;font-family:"Segoe UI",var(--sans);color:#d8d2cc;box-shadow:0 20px 50px rgba(0,0,0,.5);margin-bottom:22px}
+.dl-top{display:flex;align-items:center;gap:14px;padding:9px 14px;border-bottom:1px solid #3d3835;font-size:12px;letter-spacing:.06em;color:#a59d96;white-space:nowrap;overflow:hidden}
+.dl-top b{color:#fff;font-weight:700;letter-spacing:0}
+.dl-top .dl-title{flex:1;text-align:center;letter-spacing:0;font-size:13.5px;color:#a59d96}
+.dl-top .dl-go{border:1.5px solid #8a827b;border-radius:4px;padding:1px 9px;font-weight:800;color:#e9e4df}
+.dl-tabs{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px;border-bottom:1px solid #3d3835}
+.dl-tab{padding:6px 12px;border-radius:4px;background:#3a3532;color:#f5a623;font-size:12.5px}
+.dl-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:12px 12px 6px}
+.dl-col h4{margin:0 0 8px;padding-bottom:6px;border-bottom:3px solid var(--bk);color:var(--bk);font-size:12.5px;font-weight:600}
+.dl-btn{display:grid;grid-template-columns:minmax(0,1fr) 12px;width:100%;margin:0 0 6px;padding:0;border:1px solid #47413d;border-radius:3px;background:#24201e;color:#f5a623;text-align:left;cursor:pointer;overflow:hidden;font:inherit}
+.dl-btn span{padding:6px 8px;font-size:13px;line-height:1.2;min-width:0}
+.dl-btn small{display:block;font-size:9.5px;letter-spacing:.08em;color:#a59d96;margin-top:2px}
+.dl-btn i{background:var(--a)}
+.dl-btn[aria-pressed="true"]{border-color:#e0484f;background:#3b1f22;box-shadow:inset 0 0 0 1px #e0484f}
+.dl-btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+@media (max-width:520px){.dl-top span:not(.dl-title){display:none}.dl-cols{gap:8px;padding:10px 8px 4px}.dl-btn span{padding:6px 6px;font-size:12px}}
+
 /* Lights tab */
 .lights{background:var(--brown-800);padding-block:52px}
 .lights .sub-h{color:var(--white-75);margin:8px 0 22px;font-size:14.5px;max-width:64ch}
@@ -943,7 +963,7 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       <div class="crew-row"><span class="crew-role">Backgrounds + slides</span><span class="crew-who">Pastor + Corey</span><p class="crew-do">Countdowns, timers, lyric slides, backgrounds, speaker, game and info slides</p></div>
       <div class="crew-row"><span class="crew-role">Photos + video</span><span class="crew-who">Mary</span><p class="crew-do">Photos and video both days, social media, the 2026 recap</p></div>
       <div class="crew-row need"><span class="crew-role">Church systems</span><span class="crew-who">Open</span><p class="crew-do">The church's gear and setup, helps rebuild the light presets, backup when something breaks</p></div>
-      <div class="crew-row need"><span class="crew-role">Lights</span><span class="crew-who">Open</span><p class="crew-do">Runs the conference presets on the Lights tab</p></div>
+      <div class="crew-row need"><span class="crew-role">Lights</span><span class="crew-who">Open</span><p class="crew-do">Runs the 24 color buttons in Daslight, cue by cue from the Lights tab</p></div>
       <div class="crew-row need"><span class="crew-role">LED wall</span><span class="crew-who">Open</span><p class="crew-do">Runs Arena on the big LED wall: backgrounds and countdowns, cue by cue</p></div>
       <div class="crew-row need"><span class="crew-role">Lyrics + TVs</span><span class="crew-who">Open</span><p class="crew-do">Runs ProPresenter: lyrics, side TVs, recap video, clicks the camera onto the TVs, speaker timer on the stage monitor</p></div>
       <div class="crew-row need"><span class="crew-role">Camera + director</span><span class="crew-who">Elizabeth filling</span><p class="crew-do">Camera to the side TVs, records every session. Elizabeth Abadia runs cameras on Sundays and is filling these spots.</p></div>
@@ -1212,12 +1232,21 @@ body:has(#page-worship:not([hidden])) .network{display:none}
   </div>
 </section>
 
-<section class="band lights" aria-labelledby="h-lnorm">
+<section class="band dlband" aria-labelledby="h-dl">
   <div class="in">
-    <h2 class="crew-h" id="h-lnorm">Normal services <span class="crew-n">Rows 1 to 4</span></h2>
-    <p class="sub-h">Pastor's set for Sundays and church events, built in Daslight: 8 colors, each one still and moving, plus the looks every service needs. Every item on this tab is one Daslight scene. Being rebuilt after the power outage. When it's done, save the show to a USB stick and photograph the scene buttons so an outage can't wipe it again.</p>
-    <div class="lbanks"><span><b>Row 1 · Still</b>One step: the heads hold their aim in one color.</span><span><b>Row 2 · Slow</b>The heads sweep slowly while the color breathes toward its partner, about 4 to 6 seconds each way.</span><span><b>Row 3 · Fast</b>Faster sweeps, and the color flips to its partner on the beat.</span></div>
-    <p class="lnote">Each color sits in the same spot in all three rows. Red is always first, so going from still to moving is one row down. A moving look only moves between its color and its partner shade, never a rainbow. Worship: pick one color, Still or Slow for slow songs, Fast for upbeat ones.</p>
+    <h2 class="crew-h" id="h-dl">Daslight layout <span class="crew-n">3 banks · 8 colors each</span></h2>
+    <p class="sub-h">How the Control screen should look once it's built. Buttons are only colors and each bank is a speed, so every color sits in the same spot in every bank. Changing speed means pressing the same color in the next bank. Tap a button to see it in the preview above. When it's done, save the show to a USB stick and photograph the screen so an outage can't wipe it again.</p>
+    <div class="dl" role="group" aria-label="Daslight Control screen mock-up">
+      <div class="dl-top"><span>SETUP</span><b>CONTROL</b><span>TOUCH</span><span class="dl-title"><b>Daslight 5</b> · CYN Lights.dvc</span><span class="dl-go">GO</span><span>BPM <b>120</b></span></div>
+      <div class="dl-tabs"><span class="dl-tab">Bank 1 · Still</span><span class="dl-tab">Bank 2 · Slow</span><span class="dl-tab">Bank 3 · Fast</span></div>
+      <div class="dl-cols">
+        <div class="dl-col" style="--bk:#f5c518"><h4>Bank 1 · Still</h4><button class="dl-btn" type="button" data-dlc="0" data-dlm="0" aria-pressed="false"><span>Red<small>STATIC</small></span><i style="--a:#e3241b"></i></button><button class="dl-btn" type="button" data-dlc="1" data-dlm="0" aria-pressed="false"><span>Amber<small>STATIC</small></span><i style="--a:#ffa21f"></i></button><button class="dl-btn" type="button" data-dlc="2" data-dlm="0" aria-pressed="false"><span>Purple<small>STATIC</small></span><i style="--a:#8a3cff"></i></button><button class="dl-btn" type="button" data-dlc="3" data-dlm="0" aria-pressed="false"><span>Blue<small>STATIC</small></span><i style="--a:#2f6bff"></i></button><button class="dl-btn" type="button" data-dlc="4" data-dlm="0" aria-pressed="false"><span>Teal<small>STATIC</small></span><i style="--a:#19c3c8"></i></button><button class="dl-btn" type="button" data-dlc="5" data-dlm="0" aria-pressed="false"><span>Green<small>STATIC</small></span><i style="--a:#25d26e"></i></button><button class="dl-btn" type="button" data-dlc="6" data-dlm="0" aria-pressed="false"><span>Pink<small>STATIC</small></span><i style="--a:#ff3fa4"></i></button><button class="dl-btn" type="button" data-dlc="7" data-dlm="0" aria-pressed="false"><span>White<small>STATIC</small></span><i style="--a:#ffffff"></i></button></div>
+        <div class="dl-col" style="--bk:#f39a3c"><h4>Bank 2 · Slow</h4><button class="dl-btn" type="button" data-dlc="0" data-dlm="1" aria-pressed="false"><span>Red<small>SLOW</small></span><i style="--a:#e3241b"></i></button><button class="dl-btn" type="button" data-dlc="1" data-dlm="1" aria-pressed="false"><span>Amber<small>SLOW</small></span><i style="--a:#ffa21f"></i></button><button class="dl-btn" type="button" data-dlc="2" data-dlm="1" aria-pressed="false"><span>Purple<small>SLOW</small></span><i style="--a:#8a3cff"></i></button><button class="dl-btn" type="button" data-dlc="3" data-dlm="1" aria-pressed="false"><span>Blue<small>SLOW</small></span><i style="--a:#2f6bff"></i></button><button class="dl-btn" type="button" data-dlc="4" data-dlm="1" aria-pressed="false"><span>Teal<small>SLOW</small></span><i style="--a:#19c3c8"></i></button><button class="dl-btn" type="button" data-dlc="5" data-dlm="1" aria-pressed="false"><span>Green<small>SLOW</small></span><i style="--a:#25d26e"></i></button><button class="dl-btn" type="button" data-dlc="6" data-dlm="1" aria-pressed="false"><span>Pink<small>SLOW</small></span><i style="--a:#ff3fa4"></i></button><button class="dl-btn" type="button" data-dlc="7" data-dlm="1" aria-pressed="false"><span>White<small>SLOW</small></span><i style="--a:#ffffff"></i></button></div>
+        <div class="dl-col" style="--bk:#e0484f"><h4>Bank 3 · Fast</h4><button class="dl-btn" type="button" data-dlc="0" data-dlm="2" aria-pressed="false"><span>Red<small>FAST</small></span><i style="--a:#e3241b"></i></button><button class="dl-btn" type="button" data-dlc="1" data-dlm="2" aria-pressed="false"><span>Amber<small>FAST</small></span><i style="--a:#ffa21f"></i></button><button class="dl-btn" type="button" data-dlc="2" data-dlm="2" aria-pressed="false"><span>Purple<small>FAST</small></span><i style="--a:#8a3cff"></i></button><button class="dl-btn" type="button" data-dlc="3" data-dlm="2" aria-pressed="false"><span>Blue<small>FAST</small></span><i style="--a:#2f6bff"></i></button><button class="dl-btn" type="button" data-dlc="4" data-dlm="2" aria-pressed="false"><span>Teal<small>FAST</small></span><i style="--a:#19c3c8"></i></button><button class="dl-btn" type="button" data-dlc="5" data-dlm="2" aria-pressed="false"><span>Green<small>FAST</small></span><i style="--a:#25d26e"></i></button><button class="dl-btn" type="button" data-dlc="6" data-dlm="2" aria-pressed="false"><span>Pink<small>FAST</small></span><i style="--a:#ff3fa4"></i></button><button class="dl-btn" type="button" data-dlc="7" data-dlm="2" aria-pressed="false"><span>White<small>FAST</small></span><i style="--a:#ffffff"></i></button></div>
+      </div>
+    </div>
+    <div class="lbanks"><span><b>Bank 1 · Still</b>A static scene with COLOR only. The heads hold their aim.</span><span><b>Bank 2 · Slow</b>The same color plus MOVE FX for a slow sweep and COLOR FX breathing toward its partner, about 4 to 6 seconds each way.</span><span><b>Bank 3 · Fast</b>The same FX sped up and locked to the BPM, so the sweep and the color flip land on the beat.</span></div>
+    <p class="lnote">A moving look only moves between its color and its partner shade, never a rainbow.</p>
     <div class="lcolors">
       <div class="lc"><i class="lsw" style="--a:#e3241b;--b:#ffa21f" aria-hidden="true"></i><span class="lc-n">1</span><span class="lc-c">Red<small>moves with amber</small></span><p>Worship, the warm screen packs</p></div>
       <div class="lc"><i class="lsw" style="--a:#ffa21f;--b:#fff1d6" aria-hidden="true"></i><span class="lc-n">2</span><span class="lc-c">Amber<small>moves with warm white</small></span><p>Bridges, celebration, walk-in</p></div>
@@ -1226,20 +1255,19 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       <div class="lc"><i class="lsw" style="--a:#19c3c8;--b:#2f6bff" aria-hidden="true"></i><span class="lc-n">5</span><span class="lc-c">Teal<small>moves with blue</small></span><p>Windows to the Sea</p></div>
       <div class="lc"><i class="lsw" style="--a:#25d26e;--b:#19c3c8" aria-hidden="true"></i><span class="lc-n">6</span><span class="lc-c">Green<small>moves with teal</small></span><p>Neon Arches, games</p></div>
       <div class="lc"><i class="lsw" style="--a:#ff3fa4;--b:#8a3cff" aria-hidden="true"></i><span class="lc-n">7</span><span class="lc-c">Pink<small>moves with purple</small></span><p>Youth, games, hype</p></div>
-      <div class="lc"><i class="lsw" style="--a:#ffffff;--b:#bcd6ff" aria-hidden="true"></i><span class="lc-n">8</span><span class="lc-c">White<small>moves with cool white</small></span><p>Calvary, clean moments</p></div>
+      <div class="lc"><i class="lsw" style="--a:#ffffff;--b:#bcd6ff" aria-hidden="true"></i><span class="lc-n">8</span><span class="lc-c">White<small>moves with cool white</small></span><p>Calvary, preaching</p></div>
     </div>
-    <h3 class="lsub">Service looks <span class="crew-n">Row 4</span></h3>
+    <p class="lnote">Faces first: for announcements, preaching and the speaker, the person needs clean light from the front. Use the room's front lights if they reach the stage. If they don't, Bank 1 White aimed at center stage does the job.</p>
+    <h3 class="lsub">Normal services <span class="crew-n">Which button</span></h3>
     <div class="crew">
-      <div class="crew-row"><span class="crew-role">1 · Walk-in</span><span class="crew-who">House up</span><p class="crew-do">Room lights up, stage in soft amber.</p></div>
-      <div class="crew-row"><span class="crew-role">2 · Announcements</span><span class="crew-who">Front full</span><p class="crew-do">Front white full, stage color low.</p></div>
-      <div class="crew-row"><span class="crew-role">3 · Preaching</span><span class="crew-who">Front</span><p class="crew-do">Front white on the pastor, stage dim in one still color, nothing moving.</p></div>
-      <div class="crew-row"><span class="crew-role">4 · Prayer + altar</span><span class="crew-who">Low</span><p class="crew-do">Everything low, purple slowly breathing.</p></div>
-      <div class="crew-row"><span class="crew-role">5 · Celebration</span><span class="crew-who">Full</span><p class="crew-do">Everything up, one color on fast.</p></div>
-      <div class="crew-row"><span class="crew-role">6 · House full</span><span class="crew-who">All up</span><p class="crew-do">Every room light up, for dismissal and cleanup.</p></div>
-      <div class="crew-row"><span class="crew-role">7 · Front only</span><span class="crew-who">Backup</span><p class="crew-do">Faces lit, everything else off. The fallback if something breaks.</p></div>
-      <div class="crew-row"><span class="crew-role">8 · Blackout</span><span class="crew-who">Off</span><p class="crew-do">Everything off.</p></div>
+      <div class="crew-row"><span class="crew-role">Walk-in</span><span class="crew-who">Slow · Amber</span><p class="crew-do">Room lights up, the heads breathing in amber.</p></div>
+      <div class="crew-row"><span class="crew-role">Worship</span><span class="crew-who">Your pick</span><p class="crew-do">One color. Still for slow songs, Slow or Fast for upbeat ones.</p></div>
+      <div class="crew-row"><span class="crew-role">Announcements</span><span class="crew-who">Still · Amber</span><p class="crew-do">Warm and steady behind whoever is talking.</p></div>
+      <div class="crew-row"><span class="crew-role">Preaching</span><span class="crew-who">Still · White</span><p class="crew-do">Clean white, nothing moving.</p></div>
+      <div class="crew-row"><span class="crew-role">Prayer + altar</span><span class="crew-who">Slow · Purple</span><p class="crew-do">Low and slow.</p></div>
+      <div class="crew-row"><span class="crew-role">Celebration</span><span class="crew-who">Fast · any color</span><p class="crew-do">On the beat.</p></div>
+      <div class="crew-row"><span class="crew-role">Blackout</span><span class="crew-who">Off</span><p class="crew-do">Turn the playing scene off.</p></div>
     </div>
-    <p class="lnote">Faces first: for announcements, preaching and the speaker, the person needs clean white light from the front. If the room's front lights don't cover it, the 2 ceiling heads go white and hold on them while the 2 floor heads keep the color. The Faces button in the preview shows it.</p>
   </div>
 </section>
 
@@ -1247,27 +1275,27 @@ body:has(#page-worship:not([hidden])) .network{display:none}
   <div class="in">
     <div class="flowcard">
       <hr>
-      <h2 id="h-lconf">Conference presets</h2>
-      <p class="sub">Rows 5 and up. Named the same as the cue sheet, so the lights operator presses what the cue sheet says. Built from the normal colors, so they match the screens.</p>
-      <h3 class="lh">Program · Row 5</h3>
-      <div class="fr main"><span class="tm">Button 1<i>Row 5</i></span><div class="sg"><b>Walk-in</b><span>Room up, stage in red slowly breathing toward amber.</span><span class="scrn">Cue sheet: Registration · Fri 6:30pm, Sat 10am</span></div><span class="who">Red slow</span></div>
-      <div class="fr main"><span class="tm">Button 2<i>Row 5</i></span><div class="sg"><b>Countdown</b><span>Room dims, stage dark. The wall carries the countdown.</span><span class="scrn">Cue sheet: Transition inside · Into worship</span></div><span class="who">Dark</span></div>
-      <div class="fr main"><span class="tm">Button 3<i>Row 5</i></span><div class="sg"><b>Host</b><span>Front white full on the MCs, stage red and low, still.</span><span class="scrn">Cue sheet: Welcome · announcements · closing</span></div><span class="who">Front + red still</span></div>
-      <div class="fr main"><span class="tm">Button 4<i>Row 5</i></span><div class="sg"><b>Games</b><span>Everything up, red and amber on the beat.</span><span class="scrn">Cue sheet: Pre-show game + giveaway</span></div><span class="who">Red fast</span></div>
-      <div class="fr main"><span class="tm">Button 5<i>Row 5</i></span><div class="sg"><b>Opener</b><span>Dark while the key art is black and white. When the color floods in and NOW hits, the stage hits full in red and amber.</span><span class="scrn">Cue sheet: Opener · Fri 7:30pm</span></div><span class="who">Dark, then full</span></div>
-      <div class="fr main"><span class="tm">Button 6<i>Row 5</i></span><div class="sg"><b>Speaker</b><span>Front white on the speaker, stage dim in red, nothing moving.</span><span class="scrn">Cue sheet: Every speaker session</span></div><span class="who">Front + red still</span></div>
-      <div class="fr main"><span class="tm">Button 7<i>Row 5</i></span><div class="sg"><b>Prayer</b><span>Everything low, amber slowly breathing.</span><span class="scrn">Cue sheet: Ministry moments · closing prayer</span></div><span class="who">Amber slow</span></div>
-      <div class="fr main"><span class="tm">Button 8<i>Row 5</i></span><div class="sg"><b>Blackout</b><span>Everything off.</span><span class="scrn">Cue sheet: Before the opener · resets</span></div><span class="who">Off</span></div>
-      <h3 class="lh">Worship · Rows 6 and up</h3>
-      <p class="sub">Each song's pack gets 3 presets side by side, Verse, Chorus, Bridge, matching the 3 looks on the wall. Build only the packs the song list uses (Lourdes, Nov 2), in song order, named like "Fire Verse".</p>
-      <div class="fr main"><span class="tm">Pack 1</span><div class="sg"><b>Fire</b><span>Verse red still · Chorus red slow · Bridge amber fast</span></div><span class="who">Red + amber</span></div>
-      <div class="fr main"><span class="tm">Pack 2</span><div class="sg"><b>Tunnel</b><span>Verse red still · Chorus red slow · Bridge amber fast</span></div><span class="who">Red + amber</span></div>
-      <div class="fr main"><span class="tm">Pack 3</span><div class="sg"><b>Diamond</b><span>Verse red still · Chorus red slow · Bridge amber fast (same for the spinning bridge)</span></div><span class="who">Red + amber</span></div>
-      <div class="fr main"><span class="tm">Pack 4</span><div class="sg"><b>Frames</b><span>Verse red still · Chorus red slow · Bridge amber fast</span></div><span class="who">Red + amber</span></div>
-      <div class="fr main"><span class="tm">Pack 5</span><div class="sg"><b>Color</b><span>Verse red still · Chorus red slow · Bridge amber fast</span></div><span class="who">Red + amber</span></div>
-      <div class="fr main"><span class="tm">Pack 6</span><div class="sg"><b>Neon Arches</b><span>Verse blue still · Chorus green slow · Bridge white fast</span></div><span class="who">Blue · green · white</span></div>
-      <div class="fr main"><span class="tm">Pack 7</span><div class="sg"><b>Calvary</b><span>Verse white still · Chorus white slow · Bridge white slow. No fast, it stays reverent.</span></div><span class="who">White</span></div>
-      <div class="fr main"><span class="tm">Pack 8</span><div class="sg"><b>Windows to the Sea</b><span>Verse teal still · Chorus teal slow · Bridge teal slow</span></div><span class="who">Teal</span></div>
+      <h2 id="h-lconf">Conference cues</h2>
+      <p class="sub">The main set. Every moment uses the same 24 buttons: the bank is the speed, the button is the color. Named like the cue sheet, so the lights operator presses what the cue sheet says.</p>
+      <h3 class="lh">Program</h3>
+      <div class="fr main"><span class="tm">Bank 2<i>Slow</i></span><div class="sg"><b>Walk-in</b><span>Room up, the heads breathing in red toward amber.</span><span class="scrn">Cue sheet: Registration · Fri 6:30pm, Sat 10am</span></div><span class="who">Red</span></div>
+      <div class="fr main"><span class="tm">Off</span><div class="sg"><b>Countdown</b><span>Turn the scene off. The wall carries the countdown.</span><span class="scrn">Cue sheet: Transition inside · Into worship</span></div><span class="who">Dark</span></div>
+      <div class="fr main"><span class="tm">Bank 1<i>Still</i></span><div class="sg"><b>Host</b><span>Steady red behind the MCs, front lights on them.</span><span class="scrn">Cue sheet: Welcome · announcements · closing</span></div><span class="who">Red</span></div>
+      <div class="fr main"><span class="tm">Bank 3<i>Fast</i></span><div class="sg"><b>Games</b><span>Red flipping to amber on the beat.</span><span class="scrn">Cue sheet: Pre-show game + giveaway</span></div><span class="who">Red</span></div>
+      <div class="fr main"><span class="tm">Bank 3<i>Fast</i></span><div class="sg"><b>Opener</b><span>Start with the scene off. When the color floods in and NOW hits, press Amber.</span><span class="scrn">Cue sheet: Opener · Fri 7:30pm</span></div><span class="who">Amber</span></div>
+      <div class="fr main"><span class="tm">Bank 1<i>Still</i></span><div class="sg"><b>Speaker</b><span>Clean white, nothing moving.</span><span class="scrn">Cue sheet: Every speaker session</span></div><span class="who">White</span></div>
+      <div class="fr main"><span class="tm">Bank 2<i>Slow</i></span><div class="sg"><b>Prayer</b><span>Low amber, slowly breathing.</span><span class="scrn">Cue sheet: Ministry moments · closing prayer</span></div><span class="who">Amber</span></div>
+      <div class="fr main"><span class="tm">Off</span><div class="sg"><b>Blackout</b><span>Turn the playing scene off.</span><span class="scrn">Cue sheet: Before the opener · resets</span></div><span class="who">Dark</span></div>
+      <h3 class="lh">Worship</h3>
+      <p class="sub">The part of the song picks the bank: verse Bank 1, chorus Bank 2, bridge Bank 3. The pack on the wall picks the color.</p>
+      <div class="fr main"><span class="tm">Pack 1</span><div class="sg"><b>Fire</b><span>Verse red · Chorus red · Bridge amber</span></div><span class="who">Red + amber</span></div>
+      <div class="fr main"><span class="tm">Pack 2</span><div class="sg"><b>Tunnel</b><span>Verse red · Chorus red · Bridge amber</span></div><span class="who">Red + amber</span></div>
+      <div class="fr main"><span class="tm">Pack 3</span><div class="sg"><b>Diamond</b><span>Verse red · Chorus red · Bridge amber (same for the spinning bridge)</span></div><span class="who">Red + amber</span></div>
+      <div class="fr main"><span class="tm">Pack 4</span><div class="sg"><b>Frames</b><span>Verse red · Chorus red · Bridge amber</span></div><span class="who">Red + amber</span></div>
+      <div class="fr main"><span class="tm">Pack 5</span><div class="sg"><b>Color</b><span>Verse red · Chorus red · Bridge amber</span></div><span class="who">Red + amber</span></div>
+      <div class="fr main"><span class="tm">Pack 6</span><div class="sg"><b>Neon Arches</b><span>Verse blue · Chorus green · Bridge white</span></div><span class="who">Blue · green · white</span></div>
+      <div class="fr main"><span class="tm">Pack 7</span><div class="sg"><b>Calvary</b><span>Verse white · Chorus white · Bridge white from Bank 2, not 3. It stays reverent.</span></div><span class="who">White</span></div>
+      <div class="fr main"><span class="tm">Pack 8</span><div class="sg"><b>Windows to the Sea</b><span>Verse teal · Chorus teal · Bridge teal from Bank 2. It stays calm.</span></div><span class="who">Teal</span></div>
     </div>
   </div>
 </section>
@@ -1358,7 +1386,7 @@ body:has(#page-worship:not([hidden])) .network{display:none}
   /* The to-do list. Edit here, then run tools/cyn_page/publish.py. done: true checks it off. */
   var TASKS = [
     {"id": "t01", "title": "Find a lighting operator", "note": "Fri night, Sat AM and Sat PM.", "group": "Lights", "owner": "Corey + Pastor", "due": "2026-10-30", "done": false, "order": 1},
-    {"id": "t02", "title": "Rebuild the lighting presets lost in the power outage", "note": "Fri Oct 30. Normal services set first (Pastor: 8 colors, still and moving), then the conference set. Full list on the Lights tab.", "group": "Lights", "owner": "Corey", "due": "2026-11-04", "done": false, "order": 2},
+    {"id": "t02", "title": "Rebuild the lighting presets lost in the power outage", "note": "Fri Oct 30, in Daslight 5. 3 banks by speed (Still, Slow, Fast), 8 color buttons each. Full layout on the Lights tab.", "group": "Lights", "owner": "Corey", "due": "2026-11-04", "done": false, "order": 2},
     {"id": "t03", "title": "Test every preset in the room", "note": "At the Nov 5 training.", "group": "Lights", "owner": "Lights", "due": "2026-11-05", "done": false, "order": 3},
     {"id": "t04", "title": "Pick a countdown look", "note": "From the Ideas tab.", "group": "Screens + slides", "owner": "Pastor + Corey", "due": "2026-10-30", "done": false, "order": 4},
     {"id": "t05", "title": "Build the countdowns and timers", "note": "5-minute pre-session, transition timers, speaker timer.", "group": "Screens + slides", "owner": "Corey", "due": "2026-11-04", "done": false, "order": 5},
@@ -2971,6 +2999,7 @@ body:has(#page-worship:not([hidden])) .network{display:none}
     function press(attr, val){ $$('[' + attr + ']').forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute(attr) === String(val) ? 'true' : 'false'); }); }
     function ui(){
       press('data-sp', S.pk); press('data-spt', S.pt); press('data-sc', S.c); press('data-sm', S.m);
+      $$('[data-dlc]').forEach(function(b){ b.setAttribute('aria-pressed', (+b.getAttribute('data-dlc') === S.c && +b.getAttribute('data-dlm') === S.m && !S.faces) ? 'true' : 'false'); });
       $('#stgFaces').setAttribute('aria-pressed', S.faces ? 'true' : 'false');
       now.textContent = 'On the wall: ' + PK[S.pk].n + ', ' + PARTN[S.pt] + '. Lights: ' + COL[S.c][0].toLowerCase() + ', ' + MOTN[S.m]
         + (S.faces ? ', with the ceiling heads white on the speaker.' : '.');
@@ -2999,6 +3028,7 @@ body:has(#page-worship:not([hidden])) .network{display:none}
     $$('[data-sc]').forEach(function(b){ b.addEventListener('click', function(){ change(function(){ S.c = +b.getAttribute('data-sc'); ui(); }); }); });
     $$('[data-sm]').forEach(function(b){ b.addEventListener('click', function(){ change(function(){ S.m = +b.getAttribute('data-sm'); ui(); }); }); });
     $('#stgFaces').addEventListener('click', function(){ change(function(){ S.faces = !S.faces; ui(); }); });
+    $$('[data-dlc]').forEach(function(b){ b.addEventListener('click', function(){ change(function(){ S.c = +b.getAttribute('data-dlc'); S.m = +b.getAttribute('data-dlm'); S.faces = false; ui(); }); }); });
     song();
     window.__cynStage = still;
     if(reduce) window.addEventListener('resize', still);
