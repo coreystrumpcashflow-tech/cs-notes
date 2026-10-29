@@ -256,6 +256,20 @@ h2{margin:0;font-weight:400}
   .fr .who{grid-column:2;text-align:left;margin-top:-2px}
 }
 
+/* Lights tab: stage preview */
+.stageband{background:#0b0807;padding-block:52px}
+.stageband .sub-h{color:var(--white-75);margin:8px 0 20px;font-size:14.5px;max-width:66ch}
+.stage{position:relative;aspect-ratio:2.05/1;overflow:hidden;border-radius:10px;background:#050404;box-shadow:0 24px 60px rgba(0,0,0,.55);isolation:isolate}
+.stage .stg-ceil{position:absolute;left:0;right:0;top:0;height:3.2%;background:#020202;z-index:2}
+.stage .stg-wall{position:absolute;left:2%;width:96%;top:3%;aspect-ratio:2.4/1;box-shadow:none;z-index:1;-webkit-box-reflect:below 0 linear-gradient(transparent 84%,rgba(255,255,255,.2))}
+.stage .stg-deck{position:absolute;left:0;right:0;top:85%;height:9.5%;background:linear-gradient(#151213,#0b0909);border-bottom:1px solid rgba(255,255,255,.07);z-index:0}
+.stage canvas.stg-beam,.stage canvas.stg-rig{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.stage canvas.stg-beam{z-index:3;mix-blend-mode:screen;filter:blur(1.5px)}
+.stage canvas.stg-rig{z-index:4}
+.stg-now{margin:14px 0 2px;font-size:14px;color:var(--gold)}
+.stg-ctl{margin:10px 0 0}
+.sbtn i{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--a);box-shadow:0 0 6px var(--a);margin-right:6px;vertical-align:-1px}
+
 /* Lights tab */
 .lights{background:var(--brown-800);padding-block:52px}
 .lights .sub-h{color:var(--white-75);margin:8px 0 22px;font-size:14.5px;max-width:64ch}
@@ -1178,11 +1192,30 @@ body:has(#page-worship:not([hidden])) .network{display:none}
 
 <div id="page-lights" role="tabpanel" hidden>
 
+<section class="band stageband" aria-labelledby="h-stage">
+  <div class="in">
+    <h2 class="crew-h" id="h-stage">Stage preview <span class="crew-n">LED wall + 4 moving heads</span></h2>
+    <p class="sub-h">A mock-up of the room: the LED wall across the back, 2 moving heads hung from the ceiling at the sides, and 2 on the stage at the foot of the screen. Pick a worship pack and a part to see the wall and the lights together, or try any color and speed. Faces swings the ceiling heads to white on whoever is speaking.</p>
+    <div class="stage" id="stage">
+      <div class="stg-ceil"></div>
+      <div class="stg-wall scr glt" id="scr-stage"><canvas class="fx" id="stgWall" data-gl="fire" data-pal="deep" data-k="0.2" data-ts="0.8"></canvas></div>
+      <div class="stg-deck"></div>
+      <canvas class="stg-beam" id="stgBeam" aria-hidden="true"></canvas>
+      <canvas class="stg-rig" id="stgRig" aria-hidden="true"></canvas>
+    </div>
+    <p class="stg-now" id="stgNow" aria-live="polite"></p>
+    <div class="cdctl stg-ctl" role="group" aria-label="Wall"><span class="lab">Wall</span><button class="cbtn" type="button" data-sp="0" aria-pressed="true">Fire</button><button class="cbtn" type="button" data-sp="1" aria-pressed="false">Tunnel</button><button class="cbtn" type="button" data-sp="2" aria-pressed="false">Diamond</button><button class="cbtn" type="button" data-sp="3" aria-pressed="false">Frames</button><button class="cbtn" type="button" data-sp="4" aria-pressed="false">Color</button><button class="cbtn" type="button" data-sp="5" aria-pressed="false">Neon Arches</button><button class="cbtn" type="button" data-sp="6" aria-pressed="false">Calvary</button><button class="cbtn" type="button" data-sp="7" aria-pressed="false">Sea</button></div>
+    <div class="cdctl stg-ctl" role="group" aria-label="Song part"><span class="lab">Part</span><button class="cbtn" type="button" data-spt="0" aria-pressed="true">Verse</button><button class="cbtn" type="button" data-spt="1" aria-pressed="false">Chorus</button><button class="cbtn" type="button" data-spt="2" aria-pressed="false">Bridge</button></div>
+    <div class="cdctl stg-ctl" role="group" aria-label="Light color"><span class="lab">Lights</span><button class="cbtn sbtn" type="button" data-sc="0" aria-pressed="true"><i style="--a:#e3241b"></i>Red</button><button class="cbtn sbtn" type="button" data-sc="1" aria-pressed="false"><i style="--a:#ffa21f"></i>Amber</button><button class="cbtn sbtn" type="button" data-sc="2" aria-pressed="false"><i style="--a:#8a3cff"></i>Purple</button><button class="cbtn sbtn" type="button" data-sc="3" aria-pressed="false"><i style="--a:#2f6bff"></i>Blue</button><button class="cbtn sbtn" type="button" data-sc="4" aria-pressed="false"><i style="--a:#19c3c8"></i>Teal</button><button class="cbtn sbtn" type="button" data-sc="5" aria-pressed="false"><i style="--a:#25d26e"></i>Green</button><button class="cbtn sbtn" type="button" data-sc="6" aria-pressed="false"><i style="--a:#ff3fa4"></i>Pink</button><button class="cbtn sbtn" type="button" data-sc="7" aria-pressed="false"><i style="--a:#ffffff"></i>White</button></div>
+    <div class="cdctl stg-ctl" role="group" aria-label="Speed"><span class="lab">Speed</span><button class="cbtn" type="button" data-sm="0" aria-pressed="true">Still</button><button class="cbtn" type="button" data-sm="1" aria-pressed="false">Slow</button><button class="cbtn" type="button" data-sm="2" aria-pressed="false">Fast</button><button class="cbtn" type="button" id="stgFaces" aria-pressed="false">Faces</button></div>
+  </div>
+</section>
+
 <section class="band lights" aria-labelledby="h-lnorm">
   <div class="in">
     <h2 class="crew-h" id="h-lnorm">Normal services <span class="crew-n">Rows 1 to 4</span></h2>
     <p class="sub-h">Pastor's set for Sundays and church events, built in Daslight: 8 colors, each one still and moving, plus the looks every service needs. Every item on this tab is one Daslight scene. Being rebuilt after the power outage. When it's done, save the show to a USB stick and photograph the scene buttons so an outage can't wipe it again.</p>
-    <div class="lbanks"><span><b>Row 1 · Still</b>A scene with one step: the color, holding.</span><span><b>Row 2 · Slow</b>Two steps, the color and its partner, fading about 4 to 6 seconds each way.</span><span><b>Row 3 · Fast</b>The same two steps with short fades, on the beat.</span></div>
+    <div class="lbanks"><span><b>Row 1 · Still</b>One step: the heads hold their aim in one color.</span><span><b>Row 2 · Slow</b>The heads sweep slowly while the color breathes toward its partner, about 4 to 6 seconds each way.</span><span><b>Row 3 · Fast</b>Faster sweeps, and the color flips to its partner on the beat.</span></div>
     <p class="lnote">Each color sits in the same spot in all three rows. Red is always first, so going from still to moving is one row down. A moving look only moves between its color and its partner shade, never a rainbow. Worship: pick one color, Still or Slow for slow songs, Fast for upbeat ones.</p>
     <div class="lcolors">
       <div class="lc"><i class="lsw" style="--a:#e3241b;--b:#ffa21f" aria-hidden="true"></i><span class="lc-n">1</span><span class="lc-c">Red<small>moves with amber</small></span><p>Worship, the warm screen packs</p></div>
@@ -1205,7 +1238,7 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       <div class="crew-row"><span class="crew-role">7 · Front only</span><span class="crew-who">Backup</span><p class="crew-do">Faces lit, everything else off. The fallback if something breaks.</p></div>
       <div class="crew-row"><span class="crew-role">8 · Blackout</span><span class="crew-who">Off</span><p class="crew-do">Everything off.</p></div>
     </div>
-    <p class="lnote">The front white light on faces is kept out of every color scene and run on its own. A color change never leaves the speaker or the worship leader in the dark, and the camera keeps the faces.</p>
+    <p class="lnote">Faces first: for announcements, preaching and the speaker, the person needs clean white light from the front. If the room's front lights don't cover it, the 2 ceiling heads go white and hold on them while the 2 floor heads keep the color. The Faces button in the preview shows it.</p>
   </div>
 </section>
 
@@ -1295,7 +1328,8 @@ body:has(#page-worship:not([hidden])) .network{display:none}
     b.addEventListener('click', function(){
       var name = b.getAttribute('data-page');
       showPage(name);
-      if((name === 'ideas' || name === 'worship') && window.__cynStatic) setTimeout(window.__cynStatic, 50);
+      if((name === 'ideas' || name === 'worship' || name === 'lights') && window.__cynStatic) setTimeout(window.__cynStatic, 50);
+      if(name === 'lights' && window.__cynStage) setTimeout(window.__cynStage, 60);
       try { history.replaceState(null, '', '#' + name); } catch(e){}
       var nav = $('.pnav'); if(nav && nav.getBoundingClientRect().top < 0) nav.scrollIntoView();
     });
@@ -2694,7 +2728,7 @@ body:has(#page-worship:not([hidden])) .network{display:none}
   var lastT = 0, frameN = 0;
   function frame(t){
     var dt = Math.min(0.05, ((t - lastT) / 1000) || 0.016); lastT = t; frameN++;
-    if((!$('#page-ideas').hidden || !$('#page-worship').hidden) && !document.hidden){
+    if((!$('#page-ideas').hidden || !$('#page-worship').hidden || !$('#page-lights').hidden) && !document.hidden){
       var fsEl = document.fullscreenElement;
       if(WST.length) wsClock(t);
       SURF.forEach(function(o){
@@ -2725,6 +2759,205 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       });
     };
   } else requestAnimationFrame(frame);
+
+  /* ---------- Lights tab: stage preview. The real rig: 4 LED moving-head washes, 2 hung from the ceiling at the sides, 2 on the stage at the foot of the LED wall ---------- */
+  (function(){
+    var STG = $('#stage'); if(!STG) return;
+    var wall = $('#scr-stage'), wcv = $('#stgWall'), bcv = $('#stgBeam'), rcv = $('#stgRig');
+    var bx = bcv.getContext('2d'), rx = rcv.getContext('2d'); if(!bx || !rx) return;
+    var WO = null; SURF.forEach(function(o){ if(o.cv === wcv) WO = o; });
+    var COL = [
+      ['Red', [227, 36, 27], [255, 162, 31]], ['Amber', [255, 162, 31], [255, 241, 214]],
+      ['Purple', [138, 60, 255], [47, 107, 255]], ['Blue', [47, 107, 255], [25, 195, 200]],
+      ['Teal', [25, 195, 200], [47, 107, 255]], ['Green', [37, 210, 110], [25, 195, 200]],
+      ['Pink', [255, 63, 164], [138, 60, 255]], ['White', [255, 255, 255], [188, 214, 255]]
+    ];
+    var WARM = [255, 241, 214], WHITE = [255, 255, 255];
+    var WP = [[0, 0], [0, 1], [1, 2]];
+    var PK = [
+      { n: 'Fire', t: 'w1', L: WP }, { n: 'Tunnel', t: 'w2', L: WP }, { n: 'Diamond', t: 'w3', L: WP },
+      { n: 'Frames', t: 'w4', L: WP }, { n: 'Color', t: 'w5', L: WP },
+      { n: 'Neon Arches', t: 'w7', L: [[3, 0], [5, 1], [7, 2]] },
+      { n: 'Calvary', t: 'w8', L: [[7, 0], [7, 1], [7, 1]] },
+      { n: 'Windows to the Sea', t: 'w9', L: [[4, 0], [4, 1], [4, 1]] }
+    ];
+    var PART = ['v', 'c', 'b'], PARTN = ['verse', 'chorus', 'bridge'], MOTN = ['still', 'slow', 'fast'];
+    var S = { pk: 0, pt: 0, c: 0, m: 0, faces: false };
+
+    /* the wall shows the same tile the Worship tab shows for that pack and part */
+    function setWall(){
+      var src = $('#scr-led-' + PK[S.pk].t + PART[S.pt]); if(!src) return;
+      var sc = src.querySelector('canvas'); if(!sc) return;
+      ['data-gl', 'data-pal', 'data-k', 'data-ts', 'data-img'].forEach(function(a){
+        var v = sc.getAttribute(a); if(v == null) wcv.removeAttribute(a); else wcv.setAttribute(a, v);
+      });
+      [].slice.call(wall.children).forEach(function(ch){ if(ch !== wcv) wall.removeChild(ch); });
+      [].slice.call(src.children).forEach(function(ch){ if(ch.tagName !== 'CANVAS') wall.appendChild(ch.cloneNode(true)); });
+      wall.className = 'stg-wall ' + src.className.replace('scr-idle', '').trim();
+      if(WO){
+        WO.gl = sc.getAttribute('data-gl'); WO.img = sc.getAttribute('data-img');
+        WO.pal = PAL[sc.getAttribute('data-pal')] || PAL.red;
+        WO.ts = parseFloat(sc.getAttribute('data-ts') || '1') || 1;
+        WO.kv = parseFloat(sc.getAttribute('data-k')) || 0; WO.kcd = false;
+        if(reduce){ sizeS(WO, false); drawGL(WO, 4000); }
+      }
+    }
+
+    var W = 2, H = 2, u = 1;
+    function size(){
+      var d = Math.min(1.5, window.devicePixelRatio || 1);
+      var w = Math.max(2, Math.round(STG.clientWidth * d)), h = Math.max(2, Math.round(STG.clientHeight * d));
+      [bcv, rcv].forEach(function(c){ if(c.width !== w || c.height !== h){ c.width = w; c.height = h; } });
+      W = w; H = h; u = W * 0.01;
+    }
+    function mix(a, b, f){ return [a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f, a[2] + (b[2] - a[2]) * f]; }
+    function rgba(c, a){ return 'rgba(' + (c[0] | 0) + ',' + (c[1] | 0) + ',' + (c[2] | 0) + ',' + Math.max(0, Math.min(1, a)).toFixed(3) + ')'; }
+    function ss(e0, e1, x){ var v = Math.max(0, Math.min(1, (x - e0) / (e1 - e0))); return v * v * (3 - 2 * v); }
+    function rr(c, x, y, w, h, r){ c.beginPath(); c.moveTo(x + r, y); c.arcTo(x + w, y, x + w, y + h, r); c.arcTo(x + w, y + h, x, y + h, r); c.arcTo(x, y + h, x, y, r); c.arcTo(x, y, x + w, y, r); c.closePath(); }
+
+    /* a beam through haze: soft nested cones, brightest at the lens */
+    function cone(x, y, dx, dy, len, r0, r1, c0, c1){
+      var nx = -dy, ny = dx, ex = x + dx * len, ey = y + dy * len, g = bx.createLinearGradient(x, y, ex, ey);
+      g.addColorStop(0, c0); g.addColorStop(0.55, c1); g.addColorStop(1, 'rgba(0,0,0,0)');
+      bx.fillStyle = g; bx.beginPath();
+      bx.moveTo(x + nx * r0, y + ny * r0); bx.lineTo(ex + nx * r1, ey + ny * r1);
+      bx.lineTo(ex - nx * r1, ey - ny * r1); bx.lineTo(x - nx * r0, y - ny * r0); bx.closePath(); bx.fill();
+    }
+    function beam(x, y, ang, len, half, c, I){
+      var dx = Math.cos(ang), dy = Math.sin(ang), r0 = 1.4 * u, A = [0.12, 0.09, 0.07, 0.052, 0.038, 0.026, 0.016];
+      for(var i = 0; i < 7; i++) cone(x, y, dx, dy, len, r0, r0 + len * Math.tan(half * (1 + i * 0.2)), rgba(c, A[i] * I), rgba(c, A[i] * I * 0.45));
+      var core = mix(c, WHITE, 0.35);
+      cone(x, y, dx, dy, len, r0 * 0.7, r0 * 0.7 + len * Math.tan(half * 0.4), rgba(core, 0.16 * I), rgba(core, 0.04 * I));
+    }
+    function glow(x, y, r, c, a){
+      var g = bx.createRadialGradient(x, y, 0, x, y, r);
+      g.addColorStop(0, rgba(mix(c, WHITE, 0.5), a)); g.addColorStop(0.25, rgba(c, a * 0.5)); g.addColorStop(1, rgba(c, 0));
+      bx.fillStyle = g; bx.fillRect(x - r, y - r, r * 2, r * 2);
+    }
+    function pool(x, y, r, c, a){
+      bx.save(); bx.translate(x, y); bx.scale(1, 0.22);
+      var g = bx.createRadialGradient(0, 0, 0, 0, 0, r);
+      g.addColorStop(0, rgba(c, a)); g.addColorStop(1, rgba(c, 0));
+      bx.fillStyle = g; bx.fillRect(-r, -r, r * 2, r * 2); bx.restore();
+    }
+
+    /* the fixture: base with its blue display, yoke, head, and a 36-LED face turned toward the beam */
+    var DOTS = (function(){
+      var d = [[0, 0]];
+      [[0.3, 7], [0.58, 13], [0.86, 15]].forEach(function(r){ for(var i = 0; i < r[1]; i++){ var a = i / r[1] * 6.2832 + r[0] * 3; d.push([Math.cos(a) * r[0], Math.sin(a) * r[0]]); } });
+      return d;
+    })();
+    function body(F){
+      var x = F.x, hy = F.hy, k = u, by = F.hang ? 0.03 * H : 0.865 * H - 2 * k;
+      var py = F.hang ? by + 2 * k : by - 0.4 * k, a0 = F.hang ? by + 2.4 * k : hy - 1.8 * k, a1 = F.hang ? hy + 1.8 * k : by - 0.4 * k;
+      if(F.hang){ rx.fillStyle = '#1b1b1f'; rx.fillRect(x - 4.5 * k, by - 0.5 * k, 9 * k, 0.5 * k); }
+      rx.fillStyle = '#141418'; rr(rx, x - 2.6 * k, by, 5.2 * k, 2 * k, 0.45 * k); rx.fill();
+      rx.fillStyle = 'rgba(255,255,255,.08)'; rx.fillRect(x - 2.4 * k, by + 0.12 * k, 4.8 * k, 0.12 * k);
+      rx.fillStyle = '#4a86ff'; rx.fillRect(x - 0.75 * k, by + 0.6 * k, 1.5 * k, 0.75 * k);
+      rx.fillStyle = '#1c1c21'; rx.fillRect(x - 2.6 * k, py, 5.2 * k, 0.4 * k);
+      rx.fillStyle = '#1a1a1f';
+      rr(rx, x - 2.75 * k, a0, 0.75 * k, a1 - a0, 0.3 * k); rx.fill();
+      rr(rx, x + 2 * k, a0, 0.75 * k, a1 - a0, 0.3 * k); rx.fill();
+      var g = rx.createRadialGradient(x - 0.6 * k, hy - 0.7 * k, 0.2 * k, x, hy, 2.2 * k);
+      g.addColorStop(0, '#34343b'); g.addColorStop(1, '#0c0c0f');
+      rx.fillStyle = g; rx.beginPath(); rx.arc(x, hy, 2.1 * k, 0, 6.2832); rx.fill();
+      var dx = Math.cos(F.ang), dy = Math.sin(F.ang), nx = -dy, ny = dx, cx = x + dx * 0.6 * k, cy = hy + dy * 0.6 * k;
+      rx.fillStyle = '#060607'; rx.beginPath(); rx.ellipse(cx, cy, 0.98 * k, 1.95 * k, F.ang, 0, 6.2832); rx.fill();
+      rx.fillStyle = rgba(mix(F.c, WHITE, 0.4), 0.55 + 0.45 * F.I);
+      DOTS.forEach(function(d){
+        var a = d[0] * 0.85 * k, b = d[1] * 1.7 * k;
+        rx.beginPath(); rx.arc(cx + dx * a + nx * b, cy + dy * a + ny * b, 0.19 * k, 0, 6.2832); rx.fill();
+      });
+    }
+    function person(lit){
+      var k = u;
+      rx.save(); rx.translate(0.5 * W, 0.915 * H);
+      rx.fillStyle = '#0c0a0b';
+      rr(rx, -1.75 * k, -8.6 * k, 1.5 * k, 8.6 * k, 0.5 * k); rx.fill();
+      rr(rx, 0.25 * k, -8.6 * k, 1.5 * k, 8.6 * k, 0.5 * k); rx.fill();
+      rx.beginPath(); rx.moveTo(-2.7 * k, -15.4 * k); rx.quadraticCurveTo(0, -16.6 * k, 2.7 * k, -15.4 * k);
+      rx.lineTo(2.4 * k, -8 * k); rx.lineTo(-2.4 * k, -8 * k); rx.closePath();
+      if(lit){ var g = rx.createLinearGradient(0, -16 * k, 0, -8 * k); g.addColorStop(0, '#4a3c34'); g.addColorStop(1, '#1a1415'); rx.fillStyle = g; }
+      else rx.fillStyle = '#100d0e';
+      rx.fill();
+      rx.beginPath(); rx.ellipse(0, -17.9 * k, 1.25 * k, 1.5 * k, 0, 0, 6.2832); rx.fillStyle = lit ? '#c39a82' : '#1a1415'; rx.fill();
+      rx.restore();
+    }
+    function crowd(){
+      var X = [0.05, 0.17, 0.37, 0.62, 0.83, 0.96], R = [3.4, 3, 3.2, 3.3, 3, 3.5];
+      rx.fillStyle = '#040303';
+      X.forEach(function(px, i){
+        var r = R[i] * u, cx = px * W, cy = H + r * 0.35;
+        rx.beginPath(); rx.ellipse(cx, cy - r * 0.9, r * 0.82, r, 0, 0, 6.2832); rx.fill();
+        rx.beginPath(); rx.ellipse(cx, cy + r * 1.3, r * 2.2, r * 1.3, 0, 0, 6.2832); rx.fill();
+      });
+    }
+
+    function draw(t){
+      size();
+      bx.globalCompositeOperation = 'source-over'; bx.clearRect(0, 0, W, H); rx.clearRect(0, 0, W, H);
+      bx.globalCompositeOperation = 'lighter';
+      var main = COL[S.c][1], part = COL[S.c][2], m = S.m, TAU = 6.2832;
+      var fix = [{ x: 0.075 * W, hang: true, i: 0 }, { x: 0.925 * W, hang: true, i: 1 }, { x: 0.27 * W, hang: false, i: 1 }, { x: 0.73 * W, hang: false, i: 0 }];
+      fix.forEach(function(F, j){
+        var side = F.x < W / 2 ? -1 : 1, f = 0;
+        if(m === 1) f = 0.5 - 0.5 * Math.cos(t * TAU / 5 + F.i * Math.PI);
+        else if(m === 2){ var b = Math.floor(t / 0.5), tg = (b + F.i) % 2; f = (1 - tg) + (2 * tg - 1) * ss(0, 0.12, t - b * 0.5); }
+        var c = mix(main, part, f);
+        var I = m === 2 ? 0.72 + 0.28 * Math.exp(-(t % 0.5) * 6) : (m === 1 ? 0.88 + 0.08 * Math.sin(t * 1.3 + j) : 0.92);
+        var ang, len, half, tx, ty;
+        if(F.hang){
+          F.hy = 0.03 * H + 4.6 * u; half = 0.12;
+          if(S.faces){ c = WARM; I = 1.6; half = 0.085; tx = 0.5 * W; ty = 0.915 * H - 12 * u; }
+          else {
+            var sw = m === 0 ? 0 : (m === 1 ? 0.13 * Math.sin(t * TAU / 9) : 0.2 * Math.sin(t * TAU / 2));
+            tx = (0.5 + side * (0.1 + sw)) * W;
+            ty = (m === 2 ? 0.93 + 0.05 * Math.sin(t * TAU + F.i) : 0.9) * H;
+          }
+          ang = Math.atan2(ty - F.hy, tx - F.x); len = Math.hypot(tx - F.x, ty - F.hy) * (S.faces ? 1.25 : 1);
+        } else {
+          F.hy = 0.865 * H - 4.6 * u; half = 0.15; len = 1.15 * H;
+          var sw2 = m === 0 ? 0 : (m === 1 ? 0.36 * Math.sin(t * TAU / 7) : 0.5 * Math.sin(t * TAU / 1.8));
+          ang = -Math.PI / 2 + side * 0.24 + (m === 2 ? sw2 : side * sw2);
+        }
+        F.ang = ang; F.c = c; F.I = I;
+        var ox = F.x + Math.cos(ang) * 0.85 * u, oy = F.hy + Math.sin(ang) * 0.85 * u;
+        beam(ox, oy, ang, len, half, c, I);
+        glow(ox, oy, 5 * u, c, 0.5 * I);
+        if(F.hang) pool(tx, ty, (len * Math.tan(half) + 2 * u) * 1.2, c, 0.35 * I);
+      });
+      if(S.faces){ pool(0.5 * W, 0.915 * H, 7 * u, WARM, 0.35); glow(0.5 * W, 0.915 * H - 13 * u, 9 * u, WARM, 0.22); }
+      person(S.faces);
+      fix.forEach(body);
+      crowd();
+    }
+
+    var vis = true;
+    if('IntersectionObserver' in window) new IntersectionObserver(function(es){ vis = es[0].isIntersecting; }).observe(STG);
+    function on(){ return !$('#page-lights').hidden && !document.hidden; }
+    function tick(t){ if(on() && vis) draw(t / 1000); requestAnimationFrame(tick); }
+    function still(){ if(on()) draw(4); }
+
+    var now = $('#stgNow');
+    function press(attr, val){ $$('[' + attr + ']').forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute(attr) === String(val) ? 'true' : 'false'); }); }
+    function ui(){
+      press('data-sp', S.pk); press('data-spt', S.pt); press('data-sc', S.c); press('data-sm', S.m);
+      $('#stgFaces').setAttribute('aria-pressed', S.faces ? 'true' : 'false');
+      now.textContent = 'On the wall: ' + PK[S.pk].n + ', ' + PARTN[S.pt] + '. Lights: ' + COL[S.c][0].toLowerCase() + ', ' + MOTN[S.m]
+        + (S.faces ? ', with the ceiling heads white on the speaker.' : '.');
+      if(reduce) still();
+    }
+    function song(){ var L = PK[S.pk].L[S.pt]; S.c = L[0]; S.m = L[1]; S.faces = false; setWall(); ui(); }
+    $$('[data-sp]').forEach(function(b){ b.addEventListener('click', function(){ S.pk = +b.getAttribute('data-sp'); song(); }); });
+    $$('[data-spt]').forEach(function(b){ b.addEventListener('click', function(){ S.pt = +b.getAttribute('data-spt'); song(); }); });
+    $$('[data-sc]').forEach(function(b){ b.addEventListener('click', function(){ S.c = +b.getAttribute('data-sc'); ui(); }); });
+    $$('[data-sm]').forEach(function(b){ b.addEventListener('click', function(){ S.m = +b.getAttribute('data-sm'); ui(); }); });
+    $('#stgFaces').addEventListener('click', function(){ S.faces = !S.faces; ui(); });
+    song();
+    window.__cynStage = still;
+    if(reduce) window.addEventListener('resize', still);
+    else requestAnimationFrame(tick);
+  })();
 
   /* running timecode on the Tag us slide */
   var tc0 = Date.now();
