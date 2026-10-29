@@ -832,6 +832,14 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .wpack{margin-top:40px}
 .wgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 20px;margin-top:16px}
 @media (max-width:760px){.wgrid{grid-template-columns:minmax(0,1fr)}}
+/* worship: Calvary (painted ink, assets/ink.jpg, drifting; thin glowing crosses on top) */
+.calv{background:#000}
+.calv .ink-l{position:absolute;inset:-6%;background:url(assets/ink.jpg) center/cover no-repeat;filter:var(--if,brightness(.7));animation:inkdrift var(--sd,60s) ease-in-out infinite alternate;z-index:0}
+.calv .ink-vig{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse at 50% 50%,transparent 35%,rgba(0,0,0,.65) 100%)}
+.calv .xs{position:absolute;inset:0;width:100%;height:100%;z-index:2}
+.calv .xs.pulse{animation:xpulse 7s ease-in-out infinite}
+@keyframes inkdrift{from{transform:translate3d(2%,-1.5%,0) scale(1.05) rotate(-.6deg)}to{transform:translate3d(-2%,1.5%,0) scale(1.12) rotate(.6deg)}}
+@keyframes xpulse{0%,100%{opacity:.8}50%{opacity:1}}
 /* worship: windows to the sea (painted sea, assets/sea.jpg, drifting behind three arches) */
 .sea{background:#05080b}
 .sea .sea-l{position:absolute;inset:-6%;background:url(assets/sea.jpg) center/cover no-repeat;animation:seadrift var(--sd,50s) ease-in-out infinite alternate;z-index:0}
@@ -1148,7 +1156,7 @@ body:has(#page-worship:not([hidden])) .network{display:none}
     <div class="wpack"><div class="mhead"><h3>Pack 4 · Lights · Frames</h3><span class="label">Fast song, a row of neon frames turning on a glossy floor</span></div><div class="wgrid"><div class="bgi"><div class="scr glt" id="scr-led-w4v"><canvas class="fx" data-gl="frames" data-pal="deep" data-k="0.2"></canvas></div><span class="stype">LED wall · Verse</span><p>Five tall frames, a slow wave of turning.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w4v" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w4v">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w4c"><canvas class="fx" data-gl="frames" data-pal="red" data-k="0.6"></canvas></div><span class="stype">LED wall · Chorus</span><p>Seven frames with a second line inside, turning wider and faster.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w4c" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w4c">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w4b"><canvas class="fx" data-gl="frames" data-pal="gold" data-k="1"></canvas></div><span class="stype">LED wall · Bridge</span><p>A second row far behind, light running around every frame.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w4b" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w4b">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-tv-w4"><canvas class="fx" data-gl="ambient" data-pal="deep"></canvas></div><span class="stype">Side TVs · whole song</span><p>Calm and dark under the lyrics.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-w4" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-w4">Full screen</button></div></div></div></div>
     <div class="wpack"><div class="mhead"><h3>Pack 5 · Color</h3><span class="label">Ribbons of light drifting slowly</span></div><div class="wgrid"><div class="bgi"><div class="scr glt" id="scr-led-w5v"><canvas class="fx" data-gl="ribbons" data-pal="deep" data-k="0.2"></canvas></div><span class="stype">LED wall · Verse</span><p>Two gold ribbons, slow.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w5v" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w5v">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w5c"><canvas class="fx" data-gl="ribbons" data-pal="crimson" data-k="0.6"></canvas></div><span class="stype">LED wall · Chorus</span><p>Three red ribbons, light gliding along them.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w5c" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w5c">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w5b"><canvas class="fx" data-gl="ribbons" data-pal="royal" data-k="1"></canvas></div><span class="stype">LED wall · Bridge</span><p>Four ribbons, red and CYN blue.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w5b" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w5b">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-tv-w5"><canvas class="fx" data-gl="ambient" data-pal="deep"></canvas></div><span class="stype">Side TVs · whole song</span><p>Calm and dark under the lyrics.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-w5" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-w5">Full screen</button></div></div></div></div>
     <div class="wpack"><div class="mhead"><h3>Pack 6 · Lights · Neon Arches</h3><span class="label">Fast song, flying through glowing arches on a glossy floor</span></div><div class="wgrid"><div class="bgi"><div class="scr glt" id="scr-led-w7v"><canvas class="fx" data-gl="arches" data-pal="nblue" data-k="0.2"></canvas></div><span class="stype">LED wall · Blue</span><p>Verse level: every other arch lit, gliding slowly.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w7v" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w7v">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w7c"><canvas class="fx" data-gl="arches" data-pal="ngreen" data-k="0.6"></canvas></div><span class="stype">LED wall · Green</span><p>Chorus level: every arch lit with a second line, a little faster.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w7c" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w7c">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w7b"><canvas class="fx" data-gl="arches" data-pal="nwhite" data-k="1"></canvas></div><span class="stype">LED wall · White</span><p>Bridge level: the fastest, light running down every arch.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w7b" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w7b">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-tv-w7"><canvas class="fx" data-gl="ambient" data-pal="nblue"></canvas></div><span class="stype">Side TVs · whole song</span><p>Calm and dark under the lyrics.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-w7" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-w7">Full screen</button></div></div></div></div>
-    <div class="wpack"><div class="mhead"><h3>Pack 7 · Calvary</h3><span class="label">Three crosses on the hill as the sun comes up</span></div><div class="wgrid"><div class="bgi"><div class="scr glt" id="scr-led-w8v"><canvas class="fx" data-gl="calvary" data-pal="deep" data-k="0.2"></canvas></div><span class="stype">LED wall · Verse</span><p>Before sunrise, a deep red sky, the light just starting behind the cross.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w8v" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w8v">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w8c"><canvas class="fx" data-gl="calvary" data-pal="red" data-k="0.6"></canvas></div><span class="stype">LED wall · Chorus</span><p>The sun breaks behind the cross and light rays open up.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w8c" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w8c">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w8b"><canvas class="fx" data-gl="calvary" data-pal="gold" data-k="1"></canvas></div><span class="stype">LED wall · Bridge</span><p>Full gold light, the brightest rays, light dust rising.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w8b" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w8b">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-tv-w8"><canvas class="fx" data-gl="ambient" data-pal="deep"></canvas></div><span class="stype">Side TVs · whole song</span><p>Calm and dark under the lyrics.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-w8" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-w8">Full screen</button></div></div></div></div>
+    <div class="wpack"><div class="mhead"><h3>Pack 7 · Calvary</h3><span class="label">Glowing crosses over slow-moving black and white ink</span></div><div class="wgrid"><div class="bgi"><div class="scr calv" id="scr-led-w8v" style="--sd:70s;--if:brightness(.55) contrast(1.05)"><div class="ink-l"></div><div class="ink-vig"></div><svg class="xs" viewBox="0 0 2400 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true" fill="none"><path d="M1200 230V770M1050 380H1350" stroke="#fff" stroke-opacity=".06" stroke-width="46" stroke-linecap="round"/><path d="M1200 230V770M1050 380H1350" stroke="#fff" stroke-opacity=".16" stroke-width="18" stroke-linecap="round"/><path d="M1200 230V770M1050 380H1350" stroke="#fff" stroke-width="5" stroke-linecap="round"/></svg></div><span class="stype">LED wall · Verse</span><p>One cross, dark ink drifting slowly behind it.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w8v" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w8v">Full screen</button></div></div><div class="bgi"><div class="scr calv" id="scr-led-w8c" style="--sd:55s;--if:brightness(.8) contrast(1.08)"><div class="ink-l"></div><div class="ink-vig"></div><svg class="xs" viewBox="0 0 2400 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true" fill="none"><path d="M700 230V770M550 380H850" stroke="#fff" stroke-opacity=".06" stroke-width="46" stroke-linecap="round"/><path d="M700 230V770M550 380H850" stroke="#fff" stroke-opacity=".16" stroke-width="18" stroke-linecap="round"/><path d="M700 230V770M550 380H850" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M1200 230V770M1050 380H1350" stroke="#fff" stroke-opacity=".06" stroke-width="46" stroke-linecap="round"/><path d="M1200 230V770M1050 380H1350" stroke="#fff" stroke-opacity=".16" stroke-width="18" stroke-linecap="round"/><path d="M1200 230V770M1050 380H1350" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M1700 230V770M1550 380H1850" stroke="#fff" stroke-opacity=".06" stroke-width="46" stroke-linecap="round"/><path d="M1700 230V770M1550 380H1850" stroke="#fff" stroke-opacity=".16" stroke-width="18" stroke-linecap="round"/><path d="M1700 230V770M1550 380H1850" stroke="#fff" stroke-width="5" stroke-linecap="round"/></svg></div><span class="stype">LED wall · Chorus</span><p>Three crosses, the ink a little brighter.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w8c" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w8c">Full screen</button></div></div><div class="bgi"><div class="scr calv" id="scr-led-w8b" style="--sd:40s;--if:brightness(1.05) contrast(1.12)"><div class="ink-l"></div><div class="ink-vig"></div><svg class="xs pulse" viewBox="0 0 2400 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true" fill="none"><path d="M700 230V770M550 380H850" stroke="#fff" stroke-opacity=".06" stroke-width="46" stroke-linecap="round"/><path d="M700 230V770M550 380H850" stroke="#fff" stroke-opacity=".16" stroke-width="18" stroke-linecap="round"/><path d="M700 230V770M550 380H850" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M1200 230V770M1050 380H1350" stroke="#fff" stroke-opacity=".06" stroke-width="46" stroke-linecap="round"/><path d="M1200 230V770M1050 380H1350" stroke="#fff" stroke-opacity=".16" stroke-width="18" stroke-linecap="round"/><path d="M1200 230V770M1050 380H1350" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M1700 230V770M1550 380H1850" stroke="#fff" stroke-opacity=".06" stroke-width="46" stroke-linecap="round"/><path d="M1700 230V770M1550 380H1850" stroke="#fff" stroke-opacity=".16" stroke-width="18" stroke-linecap="round"/><path d="M1700 230V770M1550 380H1850" stroke="#fff" stroke-width="5" stroke-linecap="round"/></svg></div><span class="stype">LED wall · Bridge</span><p>Three crosses glowing brighter, the ink at its brightest and moving more.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w8b" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w8b">Full screen</button></div></div><div class="bgi"><div class="scr calv" id="scr-tv-w8" style="--sd:80s;--if:brightness(.42)"><div class="ink-l"></div><div class="ink-vig"></div></div><span class="stype">Side TVs · whole song</span><p>The same ink, dimmed and calm under the lyrics.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-w8" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-w8">Full screen</button></div></div></div></div>
     <div class="wpack"><div class="mhead"><h3>Pack 8 · Windows to the Sea</h3><span class="label">Three arched windows looking down on the sea</span></div><div class="wgrid"><div class="bgi"><div class="scr sea" id="scr-led-w9v" style="--sd:60s;--sf:brightness(.82) saturate(.9)"><div class="sea-l sea-dim"></div><div class="sea-win"><div class="sea-l"></div></div><svg class="sea-edge" viewBox="0 0 2400 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><path d="M586 830V330A190 190 0 0 1 966 330V830ZM1010 830V330A190 190 0 0 1 1390 330V830ZM1434 830V330A190 190 0 0 1 1814 330V830Z" fill="none" stroke="rgba(0,0,0,.42)" stroke-width="22"/><path d="M586 830V330A190 190 0 0 1 966 330V830ZM1010 830V330A190 190 0 0 1 1390 330V830ZM1434 830V330A190 190 0 0 1 1814 330V830Z" fill="none" stroke="rgba(255,236,200,.28)" stroke-width="3"/></svg></div><span class="stype">LED wall · Verse</span><p>Cool and calm, the sea drifting slowly past the windows.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w9v" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w9v">Full screen</button></div></div><div class="bgi"><div class="scr sea" id="scr-led-w9c" style="--sd:45s;--sf:brightness(1) saturate(1.08) sepia(.12)"><div class="sea-l sea-dim"></div><div class="sea-win"><div class="sea-l"></div></div><svg class="sea-edge" viewBox="0 0 2400 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><path d="M586 830V330A190 190 0 0 1 966 330V830ZM1010 830V330A190 190 0 0 1 1390 330V830ZM1434 830V330A190 190 0 0 1 1814 330V830Z" fill="none" stroke="rgba(0,0,0,.42)" stroke-width="22"/><path d="M586 830V330A190 190 0 0 1 966 330V830ZM1010 830V330A190 190 0 0 1 1390 330V830ZM1434 830V330A190 190 0 0 1 1814 330V830Z" fill="none" stroke="rgba(255,236,200,.28)" stroke-width="3"/></svg></div><span class="stype">LED wall · Chorus</span><p>Warmer light on the waves, a little more movement.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w9c" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w9c">Full screen</button></div></div><div class="bgi"><div class="scr sea" id="scr-led-w9b" style="--sd:34s;--sf:brightness(1.12) saturate(1.12) sepia(.18)"><div class="sea-l sea-dim"></div><div class="sea-win"><div class="sea-l"></div></div><div class="sea-sheen"></div><svg class="sea-edge" viewBox="0 0 2400 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><path d="M586 830V330A190 190 0 0 1 966 330V830ZM1010 830V330A190 190 0 0 1 1390 330V830ZM1434 830V330A190 190 0 0 1 1814 330V830Z" fill="none" stroke="rgba(0,0,0,.42)" stroke-width="22"/><path d="M586 830V330A190 190 0 0 1 966 330V830ZM1010 830V330A190 190 0 0 1 1390 330V830ZM1434 830V330A190 190 0 0 1 1814 330V830Z" fill="none" stroke="rgba(255,236,200,.28)" stroke-width="3"/></svg></div><span class="stype">LED wall · Bridge</span><p>The warmest, with golden light sweeping across the windows.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w9b" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w9b">Full screen</button></div></div><div class="bgi"><div class="scr sea sea-tv" id="scr-tv-w9" style="--sd:70s"><div class="sea-l sea-dim"></div></div><span class="stype">Side TVs · whole song</span><p>The same sea, dimmed and calm under the lyrics.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-w9" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-w9">Full screen</button></div></div></div></div>
   </div>
 </section>
@@ -1816,7 +1824,6 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       '  float bw = 0.17 / z;',
       '  float m3 = mod(fb, 3.0);',
       '  vec3 bc = m3 < 0.5 ? cc : (m3 < 1.5 ? mix(cb, cc, 0.5) * 1.4 : cb * 1.6);',
-      '  bc = mix(bc, pe, step(0.75, lv) * step(0.5, mod(fb, 2.0)));',
       '  float fog = 1.0 / (0.6 + 0.4 * z * z);',
       '  float gp = fract(x * 0.12 - t * (0.03 + 0.03 * lv) + fb * 0.37) - 0.5; float glint = 1.0 + 2.2 * exp(-gp * gp / 0.0015) * smoothstep(0.4, 0.6, lv);',
       '  for(int s = 0; s < 16; s++){',
@@ -1980,7 +1987,7 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       '  float fi = float(i); float z = mod(fi - sp, 16.0) + 0.25;',
       '  float show = min(1.0, step(0.5, mod(fi, 2.0)) + step(0.45, lv));',
       '  float pr = 0.55 / z; float th = max(0.013 / z + 0.0015, 0.9 / r.y); float e = (0.013 / z + 0.0015) / th; float dd = rr - pr;',
-      '  float m3 = mod(fi, 3.0); vec3 rc = m3 < 0.5 ? cc : (m3 < 1.5 ? pe : rd);',
+      '  float m3 = mod(fi, 3.0); vec3 rc = mod(fi, 2.0) < 0.5 ? cc : mix(cb, cc, 0.45) * 1.3;',
       '  float sg = fract(ang / 6.2832 * (10.0 + mod(fi, 4.0) * 4.0) + (mod(fi, 2.0) * 2.0 - 1.0) * t * (0.1 + 0.25 * lv) + fi * 0.37);',
       '  float dash = mix(1.0, smoothstep(0.42, 0.3, abs(sg - 0.5)), mod(fi, 2.0) * step(0.45, lv));',
       '  float fog = smoothstep(16.0, 7.0, z) * smoothstep(0.25, 1.1, z);',
@@ -1998,7 +2005,7 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       ' float sid = floor(pa + 0.5); float hs = hash(vec2(sid, 2.3));',
       ' float runp = fract(wz * 0.12 - t * (0.15 + 0.3 * lv) + hs * 5.0) - 0.5;',
       ' float run = exp(-runp * runp / 0.0025) * step(1.0 - (0.15 + 0.35 * lv), hs) * smoothstep(0.43, 0.5, pf.x) * dfade;',
-      ' col += mix(cc, pe, step(0.5, hash(vec2(sid, 7.1)))) * run * (0.3 + 1.2 * lv);',
+      ' col += mix(cc, mix(cb, cc, 0.45) * 1.3, step(0.5, hash(vec2(sid, 7.1)))) * run * (0.3 + 1.2 * lv);',
       ' col += rings;',
       ' if(lv > 0.75){',
       '  for(int j = 0; j < 8; j++){',
@@ -2006,7 +2013,7 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       '   float pr = 0.78 / z; float th = max(0.007 / z + 0.001, 0.9 / r.y); float e = (0.007 / z + 0.001) / th; float dd = rr - pr;',
       '   float tooth = smoothstep(0.25, 0.15, abs(fract(ang / 6.2832 * 24.0 - t * 0.6 * (mod(fj, 2.0) * 2.0 - 1.0)) - 0.5));',
       '   float fog = smoothstep(16.0, 6.0, z) * smoothstep(0.25, 1.0, z);',
-      '   col += neon(dd, th, mix(pe, cc, mod(fj, 2.0))) * e * tooth * fog * (0.5 + 0.5 * beat);',
+      '   col += neon(dd, th, mix(mix(cb, cc, 0.45) * 1.3, cc, mod(fj, 2.0))) * e * tooth * fog * (0.5 + 0.5 * beat);',
       '  }',
       ' }',
       ' col = 1.0 - exp(-col * 1.8);',
@@ -2030,11 +2037,11 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       ' float dfade = smoothstep(0.3, 0.08, dz * 1.5);',
       ' float rz = zz * 1.1; float fz = fract(rz); float e = min(fz, 1.0 - fz); float ri = floor(rz + 0.5);',
       ' float show = max(step(0.5, mod(ri, 2.0)), step(0.45, lv));',
-      ' float m3 = mod(ri, 3.0); vec3 rc = m3 < 0.5 ? cc : (m3 < 1.5 ? pe : mix(cb, cc, 0.4) * 1.4);',
+      ' float m3 = mod(ri, 3.0); vec3 rc = mod(ri, 2.0) < 0.5 ? cc : mix(cb, cc, 0.4) * 1.4;',
       ' float r0 = floor(rz); float r1 = r0 + 1.0;',
       ' float s0 = max(step(0.5, mod(r0, 2.0)), step(0.45, lv)); float s1 = max(step(0.5, mod(r1, 2.0)), step(0.45, lv));',
       ' float q0 = mod(r0, 3.0); float q1 = mod(r1, 3.0);',
-      ' vec3 c0 = q0 < 0.5 ? cc : (q0 < 1.5 ? pe : mix(cb, cc, 0.4) * 1.4); vec3 c1 = q1 < 0.5 ? cc : (q1 < 1.5 ? pe : mix(cb, cc, 0.4) * 1.4);',
+      ' vec3 c0 = mod(r0, 2.0) < 0.5 ? cc : mix(cb, cc, 0.4) * 1.4; vec3 c1 = mod(r1, 2.0) < 0.5 ? cc : mix(cb, cc, 0.4) * 1.4;',
       ' vec3 wl = (c0 * s0 * exp(-fz * 4.0) + c1 * s1 * exp(-(1.0 - fz) * 4.0)) * vis * vec3(1.0, 0.82, 0.66);',
       ' vec2 pg = vec2(v * 3.0, zz * 1.5); vec2 pid = floor(pg); vec2 pf = abs(fract(pg) - 0.5); float pm = max(pf.x, pf.y);',
       ' float hp = hash(pid);',
@@ -2045,15 +2052,15 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       ' float rim = smoothstep(0.39, 0.43, pm) - smoothstep(0.43, 0.45, pm);',
       ' col += wl * (face * (1.0 - groove) + rim * 0.35 * dfade) + wl * 0.02;',
       ' float lit = step(0.8 - 0.3 * lv, hp) * (0.45 + 0.55 * sin(t * 0.5 + hp * 6.28)) * smoothstep(0.3, 0.7, lv);',
-      ' vec3 lc = mix(cc, pe, step(0.8, hash(pid * 1.3)) * step(0.7, lv));',
+      ' vec3 lc = cc;',
       ' float ins = smoothstep(0.38, 0.3, pm);',
       ' col += lc * lit * (rim * 1.1 * dfade + ins * 0.12) * vis * smoothstep(0.45, 1.1, z);',
       ' float wr = max(0.025, 1.1 * dz); float er = 0.025 / wr;',
       ' col += neon(e, wr, rc) * er * show * vis * 0.9;',
-      ' float e2 = abs(fz - 0.14); float w2 = max(0.012, 0.9 * dz); col += neon(e2, w2, mix(pe, cc, mod(ri, 2.0))) * (0.012 / w2) * vis * smoothstep(0.4, 0.6, lv) * 0.6;',
+      ' float e2 = abs(fz - 0.14); float w2 = max(0.012, 0.9 * dz); col += neon(e2, w2, mix(mix(cb, cc, 0.4) * 1.4, cc, mod(ri, 2.0))) * (0.012 / w2) * vis * smoothstep(0.4, 0.6, lv) * 0.6;',
       ' float ce = 1.0 - abs(v);',
       ' float run = mix(1.0, 0.3 + 0.7 * smoothstep(0.55, 1.0, fract(zz * 0.8)), smoothstep(0.7, 0.95, lv));',
-      ' col += neon(ce * m, 0.0022, mix(cc, pe, 0.4)) * vis * run * 0.35;',
+      ' col += neon(ce * m, 0.0022, cc) * vis * run * 0.35;',
       ' col += cc * 0.5 * exp(-m * 26.0) + cb * 0.35 * exp(-m * 6.0);',
       ' col = 1.0 - exp(-col * 1.7);',
       ' gl_FragColor = vec4(col * vig(uv), 1.0);',
@@ -2089,7 +2096,7 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       '  float u = fi - (nf - 1.0) * 0.5;',
       '  vec3 c = vec3(u * 0.56, -0.1, -0.04 * u * u);',
       '  float th = amp * sin(t * sp - u * 0.6);',
-      '  float m3 = mod(fi, 3.0); vec3 fc = m3 < 0.5 ? cc : (m3 < 1.5 ? pe : wr);',
+      '  float m3 = mod(fi, 3.0); vec3 fc = mod(fi, 2.0) < 0.5 ? cc : wr;',
       '  col += frame(ro, rd, c, th, vec2(0.2, 0.5), pa, lv, fi, fc);',
       ' }',
       ' if(lv > 0.75){',
@@ -2097,7 +2104,7 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       '   float fi = float(i); float u = fi - 3.5;',
       '   vec3 c = vec3(u * 0.8, -0.1, 3.0);',
       '   float th = -amp * 0.8 * sin(t * sp * 0.8 - u * 0.6 + 1.5);',
-      '   vec3 fc = mod(fi, 2.0) < 0.5 ? pe : cc;',
+      '   vec3 fc = mod(fi, 2.0) < 0.5 ? wr : cc;',
       '   col += frame(ro, rd, c, th, vec2(0.2, 0.5), pa, lv, fi + 9.0, fc) * 0.8;',
       '  }',
       ' }',
@@ -2166,58 +2173,6 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       '  col += pool * (0.05 * exp(-max(fx - R, 0.0) * 4.0) + 0.04 * exp(-abs(fx - R) * 9.0)) * exp(-zf * 0.08);',
       ' }',
       ' col = 1.0 - exp(-col * 1.7);',
-      ' col = col * vig(uv) + (hash(gl_FragCoord.xy + fract(t * 7.0) * 91.0) - 0.5) / 255.0;',
-      ' gl_FragColor = vec4(col, 1.0);',
-      '}'].join('\n'),
-    calvary: [
-      'float sdBox2(vec2 p, vec2 b){ vec2 d = abs(p) - b; return length(max(d, 0.0)) + min(max(d.x, d.y), 0.0); }',
-      'float sdCross(vec2 p, vec2 base, float hgt){',
-      ' vec2 q = p - base; float w = hgt * 0.035;',
-      ' float v = sdBox2(q - vec2(0.0, hgt * 0.5), vec2(w, hgt * 0.5));',
-      ' float hb = sdBox2(q - vec2(0.0, hgt * 0.72), vec2(hgt * 0.24, w));',
-      ' return min(v, hb);',
-      '}',
-      'float hillY(float x){ return -0.16 - 0.2 * x * x - 0.02 * sin(x * 3.1 + 0.6); }',
-      'vec3 motes(vec2 p, float lv){',
-      ' vec3 s = vec3(0.0);',
-      ' for(int l = 0; l < 3; l++){',
-      '  float fl = float(l); float sc = 5.0 + fl * 4.0;',
-      '  vec2 g = vec2(p.x * sc + sin(p.y * 2.0 + t * 0.2 + fl) * 0.3, (p.y - t * (0.03 + 0.03 * lv) / (1.0 + fl * 0.4)) * sc);',
-      '  vec2 id = floor(g); vec2 o = vec2(hash(id + fl * 13.0 + 1.3), hash(id + fl * 13.0 + 5.9)) - 0.5;',
-      '  vec2 dq = (fract(g) - 0.5 - o * 0.6) / sc;',
-      '  float h = hash(id + fl * 13.0);',
-      '  float rq = 0.0022 / (1.0 + fl * 0.5); float rad = max(rq, 0.8 / r.y);',
-      '  float sp = exp(-dot(dq, dq) / (rad * rad)) * rq * rq / (rad * rad) + exp(-length(dq) / (rq * 4.0)) * 0.04;',
-      '  float fk = 0.6 + 0.4 * sin(t * (1.0 + 2.0 * h) + h * 30.0);',
-      '  s += mix(cc, vec3(1.0), 0.3) * sp * fk * step(1.0 - (0.1 + 0.25 * lv), h) * (1.6 - fl * 0.3);',
-      ' }',
-      ' return s;',
-      '}',
-      'void main(){',
-      ' vec2 uv = gl_FragCoord.xy / r; vec2 p = (gl_FragCoord.xy - 0.5 * r) / r.y; float lv = k;',
-      ' float px = 1.0 / r.y;',
-      ' vec2 sun = vec2(0.0, -0.06);',
-      ' float ds = length((p - sun) * vec2(0.8, 1.0));',
-      ' float br = 0.45 + 0.55 * lv + 0.05 * sin(t * 0.3);',
-      ' vec3 sky = mix(ca * 0.6, cb * 0.55, smoothstep(0.55, -0.2, p.y));',
-      ' sky += cb * 0.5 * br * exp(-ds * 2.2) + cc * 0.55 * br * exp(-ds * 7.0) + mix(cc, vec3(1.0), 0.5) * 0.6 * br * exp(-ds * 22.0);',
-      ' float ang = atan(p.y - sun.y, p.x - sun.x);',
-      ' float rays = pow(0.5 + 0.5 * sin(ang * 18.0 + sin(ang * 5.0 + 1.3) * 1.5), 5.0) * (0.75 + 0.25 * sin(t * 0.25 + ang * 3.0));',
-      ' sky += cc * rays * smoothstep(0.2, 0.75, lv) * 0.22 * br * exp(-ds * 1.8) * smoothstep(0.02, 0.15, ds);',
-      ' float far = -0.1 - 0.06 * p.x * p.x + 0.025 * sin(p.x * 4.0 + 1.0) + 0.012 * sin(p.x * 11.0);',
-      ' sky = mix(sky, mix(sky, ca * 0.9 + cb * 0.25 * br, 0.6), smoothstep(px, -px, p.y - far));',
-      ' vec3 col = sky + motes(p, lv) * smoothstep(-0.25, 0.1, p.y);',
-      ' float hy = hillY(p.x);',
-      ' float dh = p.y - hy;',
-      ' float dc = min(sdCross(p, vec2(0.0, hillY(0.0) - 0.01), 0.46), min(sdCross(p, vec2(-0.34, hillY(-0.34) - 0.01), 0.32), sdCross(p, vec2(0.34, hillY(0.34) - 0.01), 0.32)));',
-      ' float sil = min(dc, dh);',
-      ' float inside = smoothstep(px, -px, sil);',
-      ' vec3 dark = ca * 0.25;',
-      ' float glowAt = exp(-ds * 3.0) * br;',
-      ' float rim = exp(-max(-sil, 0.0) / 0.004) * inside * glowAt;',
-      ' col = mix(col, dark, inside) + mix(cc, vec3(1.0), 0.4) * rim * 0.55;',
-      ' col += cb * 0.18 * br * exp(-max(sil, 0.0) / 0.01) * (1.0 - inside) * glowAt;',
-      ' col = 1.0 - exp(-col * 1.6);',
       ' col = col * vig(uv) + (hash(gl_FragCoord.xy + fract(t * 7.0) * 91.0) - 0.5) / 255.0;',
       ' gl_FragColor = vec4(col, 1.0);',
       '}'].join('\n'),
