@@ -262,6 +262,7 @@ h2{margin:0;font-weight:400}
 .stage{position:relative;aspect-ratio:2.05/1;overflow:hidden;border-radius:10px;background:#050404;box-shadow:0 24px 60px rgba(0,0,0,.55);isolation:isolate}
 .stage .stg-ceil{position:absolute;left:0;right:0;top:0;height:3.2%;background:#020202;z-index:2}
 .stage .stg-wall{position:absolute;left:2%;width:96%;top:3%;aspect-ratio:2.4/1;box-shadow:none;z-index:1;-webkit-box-reflect:below 0 linear-gradient(transparent 84%,rgba(255,255,255,.2))}
+.stage .stg-ghost{z-index:2;pointer-events:none;transition:opacity 1s ease}
 .stage .stg-deck{position:absolute;left:0;right:0;top:85%;height:9.5%;background:linear-gradient(#151213,#0b0909);border-bottom:1px solid rgba(255,255,255,.07);z-index:0}
 .stage canvas.stg-beam,.stage canvas.stg-rig{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .stage canvas.stg-beam{z-index:3;mix-blend-mode:screen;filter:blur(1.5px)}
@@ -1180,11 +1181,11 @@ body:has(#page-worship:not([hidden])) .network{display:none}
     <div class="wpack"><div class="mhead"><h3>Pack 1 · Fire</h3><span class="label">CYN fire, three colors</span></div><div class="wgrid"><div class="bgi"><div class="scr glt" id="scr-led-w1v"><canvas class="fx" data-gl="fire" data-pal="deep" data-ts="0.8" data-k="0.2"></canvas></div><span class="stype">LED wall · Verse</span><p>Deep red fire, slow, a few sparks rising.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w1v" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w1v">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w1c"><canvas class="fx" data-gl="fire" data-pal="red" data-ts="1.1" data-k="0.6"></canvas></div><span class="stype">LED wall · Chorus</span><p>CYN red, more movement and more sparks.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w1c" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w1c">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w1b"><canvas class="fx" data-gl="fire" data-pal="gold" data-ts="1.4" data-k="1"></canvas></div><span class="stype">LED wall · Bridge</span><p>Gold fire, the most movement, sparks everywhere.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w1b" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w1b">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-tv-w1"><canvas class="fx" data-gl="ambient" data-pal="deep"></canvas></div><span class="stype">Side TVs · whole song</span><p>Calm and dark under the lyrics.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-w1" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-w1">Full screen</button></div></div></div></div>
     <div class="wpack"><div class="mhead"><h3>Pack 2 · Lights · Tunnel</h3><span class="label">Fast song, builds as the song builds</span></div><div class="wgrid"><div class="bgi"><div class="scr glt" id="scr-led-w2v"><canvas class="fx" data-gl="tunnelx" data-pal="deep" data-k="0.2"></canvas></div><span class="stype">LED wall · Verse</span><p>Half the rings, a gentle sway.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w2v" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w2v">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w2c"><canvas class="fx" data-gl="tunnelx" data-pal="red" data-k="0.6"></canvas></div><span class="stype">LED wall · Chorus</span><p>Every ring, dashes spinning, the tunnel starts to roll.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w2c" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w2c">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w2b"><canvas class="fx" data-gl="tunnelx" data-pal="gold" data-k="1"></canvas></div><span class="stype">LED wall · Bridge</span><p>Full speed, big sway and roll, a second layer of rings and light racing along the walls.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w2b" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w2b">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-tv-w2"><canvas class="fx" data-gl="ambient" data-pal="deep"></canvas></div><span class="stype">Side TVs · whole song</span><p>Calm and dark under the lyrics.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-w2" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-w2">Full screen</button></div></div></div></div>
     <div class="wpack"><div class="mhead"><h3>Pack 3 · Lights · Diamond</h3><span class="label">Fast song, a neon diamond tunnel</span></div><div class="wgrid"><div class="bgi"><div class="scr glt" id="scr-led-w3v"><canvas class="fx" data-gl="prism" data-pal="deep" data-k="0.2"></canvas></div><span class="stype">LED wall · Verse</span><p>Every other neon frame, a slow glide down the tunnel.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w3v" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w3v">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w3c"><canvas class="fx" data-gl="prism" data-pal="red" data-k="0.6"></canvas></div><span class="stype">LED wall · Chorus</span><p>Every frame with a second line, and wall panels start to light.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w3c" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w3c">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w3b"><canvas class="fx" data-gl="prism" data-pal="gold" data-k="1"></canvas></div><span class="stype">LED wall · Bridge</span><p>Faster, the tunnel tilts, light runs down the corners and more panels light.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w3b" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w3b">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w3s"><canvas class="fx" data-gl="prism" data-pal="gold" data-k="1.5"></canvas></div><span class="stype">LED wall · Bridge, spinning</span><p>The bridge look, with the whole tunnel slowly turning.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w3s" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w3s">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-tv-w3"><canvas class="fx" data-gl="ambient" data-pal="deep"></canvas></div><span class="stype">Side TVs · whole song</span><p>Calm and dark under the lyrics.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-w3" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-w3">Full screen</button></div></div></div></div>
-    <div class="wpack"><div class="mhead"><h3>Pack 4 · Lights · Frames</h3><span class="label">Fast song, a row of neon frames turning on a glossy floor</span></div><div class="wgrid"><div class="bgi"><div class="scr glt" id="scr-led-w4v"><canvas class="fx" data-gl="frames" data-pal="deep" data-k="0.2"></canvas></div><span class="stype">LED wall · Verse</span><p>Five tall frames, a slow wave of turning.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w4v" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w4v">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w4c"><canvas class="fx" data-gl="frames" data-pal="red" data-k="0.6"></canvas></div><span class="stype">LED wall · Chorus</span><p>Seven frames with a second line inside, turning wider and faster.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w4c" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w4c">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w4b"><canvas class="fx" data-gl="frames" data-pal="gold" data-k="1"></canvas></div><span class="stype">LED wall · Bridge</span><p>A second row far behind, light running around every frame.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w4b" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w4b">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-tv-w4"><canvas class="fx" data-gl="ambient" data-pal="deep"></canvas></div><span class="stype">Side TVs · whole song</span><p>Calm and dark under the lyrics.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-w4" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-w4">Full screen</button></div></div></div></div>
+    <div class="wpack"><div class="mhead"><h3>Pack 4 · Lights · Frames</h3><span class="label">Fast song, neon frames in a half circle around the speaker</span></div><div class="wgrid"><div class="bgi"><div class="scr glt" id="scr-led-w4v"><canvas class="fx" data-gl="frames" data-pal="deep" data-k="0.2"></canvas></div><span class="stype">LED wall · Verse</span><p>Five tall frames in a half circle, all facing a spot 6 ft in front of the middle of the screen.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w4v" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w4v">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w4c"><canvas class="fx" data-gl="frames" data-pal="red" data-k="0.6"></canvas></div><span class="stype">LED wall · Chorus</span><p>Seven frames with a second line inside, light chasing around the half circle.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w4c" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w4c">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w4b"><canvas class="fx" data-gl="frames" data-pal="gold" data-k="1"></canvas></div><span class="stype">LED wall · Bridge</span><p>A second, taller half circle behind, light running around every frame.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w4b" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w4b">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-tv-w4"><canvas class="fx" data-gl="ambient" data-pal="deep"></canvas></div><span class="stype">Side TVs · whole song</span><p>Calm and dark under the lyrics.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-w4" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-w4">Full screen</button></div></div></div></div>
     <div class="wpack"><div class="mhead"><h3>Pack 5 · Color</h3><span class="label">Ribbons of light drifting slowly</span></div><div class="wgrid"><div class="bgi"><div class="scr glt" id="scr-led-w5v"><canvas class="fx" data-gl="ribbons" data-pal="deep" data-k="0.2"></canvas></div><span class="stype">LED wall · Verse</span><p>Two gold ribbons, slow.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w5v" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w5v">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w5c"><canvas class="fx" data-gl="ribbons" data-pal="crimson" data-k="0.6"></canvas></div><span class="stype">LED wall · Chorus</span><p>Three red ribbons, light gliding along them.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w5c" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w5c">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w5b"><canvas class="fx" data-gl="ribbons" data-pal="royal" data-k="1"></canvas></div><span class="stype">LED wall · Bridge</span><p>Four ribbons, red and CYN blue.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w5b" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w5b">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-tv-w5"><canvas class="fx" data-gl="ambient" data-pal="deep"></canvas></div><span class="stype">Side TVs · whole song</span><p>Calm and dark under the lyrics.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-w5" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-w5">Full screen</button></div></div></div></div>
     <div class="wpack"><div class="mhead"><h3>Pack 6 · Lights · Neon Arches</h3><span class="label">Fast song, flying through glowing arches on a glossy floor</span></div><div class="wgrid"><div class="bgi"><div class="scr glt" id="scr-led-w7v"><canvas class="fx" data-gl="arches" data-pal="nblue" data-k="0.2"></canvas></div><span class="stype">LED wall · Blue</span><p>Verse level: every other arch lit, gliding slowly.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w7v" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w7v">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w7c"><canvas class="fx" data-gl="arches" data-pal="ngreen" data-k="0.6"></canvas></div><span class="stype">LED wall · Green</span><p>Chorus level: every arch lit with a second line, a little faster.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w7c" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w7c">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-led-w7b"><canvas class="fx" data-gl="arches" data-pal="nwhite" data-k="1"></canvas></div><span class="stype">LED wall · White</span><p>Bridge level: the fastest, light running down every arch.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w7b" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w7b">Full screen</button></div></div><div class="bgi"><div class="scr glt" id="scr-tv-w7"><canvas class="fx" data-gl="ambient" data-pal="nblue"></canvas></div><span class="stype">Side TVs · whole song</span><p>Calm and dark under the lyrics.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-w7" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-w7">Full screen</button></div></div></div></div>
     <div class="wpack"><div class="mhead"><h3>Pack 7 · Calvary</h3><span class="label">Glowing crosses over slow-moving black and white ink</span></div><div class="wgrid"><div class="bgi"><div class="scr calv" id="scr-led-w8v"><canvas class="fx" data-gl="inkflow" data-img="assets/ink.jpg" data-pal="ink" data-k="0.2" data-ts="0.96"></canvas><div class="ink-vig"></div><svg class="xs" viewBox="0 0 2400 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true" fill="none"><path d="M1200 230V770M1050 380H1350" stroke="#fff" stroke-opacity=".06" stroke-width="46" stroke-linecap="round"/><path d="M1200 230V770M1050 380H1350" stroke="#fff" stroke-opacity=".16" stroke-width="18" stroke-linecap="round"/><path d="M1200 230V770M1050 380H1350" stroke="#fff" stroke-width="5" stroke-linecap="round"/></svg></div><span class="stype">LED wall · Verse</span><p>One cross, dark ink drifting slowly behind it.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w8v" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w8v">Full screen</button></div></div><div class="bgi"><div class="scr calv" id="scr-led-w8c"><canvas class="fx" data-gl="inkflow" data-img="assets/ink.jpg" data-pal="ink" data-k="0.6" data-ts="1.2"></canvas><div class="ink-vig"></div><svg class="xs" viewBox="0 0 2400 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true" fill="none"><path d="M700 230V770M550 380H850" stroke="#fff" stroke-opacity=".06" stroke-width="46" stroke-linecap="round"/><path d="M700 230V770M550 380H850" stroke="#fff" stroke-opacity=".16" stroke-width="18" stroke-linecap="round"/><path d="M700 230V770M550 380H850" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M1200 230V770M1050 380H1350" stroke="#fff" stroke-opacity=".06" stroke-width="46" stroke-linecap="round"/><path d="M1200 230V770M1050 380H1350" stroke="#fff" stroke-opacity=".16" stroke-width="18" stroke-linecap="round"/><path d="M1200 230V770M1050 380H1350" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M1700 230V770M1550 380H1850" stroke="#fff" stroke-opacity=".06" stroke-width="46" stroke-linecap="round"/><path d="M1700 230V770M1550 380H1850" stroke="#fff" stroke-opacity=".16" stroke-width="18" stroke-linecap="round"/><path d="M1700 230V770M1550 380H1850" stroke="#fff" stroke-width="5" stroke-linecap="round"/></svg></div><span class="stype">LED wall · Chorus</span><p>Three crosses, the ink a little brighter.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w8c" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w8c">Full screen</button></div></div><div class="bgi"><div class="scr calv" id="scr-led-w8b"><canvas class="fx" data-gl="inkflow" data-img="assets/ink.jpg" data-pal="ink" data-k="1" data-ts="1.62"></canvas><div class="ink-vig"></div><svg class="xs pulse" viewBox="0 0 2400 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true" fill="none"><path d="M700 230V770M550 380H850" stroke="#fff" stroke-opacity=".06" stroke-width="46" stroke-linecap="round"/><path d="M700 230V770M550 380H850" stroke="#fff" stroke-opacity=".16" stroke-width="18" stroke-linecap="round"/><path d="M700 230V770M550 380H850" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M1200 230V770M1050 380H1350" stroke="#fff" stroke-opacity=".06" stroke-width="46" stroke-linecap="round"/><path d="M1200 230V770M1050 380H1350" stroke="#fff" stroke-opacity=".16" stroke-width="18" stroke-linecap="round"/><path d="M1200 230V770M1050 380H1350" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M1700 230V770M1550 380H1850" stroke="#fff" stroke-opacity=".06" stroke-width="46" stroke-linecap="round"/><path d="M1700 230V770M1550 380H1850" stroke="#fff" stroke-opacity=".16" stroke-width="18" stroke-linecap="round"/><path d="M1700 230V770M1550 380H1850" stroke="#fff" stroke-width="5" stroke-linecap="round"/></svg></div><span class="stype">LED wall · Bridge</span><p>Three crosses glowing brighter, the ink at its brightest and moving more.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w8b" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w8b">Full screen</button></div></div><div class="bgi"><div class="scr calv" id="scr-tv-w8"><canvas class="fx" data-gl="inkflow" data-img="assets/ink.jpg" data-pal="ink" data-k="-0.25" data-ts="0.84"></canvas><div class="ink-vig"></div></div><span class="stype">Side TVs · whole song</span><p>The same ink, dimmed and calm under the lyrics.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-w8" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-w8">Full screen</button></div></div></div></div>
-    <div class="wpack"><div class="mhead"><h3>Pack 8 · Windows to the Sea</h3><span class="label">Three arched windows looking down on the sea</span></div><div class="wgrid"><div class="bgi"><div class="scr sea" id="scr-led-w9v"><canvas class="fx" data-gl="seaflow" data-img="assets/sea.jpg" data-pal="sea" data-k="0.2" data-ts="0.96"></canvas><svg class="sea-edge" viewBox="0 0 2400 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><path d="M586 830V330A190 190 0 0 1 966 330V830ZM1010 830V330A190 190 0 0 1 1390 330V830ZM1434 830V330A190 190 0 0 1 1814 330V830Z" fill="none" stroke="rgba(0,0,0,.42)" stroke-width="22"/><path d="M586 830V330A190 190 0 0 1 966 330V830ZM1010 830V330A190 190 0 0 1 1390 330V830ZM1434 830V330A190 190 0 0 1 1814 330V830Z" fill="none" stroke="rgba(255,236,200,.28)" stroke-width="3"/></svg></div><span class="stype">LED wall · Verse</span><p>Cool and calm, the sea drifting slowly past the windows.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w9v" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w9v">Full screen</button></div></div><div class="bgi"><div class="scr sea" id="scr-led-w9c"><canvas class="fx" data-gl="seaflow" data-img="assets/sea.jpg" data-pal="sea" data-k="0.6" data-ts="1.2"></canvas><svg class="sea-edge" viewBox="0 0 2400 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><path d="M586 830V330A190 190 0 0 1 966 330V830ZM1010 830V330A190 190 0 0 1 1390 330V830ZM1434 830V330A190 190 0 0 1 1814 330V830Z" fill="none" stroke="rgba(0,0,0,.42)" stroke-width="22"/><path d="M586 830V330A190 190 0 0 1 966 330V830ZM1010 830V330A190 190 0 0 1 1390 330V830ZM1434 830V330A190 190 0 0 1 1814 330V830Z" fill="none" stroke="rgba(255,236,200,.28)" stroke-width="3"/></svg></div><span class="stype">LED wall · Chorus</span><p>Warmer light on the waves, a little more movement.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w9c" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w9c">Full screen</button></div></div><div class="bgi"><div class="scr sea" id="scr-led-w9b"><canvas class="fx" data-gl="seaflow" data-img="assets/sea.jpg" data-pal="sea" data-k="1" data-ts="1.62"></canvas><div class="sea-sheen"></div><svg class="sea-edge" viewBox="0 0 2400 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><path d="M586 830V330A190 190 0 0 1 966 330V830ZM1010 830V330A190 190 0 0 1 1390 330V830ZM1434 830V330A190 190 0 0 1 1814 330V830Z" fill="none" stroke="rgba(0,0,0,.42)" stroke-width="22"/><path d="M586 830V330A190 190 0 0 1 966 330V830ZM1010 830V330A190 190 0 0 1 1390 330V830ZM1434 830V330A190 190 0 0 1 1814 330V830Z" fill="none" stroke="rgba(255,236,200,.28)" stroke-width="3"/></svg></div><span class="stype">LED wall · Bridge</span><p>The warmest, with golden light sweeping across the windows.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w9b" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w9b">Full screen</button></div></div><div class="bgi"><div class="scr sea" id="scr-tv-w9"><canvas class="fx" data-gl="seaflow" data-img="assets/sea.jpg" data-pal="sea" data-k="-0.2" data-ts="0.84"></canvas></div><span class="stype">Side TVs · whole song</span><p>The same sea, dimmed and calm under the lyrics.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-w9" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-w9">Full screen</button></div></div></div></div>
+    <div class="wpack"><div class="mhead"><h3>Pack 8 · Windows to the Sea</h3><span class="label">Three arched windows looking down on the sea</span></div><div class="wgrid"><div class="bgi"><div class="scr sea" id="scr-led-w9v"><canvas class="fx" data-gl="seaflow" data-img="assets/sea.jpg" data-pal="sea" data-k="0.2" data-ts="0.96"></canvas><svg class="sea-edge" viewBox="0 0 2400 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><path d="M586 830V330A190 190 0 0 1 966 330V830ZM1010 830V330A190 190 0 0 1 1390 330V830ZM1434 830V330A190 190 0 0 1 1814 330V830Z" fill="none" stroke="rgba(0,0,0,.42)" stroke-width="22"/><path d="M586 830V330A190 190 0 0 1 966 330V830ZM1010 830V330A190 190 0 0 1 1390 330V830ZM1434 830V330A190 190 0 0 1 1814 330V830Z" fill="none" stroke="rgba(255,236,200,.28)" stroke-width="3"/></svg></div><span class="stype">LED wall · Verse</span><p>Only the middle window open, cool and calm. The side windows stay dark.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w9v" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w9v">Full screen</button></div></div><div class="bgi"><div class="scr sea" id="scr-led-w9c"><canvas class="fx" data-gl="seaflow" data-img="assets/sea.jpg" data-pal="sea" data-k="0.6" data-ts="1.2"></canvas><svg class="sea-edge" viewBox="0 0 2400 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><path d="M586 830V330A190 190 0 0 1 966 330V830ZM1010 830V330A190 190 0 0 1 1390 330V830ZM1434 830V330A190 190 0 0 1 1814 330V830Z" fill="none" stroke="rgba(0,0,0,.42)" stroke-width="22"/><path d="M586 830V330A190 190 0 0 1 966 330V830ZM1010 830V330A190 190 0 0 1 1390 330V830ZM1434 830V330A190 190 0 0 1 1814 330V830Z" fill="none" stroke="rgba(255,236,200,.28)" stroke-width="3"/></svg></div><span class="stype">LED wall · Chorus</span><p>All three windows open, warm light spilling onto the wall, more movement.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w9c" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w9c">Full screen</button></div></div><div class="bgi"><div class="scr sea" id="scr-led-w9b"><canvas class="fx" data-gl="seaflow" data-img="assets/sea.jpg" data-pal="sea" data-k="1" data-ts="1.62"></canvas><div class="sea-sheen"></div><svg class="sea-edge" viewBox="0 0 2400 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><path d="M586 830V330A190 190 0 0 1 966 330V830ZM1010 830V330A190 190 0 0 1 1390 330V830ZM1434 830V330A190 190 0 0 1 1814 330V830Z" fill="none" stroke="rgba(0,0,0,.42)" stroke-width="22"/><path d="M586 830V330A190 190 0 0 1 966 330V830ZM1010 830V330A190 190 0 0 1 1390 330V830ZM1434 830V330A190 190 0 0 1 1814 330V830Z" fill="none" stroke="rgba(255,236,200,.28)" stroke-width="3"/></svg></div><span class="stype">LED wall · Bridge</span><p>The wall falls away and the whole sea opens up, light pouring in from above.</p><div class="tile-actions"><button class="mini" type="button" data-pick="led-w9b" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-led-w9b">Full screen</button></div></div><div class="bgi"><div class="scr sea" id="scr-tv-w9"><canvas class="fx" data-gl="seaflow" data-img="assets/sea.jpg" data-pal="sea" data-k="-0.2" data-ts="0.84"></canvas></div><span class="stype">Side TVs · whole song</span><p>The same sea, dimmed and calm under the lyrics.</p><div class="tile-actions"><button class="mini" type="button" data-pick="tv-w9" aria-pressed="false">Pick</button><button class="mini" type="button" data-fs="scr-tv-w9">Full screen</button></div></div></div></div>
   </div>
 </section>
 
@@ -2185,53 +2186,58 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       ' vec2 qd = abs(pq) - hs; float sd = length(max(qd, 0.0)) + min(max(qd.x, qd.y), 0.0);',
       ' float ad = max(abs(dn), 0.2);',
       ' float fp = tt * pa; float fw = mix(fp, fp / ad, step(qd.y, qd.x));',
-      ' float w0 = 0.0055; float w = max(w0, fw * 0.75); float e = w0 / w;',
+      ' float w0 = 0.045; float w = max(w0, fw * 0.75); float e = w0 / w;',
       ' float core = exp(-sd * sd / (w * w)) * e;',
-      ' float halo = exp(-abs(sd) / 0.045) * 0.16 * (0.4 + 0.6 * ad);',
-      ' float sd2 = sd + 0.03; float inner = exp(-sd2 * sd2 / (w * w)) * e * smoothstep(0.4, 0.6, lv) * 0.7;',
+      ' float halo = exp(-abs(sd) / 0.36) * 0.16 * (0.4 + 0.6 * ad);',
+      ' float sd2 = sd + 0.24; float inner = exp(-sd2 * sd2 / (w * w)) * e * smoothstep(0.4, 0.6, lv) * 0.7;',
       ' float s = qd.x > qd.y ? pq.y : pq.x;',
-      ' float bulb = 0.6 + 0.4 * smoothstep(0.32, 0.12, abs(fract(s * 14.0) - 0.5));',
+      ' float bulb = 0.6 + 0.4 * smoothstep(0.32, 0.12, abs(fract(s * 1.75) - 0.5));',
       ' float a = atan(pq.y, pq.x) / 6.2832;',
       ' float run = smoothstep(0.82, 1.0, fract(a - t * 0.12 + fi * 0.17)) * smoothstep(0.75, 0.95, lv);',
-      ' float fog = exp(-max(tt - 2.0, 0.0) * 0.35);',
+      ' float fog = exp(-max(tt - 34.0, 0.0) * 0.04);',
       ' return fc * (core * bulb * (1.0 + 2.0 * run) + halo + inner) * fog * smoothstep(0.06, 0.3, abs(dn));',
       '}',
-      'vec3 fscene(vec3 ro, vec3 rd, float lv){',
-      ' vec3 pe = vec3(0.63, 0.75, 1.0); vec3 wr = mix(cb, cc, 0.45) * 1.3;',
-      ' float pa = 1.0 / (r.y * 1.5);',
+      'vec3 fscene(vec3 ro, vec3 rd, float lv, float pa){',
+      ' vec3 wr = mix(cb, cc, 0.45) * 1.3;',
+      ' vec3 fo = vec3(0.0, 4.0, -6.0);',
       ' vec3 col = vec3(0.0);',
-      ' float nf = lv < 0.4 ? 5.0 : 7.0;',
-      ' float amp = 0.45 + 0.5 * lv; float sp = 0.3 + 0.35 * lv;',
+      ' float nf = lv < 0.4 ? 5.0 : 7.0; float st = lv < 0.4 ? 0.3927 : 0.3142;',
+      ' float sw = 0.04 + 0.1 * lv; float sp = 0.3 + 0.35 * lv;',
       ' for(int i = 0; i < 7; i++){',
       '  float fi = float(i); if(fi >= nf) break;',
-      '  float u = fi - (nf - 1.0) * 0.5;',
-      '  vec3 c = vec3(u * 0.56, -0.1, -0.04 * u * u);',
-      '  float th = amp * sin(t * sp - u * 0.6);',
-      '  float m3 = mod(fi, 3.0); vec3 fc = mod(fi, 2.0) < 0.5 ? cc : wr;',
-      '  col += frame(ro, rd, c, th, vec2(0.2, 0.5), pa, lv, fi, fc);',
+      '  float u = fi - (nf - 1.0) * 0.5; float ph = u * st;',
+      '  vec3 c = fo + 14.0 * vec3(sin(ph), 0.0, cos(ph));',
+      '  float th = ph + sw * sin(t * sp - u * 0.6);',
+      '  float ch = smoothstep(0.6, 1.0, sin(t * sp * 1.6 - u * 0.9));',
+      '  vec3 fc = (mod(fi, 2.0) < 0.5 ? cc : wr) * (1.0 + (ch * 0.5 - 0.25) * smoothstep(0.3, 0.6, lv));',
+      '  col += frame(ro, rd, c, th, vec2(1.6, 4.0), pa, lv, fi, fc);',
       ' }',
       ' if(lv > 0.75){',
-      '  for(int i = 0; i < 8; i++){',
-      '   float fi = float(i); float u = fi - 3.5;',
-      '   vec3 c = vec3(u * 0.8, -0.1, 3.0);',
-      '   float th = -amp * 0.8 * sin(t * sp * 0.8 - u * 0.6 + 1.5);',
+      '  for(int i = 0; i < 7; i++){',
+      '   float fi = float(i); float u = fi - 3.0; float ph = u * 0.2443;',
+      '   vec3 c = fo + vec3(0.0, 1.5, 0.0) + 26.0 * vec3(sin(ph), 0.0, cos(ph));',
+      '   float th = ph - sw * 0.8 * sin(t * sp * 0.8 - u * 0.6 + 1.5);',
       '   vec3 fc = mod(fi, 2.0) < 0.5 ? wr : cc;',
-      '   col += frame(ro, rd, c, th, vec2(0.2, 0.5), pa, lv, fi + 9.0, fc) * 0.8;',
+      '   col += frame(ro, rd, c, th, vec2(1.6, 5.5), pa, lv, fi + 9.0, fc) * 0.55;',
       '  }',
       ' }',
       ' return col;',
       '}',
       'void main(){',
       ' vec2 uv = gl_FragCoord.xy / r; vec2 p = (gl_FragCoord.xy - 0.5 * r) / r.y; float lv = k;',
-      ' vec3 ro = vec3(sin(t * 0.05) * 0.12, 0.1, -2.4); vec3 rd = normalize(vec3(p.x, p.y - 0.15, 1.5));',
+      ' float D = 28.0; float pa = 11.0 / (r.y * D);',
+      ' vec3 ro = vec3(sin(t * 0.05) * 0.6, 6.5, -D);',
+      ' vec3 rd = normalize(vec3(p.x * 11.0, (p.y + 0.5) * 11.0, 0.0) - ro);',
       ' vec3 bg = ca * 0.5 + cb * 0.3 * exp(-length(p * vec2(0.55, 1.3)) * 1.6);',
-      ' vec3 col = bg + fscene(ro, rd, lv);',
-      ' float yf = -0.6;',
+      ' vec3 col = bg + fscene(ro, rd, lv, pa);',
       ' if(rd.y < 0.0){',
-      '  float tf = (yf - ro.y) / rd.y; vec3 hp = ro + rd * tf;',
-      '  float near = exp(-max(tf - 2.2, 0.0) * 0.7);',
-      '  vec3 rr = normalize(vec3(rd.x + (noise(hp.xz * vec2(8.0, 26.0)) - 0.5) * 0.006, -rd.y, rd.z));',
-      '  vec3 fl = ca * 0.25 + fscene(hp, rr, lv) * 0.32 * exp(-max(tf - 2.4, 0.0) * 0.4);',
+      '  float tf = -ro.y / rd.y; vec3 hp = ro + rd * tf;',
+      '  float near = exp(-max(tf - 30.0, 0.0) * 0.08);',
+      '  vec3 rr = normalize(vec3(rd.x + (noise(hp.xz * vec2(0.8, 2.6)) - 0.5) * 0.006, -rd.y, rd.z));',
+      '  vec3 fl = ca * 0.25 + fscene(hp, rr, lv, pa) * 0.32 * exp(-max(tf - 31.0, 0.0) * 0.04);',
+      '  float da = abs(length(hp.xz - vec2(0.0, -6.0)) - 14.0);',
+      '  float lw = max(0.06, tf * pa * 0.75 / max(-rd.y, 0.02));',
+      '  fl += cc * exp(-da * da / (lw * lw)) * (0.06 / lw) * 0.55 * (0.5 + 0.5 * lv);',
       '  col = mix(col, fl, near);',
       ' }',
       ' col = 1.0 - exp(-col * 1.7);',
@@ -2306,31 +2312,39 @@ body:has(#page-worship:not([hidden])) .network{display:none}
     seaflow: [
       'uniform sampler2D img; uniform vec2 ir;',
       'vec2 cover(vec2 uv){ float ra = r.x / r.y; float ia = ir.x / ir.y; vec2 s = ra > ia ? vec2(1.0, ia / ra) : vec2(ra / ia, 1.0); return (uv - 0.5) * s + 0.5; }',
-      'float archMask(vec2 fc){',
-      ' float s = min(r.x / 2400.0, r.y / 1000.0);',
-      ' vec2 v = vec2((fc.x - (r.x - 2400.0 * s) * 0.5) / s, (r.y - fc.y - (r.y - 1000.0 * s) * 0.5) / s);',
-      ' float d = 100000.0;',
-      ' for(int i = 0; i < 3; i++){',
-      '  float cx = 776.0 + float(i) * 424.0;',
-      '  float dd = v.y >= 330.0 ? max(abs(v.x - cx) - 190.0, v.y - 830.0) : length(v - vec2(cx, 330.0)) - 190.0;',
-      '  d = min(d, dd);',
-      ' }',
-      ' return 1.0 - smoothstep(-0.75 / s, 0.75 / s, d);',
-      '}',
+      'float archD(vec2 v, float cx){ return v.y >= 330.0 ? max(abs(v.x - cx) - 190.0, v.y - 830.0) : length(v - vec2(cx, 330.0)) - 190.0; }',
       'void main(){',
       ' vec2 uv = gl_FragCoord.xy / r; float lv = abs(k); float tv = step(k, -0.01);',
+      ' float s = min(r.x / 2400.0, r.y / 1000.0);',
+      ' vec2 v = vec2((gl_FragCoord.x - (r.x - 2400.0 * s) * 0.5) / s, (r.y - gl_FragCoord.y - (r.y - 1000.0 * s) * 0.5) / s);',
+      ' float aa = 0.75 / s;',
+      ' float side = smoothstep(0.35, 0.55, lv); float wide = smoothstep(0.75, 0.95, lv); float warm = smoothstep(0.3, 0.7, lv);',
+      ' float dC = archD(v, 1200.0); float dS = min(archD(v, 776.0), archD(v, 1624.0));',
+      ' float mC = 1.0 - smoothstep(-aa, aa, dC); float mS = 1.0 - smoothstep(-aa, aa, dS);',
       ' vec2 c = cover(uv);',
-      ' c = (c - 0.5) * 0.86 + 0.5 + vec2(sin(t * 0.011), cos(t * 0.008)) * 0.035;',
+      ' c = (c - 0.5) * (0.86 - 0.08 * wide) + 0.5 + vec2(sin(t * 0.011), cos(t * 0.008)) * 0.035;',
       ' vec2 q = c * 5.0;',
       ' vec2 w1 = vec2(fbm(q + vec2(0.0, t * 0.06)), fbm(q + vec2(4.1, t * 0.06 + 1.7))) - 0.5;',
       ' vec2 w2 = vec2(fbm(q * 2.6 - vec2(t * 0.05, t * 0.09)), fbm(q * 2.6 + vec2(2.3, -t * 0.09))) - 0.5;',
-      ' c += w1 * (0.01 + 0.004 * lv) + w2 * 0.004;',
+      ' c += w1 * (0.008 + 0.01 * lv) + w2 * (0.003 + 0.004 * lv);',
       ' vec3 col = texture2D(img, c).rgb;',
       ' float lum = dot(col, vec3(0.299, 0.587, 0.114));',
-      ' vec3 inside = col * (0.82 + 0.3 * lv);',
-      ' inside = mix(inside, inside * vec3(1.1, 1.0, 0.85), smoothstep(0.3, 0.7, lv) * 0.7);',
-      ' vec3 outside = mix(vec3(lum), col, 0.7) * 0.26;',
-      ' vec3 o = mix(outside, inside, archMask(gl_FragCoord.xy) * (1.0 - tv));',
+      ' vec3 cool = mix(vec3(lum), col, 0.55) * vec3(0.82, 0.95, 1.12);',
+      ' vec3 inside = mix(cool, col, warm) * (0.8 + 0.3 * lv);',
+      ' inside = mix(inside, inside * vec3(1.12, 1.0, 0.84), warm * 0.7);',
+      ' vec3 shut = mix(vec3(lum), col, 0.3) * 0.2;',
+      ' shut = mix(shut, inside, side);',
+      ' vec3 outside = mix(vec3(lum), col, 0.7) * 0.22;',
+      ' outside = mix(outside, inside * 0.8, wide);',
+      ' vec3 o = mix(outside, shut, mS);',
+      ' o = mix(o, inside, mC);',
+      ' float dOpen = min(dC, mix(100000.0, dS, side));',
+      ' o += vec3(1.0, 0.86, 0.62) * exp(-max(dOpen, 0.0) / 70.0) * 0.1 * warm * (1.0 - wide);',
+      ' vec2 dp = (uv - vec2(0.5, 1.12)) * vec2(r.x / r.y, 1.0);',
+      ' float an = atan(dp.x, -dp.y);',
+      ' float ry = noise(vec2(an * 9.0, t * 0.08)) * 0.6 + noise(vec2(an * 23.0, 3.0 - t * 0.05)) * 0.4;',
+      ' ry = ry * ry * ry * smoothstep(1.7, 0.2, length(dp)) * wide;',
+      ' o += vec3(1.0, 0.9, 0.7) * ry * 0.45;',
       ' o = mix(o, mix(vec3(lum), col, 0.75) * 0.42, tv);',
       ' gl_FragColor = vec4(o + (hash(gl_FragCoord.xy + fract(t * 7.0) * 91.0) - 0.5) / 255.0, 1.0);',
       '}'].join('\n'),
@@ -2893,41 +2907,56 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       });
     }
 
+    function aim(st, F, t){
+      var main = COL[st.c][1], part = COL[st.c][2], m = st.m, TAU = 6.2832, side = F.x < W / 2 ? -1 : 1, f = 0, o = {};
+      if(m === 1) f = 0.5 - 0.5 * Math.cos(t * TAU / 5 + F.i * Math.PI);
+      else if(m === 2){ var b = Math.floor(t / 0.5), tg = (b + F.i) % 2; f = (1 - tg) + (2 * tg - 1) * ss(0, 0.12, t - b * 0.5); }
+      o.c = mix(main, part, f);
+      o.I = m === 2 ? 0.72 + 0.28 * Math.exp(-(t % 0.5) * 6) : (m === 1 ? 0.88 + 0.08 * Math.sin(t * 1.3 + F.j) : 0.92);
+      if(F.hang){
+        o.half = 0.12;
+        if(st.faces){ o.c = WARM; o.I = 1.6; o.half = 0.085; o.tx = 0.5 * W; o.ty = 0.915 * H - 12 * u; }
+        else {
+          var sw = m === 0 ? 0 : (m === 1 ? 0.13 * Math.sin(t * TAU / 9) : 0.2 * Math.sin(t * TAU / 2));
+          o.tx = (0.5 + side * (0.1 + sw)) * W;
+          o.ty = (m === 2 ? 0.93 + 0.05 * Math.sin(t * TAU + F.i) : 0.9) * H;
+        }
+        o.ang = Math.atan2(o.ty - F.hy, o.tx - F.x); o.len = Math.hypot(o.tx - F.x, o.ty - F.hy) * (st.faces ? 1.25 : 1);
+      } else {
+        o.half = 0.15; o.len = 1.15 * H;
+        var sw2 = m === 0 ? 0 : (m === 1 ? 0.36 * Math.sin(t * TAU / 7) : 0.5 * Math.sin(t * TAU / 1.8));
+        o.ang = -Math.PI / 2 + side * 0.24 + (m === 2 ? sw2 : side * sw2);
+      }
+      return o;
+    }
+    function lerp(a, b, k){ return a + (b - a) * k; }
+
+    var FADE = 1, PV = null, T0 = 0;
     function draw(t){
       size();
       bx.globalCompositeOperation = 'source-over'; bx.clearRect(0, 0, W, H); rx.clearRect(0, 0, W, H);
       bx.globalCompositeOperation = 'lighter';
-      var main = COL[S.c][1], part = COL[S.c][2], m = S.m, TAU = 6.2832;
-      var fix = [{ x: 0.075 * W, hang: true, i: 0 }, { x: 0.925 * W, hang: true, i: 1 }, { x: 0.27 * W, hang: false, i: 1 }, { x: 0.73 * W, hang: false, i: 0 }];
-      fix.forEach(function(F, j){
-        var side = F.x < W / 2 ? -1 : 1, f = 0;
-        if(m === 1) f = 0.5 - 0.5 * Math.cos(t * TAU / 5 + F.i * Math.PI);
-        else if(m === 2){ var b = Math.floor(t / 0.5), tg = (b + F.i) % 2; f = (1 - tg) + (2 * tg - 1) * ss(0, 0.12, t - b * 0.5); }
-        var c = mix(main, part, f);
-        var I = m === 2 ? 0.72 + 0.28 * Math.exp(-(t % 0.5) * 6) : (m === 1 ? 0.88 + 0.08 * Math.sin(t * 1.3 + j) : 0.92);
-        var ang, len, half, tx, ty;
-        if(F.hang){
-          F.hy = 0.03 * H + 4.6 * u; half = 0.12;
-          if(S.faces){ c = WARM; I = 1.6; half = 0.085; tx = 0.5 * W; ty = 0.915 * H - 12 * u; }
-          else {
-            var sw = m === 0 ? 0 : (m === 1 ? 0.13 * Math.sin(t * TAU / 9) : 0.2 * Math.sin(t * TAU / 2));
-            tx = (0.5 + side * (0.1 + sw)) * W;
-            ty = (m === 2 ? 0.93 + 0.05 * Math.sin(t * TAU + F.i) : 0.9) * H;
-          }
-          ang = Math.atan2(ty - F.hy, tx - F.x); len = Math.hypot(tx - F.x, ty - F.hy) * (S.faces ? 1.25 : 1);
-        } else {
-          F.hy = 0.865 * H - 4.6 * u; half = 0.15; len = 1.15 * H;
-          var sw2 = m === 0 ? 0 : (m === 1 ? 0.36 * Math.sin(t * TAU / 7) : 0.5 * Math.sin(t * TAU / 1.8));
-          ang = -Math.PI / 2 + side * 0.24 + (m === 2 ? sw2 : side * sw2);
+      var k = PV && !reduce ? ss(0, FADE, t - T0) : 1; if(k >= 1) PV = null;
+      var fz = (S.faces ? k : 0) + (PV && PV.faces ? 1 - k : 0);
+      var fix = [
+        { x: 0.075 * W, hy: 0.03 * H + 4.6 * u, hang: true, i: 0, j: 0 }, { x: 0.925 * W, hy: 0.03 * H + 4.6 * u, hang: true, i: 1, j: 1 },
+        { x: 0.27 * W, hy: 0.865 * H - 4.6 * u, hang: false, i: 1, j: 2 }, { x: 0.73 * W, hy: 0.865 * H - 4.6 * u, hang: false, i: 0, j: 3 }
+      ];
+      fix.forEach(function(F){
+        var o = aim(S, F, t);
+        if(PV){
+          var p = aim(PV, F, t);
+          o = { c: mix(p.c, o.c, k), I: lerp(p.I, o.I, k), ang: lerp(p.ang, o.ang, k), len: lerp(p.len, o.len, k), half: lerp(p.half, o.half, k),
+            tx: F.hang ? lerp(p.tx, o.tx, k) : 0, ty: F.hang ? lerp(p.ty, o.ty, k) : 0 };
         }
-        F.ang = ang; F.c = c; F.I = I;
-        var ox = F.x + Math.cos(ang) * 0.85 * u, oy = F.hy + Math.sin(ang) * 0.85 * u;
-        beam(ox, oy, ang, len, half, c, I);
-        glow(ox, oy, 5 * u, c, 0.5 * I);
-        if(F.hang) pool(tx, ty, (len * Math.tan(half) + 2 * u) * 1.2, c, 0.35 * I);
+        F.ang = o.ang; F.c = o.c; F.I = Math.min(1, o.I);
+        var ox = F.x + Math.cos(o.ang) * 0.85 * u, oy = F.hy + Math.sin(o.ang) * 0.85 * u;
+        beam(ox, oy, o.ang, o.len, o.half, o.c, o.I);
+        glow(ox, oy, 5 * u, o.c, 0.5 * F.I);
+        if(F.hang) pool(o.tx, o.ty, (o.len * Math.tan(o.half) + 2 * u) * 1.2, o.c, 0.35 * F.I);
       });
-      if(S.faces){ pool(0.5 * W, 0.915 * H, 7 * u, WARM, 0.35); glow(0.5 * W, 0.915 * H - 13 * u, 9 * u, WARM, 0.22); }
-      person(S.faces);
+      if(fz > 0){ pool(0.5 * W, 0.915 * H, 7 * u, WARM, 0.35 * fz); glow(0.5 * W, 0.915 * H - 13 * u, 9 * u, WARM, 0.22 * fz); }
+      person(fz > 0.5);
       fix.forEach(body);
       crowd();
     }
@@ -2947,12 +2976,29 @@ body:has(#page-worship:not([hidden])) .network{display:none}
         + (S.faces ? ', with the ceiling heads white on the speaker.' : '.');
       if(reduce) still();
     }
+    function ghost(){
+      if(reduce || !WO || !wcv.width) return;
+      var g = document.createElement('div');
+      g.className = wall.className.replace('scr-idle', '') + ' stg-ghost';
+      var c2 = document.createElement('canvas'); c2.className = 'fx'; c2.width = wcv.width; c2.height = wcv.height;
+      var x2 = c2.getContext('2d'); if(x2) x2.drawImage(wcv, 0, 0);
+      g.appendChild(c2);
+      [].slice.call(wall.children).forEach(function(ch){ if(ch !== wcv) g.appendChild(ch.cloneNode(true)); });
+      wall.parentNode.insertBefore(g, wall.nextSibling);
+      requestAnimationFrame(function(){ requestAnimationFrame(function(){ g.style.opacity = '0'; }); });
+      setTimeout(function(){ if(g.parentNode) g.parentNode.removeChild(g); }, FADE * 1000 + 250);
+    }
+    function change(fn, wallToo){
+      PV = { pk: S.pk, pt: S.pt, c: S.c, m: S.m, faces: S.faces }; T0 = performance.now() / 1000;
+      if(wallToo) ghost();
+      fn();
+    }
     function song(){ var L = PK[S.pk].L[S.pt]; S.c = L[0]; S.m = L[1]; S.faces = false; setWall(); ui(); }
-    $$('[data-sp]').forEach(function(b){ b.addEventListener('click', function(){ S.pk = +b.getAttribute('data-sp'); song(); }); });
-    $$('[data-spt]').forEach(function(b){ b.addEventListener('click', function(){ S.pt = +b.getAttribute('data-spt'); song(); }); });
-    $$('[data-sc]').forEach(function(b){ b.addEventListener('click', function(){ S.c = +b.getAttribute('data-sc'); ui(); }); });
-    $$('[data-sm]').forEach(function(b){ b.addEventListener('click', function(){ S.m = +b.getAttribute('data-sm'); ui(); }); });
-    $('#stgFaces').addEventListener('click', function(){ S.faces = !S.faces; ui(); });
+    $$('[data-sp]').forEach(function(b){ b.addEventListener('click', function(){ change(function(){ S.pk = +b.getAttribute('data-sp'); song(); }, true); }); });
+    $$('[data-spt]').forEach(function(b){ b.addEventListener('click', function(){ change(function(){ S.pt = +b.getAttribute('data-spt'); song(); }, true); }); });
+    $$('[data-sc]').forEach(function(b){ b.addEventListener('click', function(){ change(function(){ S.c = +b.getAttribute('data-sc'); ui(); }); }); });
+    $$('[data-sm]').forEach(function(b){ b.addEventListener('click', function(){ change(function(){ S.m = +b.getAttribute('data-sm'); ui(); }); }); });
+    $('#stgFaces').addEventListener('click', function(){ change(function(){ S.faces = !S.faces; ui(); }); });
     song();
     window.__cynStage = still;
     if(reduce) window.addEventListener('resize', still);
