@@ -1888,6 +1888,7 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       ' float sp = 1.0 + (1.0 - k) * 3.0; float tt = t * 0.12 * sp;',
       ' float a = atan(p.y, p.x); float d = length(p);',
       ' float sw = fbm(vec2(a * 1.2 + tt * 0.7 + d * 2.5, d * 3.5 - tt));',
+      ' sw = mix(sw, fbm(vec2((a - 6.2832) * 1.2 + tt * 0.7 + d * 2.5, d * 3.5 - tt)), smoothstep(0.75, 1.0, (a + 3.1416) / 6.2832));',
       ' vec3 col = mix(ca, cb * 0.8, smoothstep(0.25, 0.9, sw) * (1.0 - smoothstep(0.05, 1.0, d)));',
       ' float R = 0.38; float wob = 0.012 * sin(a * 7.0 + tt * 3.0); float rd = abs(d - R - wob);',
       ' col += cc * (1.0 - smoothstep(0.0, 0.05, rd)) * (0.25 + 0.5 * sw);',
