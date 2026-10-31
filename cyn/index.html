@@ -1286,8 +1286,8 @@ body:has(#page-worship:not([hidden])) .network{display:none}
 
 <section class="band stageband" aria-labelledby="h-stage">
   <div class="in">
-    <h2 class="crew-h" id="h-stage">Stage preview <span class="crew-n">LED wall + 4 moving heads</span></h2>
-    <p class="sub-h">A mock-up of the room: the LED wall across the back, 2 moving heads hung from the ceiling at the sides, and 2 on the stage at the foot of the screen. Pick a worship pack and a part to see the wall and the lights together, or try any color and speed. Speaker shows the speaker preset: white on the person and nothing aimed at the seats.</p>
+    <h2 class="crew-h" id="h-stage">Stage preview <span class="crew-n">LED wall + 6 moving heads</span></h2>
+    <p class="sub-h">A mock-up of the room: the LED wall across the back, 2 moving heads hung above the stage, 2 on the floor next to the stage, and 2 hung over the seats facing the stage. Pick a worship pack and a part to see the wall and the lights together, or try any color and speed. Speaker shows the speaker preset: white on the person from above and from the front, and nothing aimed at the seats.</p>
     <div class="stage" id="stage">
       <div class="stg-ceil"></div>
       <div class="stg-wall scr glt" id="scr-stage"><canvas class="fx" id="stgWall" data-gl="fire" data-pal="deep" data-k="0.2" data-ts="0.8"></canvas></div>
@@ -1317,7 +1317,7 @@ body:has(#page-worship:not([hidden])) .network{display:none}
         <div class="dl-col dl-wide" style="--bk:#9fc3ff"><h4>Bank 4 · Speaker</h4><button class="dl-btn" type="button" data-dlspk aria-pressed="false"><span>Speaker<small>STATIC</small></span><i style="--a:#fff1d6"></i></button></div>
       </div>
     </div>
-    <div class="lbanks"><span><b>Bank 1 · Still</b>A static scene with COLOR only. The heads hold their aim.</span><span><b>Bank 2 · Slow</b>The same color plus MOVE FX for a slow sweep and COLOR FX breathing toward its partner, about 4 to 6 seconds each way.</span><span><b>Bank 3 · Fast</b>The same FX sped up and locked to the BPM, so the sweep and the color flip land on the beat.</span><span><b>Bank 4 · Speaker</b>One static scene. Ceiling heads warm white, zoomed tight, tilted down onto the speaker's spot. Floor heads low and straight up. Nothing aims at the seats.</span></div>
+    <div class="lbanks"><span><b>Bank 1 · Still</b>A static scene with COLOR only. The heads hold their aim.</span><span><b>Bank 2 · Slow</b>The same color plus MOVE FX for a slow sweep and COLOR FX breathing toward its partner, about 4 to 6 seconds each way.</span><span><b>Bank 3 · Fast</b>The same FX sped up and locked to the BPM, so the sweep and the color flip land on the beat.</span><span><b>Bank 4 · Speaker</b>One static scene. The 2 heads over the seats warm white on the speaker's face. The 2 above the stage warm white, zoomed tight, tilted down onto the speaker's spot. Floor heads low and straight up. Nothing aims at the seats.</span></div>
     <p class="lnote">A moving look only moves between its color and its partner shade, never a rainbow.</p>
     <div class="lcolors">
       <div class="lc"><i class="lsw" style="--a:#e3241b;--b:#ffa21f" aria-hidden="true"></i><span class="lc-n">1</span><span class="lc-c">Red<small>moves with amber</small></span><p>Worship, the warm screen packs</p></div>
@@ -1329,7 +1329,7 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       <div class="lc"><i class="lsw" style="--a:#ff3fa4;--b:#8a3cff" aria-hidden="true"></i><span class="lc-n">7</span><span class="lc-c">Pink<small>moves with purple</small></span><p>Youth, games, hype</p></div>
       <div class="lc"><i class="lsw" style="--a:#ffffff;--b:#bcd6ff" aria-hidden="true"></i><span class="lc-n">8</span><span class="lc-c">White<small>moves with cool white</small></span><p>Calvary, preaching</p></div>
     </div>
-    <p class="lnote">Faces first: for preaching and the speaker, use Bank 4 Speaker. It lights the person without shining into the seats. If the room's front lights reach the stage, add them too.</p>
+    <p class="lnote">Faces first: for preaching and the speaker, use Bank 4 Speaker. It lights the person without shining into the seats. The 2 heads over the seats are the front light, so they're the ones that light faces.</p>
     <h3 class="lsub">Normal services <span class="crew-n">Which button</span></h3>
     <div class="crew">
       <div class="crew-row"><span class="crew-role">Walk-in</span><span class="crew-who">Slow · Amber</span><p class="crew-do">Room lights up, the heads breathing in amber.</p></div>
@@ -2917,7 +2917,7 @@ body:has(#page-worship:not([hidden])) .network{display:none}
     };
   } else requestAnimationFrame(frame);
 
-  /* ---------- Lights tab: stage preview. The real rig: 4 LED moving-head washes, 2 hung from the ceiling at the sides, 2 on the stage at the foot of the LED wall ---------- */
+  /* ---------- Lights tab: stage preview. The real rig (Corey's photo 10/30): 6 moving heads. 2 LED washes hung above the stage, 2 LED washes on the floor next to it, 2 single-lens spots hung over the seats facing the stage ---------- */
   (function(){
     var STG = $('#stage'); if(!STG) return;
     var wall = $('#scr-stage'), wcv = $('#stgWall'), bcv = $('#stgBeam'), rcv = $('#stgRig');
@@ -3005,7 +3005,7 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       return d;
     })();
     function body(F){
-      var x = F.x, hy = F.hy, k = u, by = F.hang ? 0.03 * H : 0.865 * H - 2 * k;
+      var x = F.x, hy = F.hy, k = (F.s || 1) * u, by = F.by != null ? F.by : (F.hang ? 0.03 * H : 0.865 * H - 2 * k);
       var py = F.hang ? by + 2 * k : by - 0.4 * k, a0 = F.hang ? by + 2.4 * k : hy - 1.8 * k, a1 = F.hang ? hy + 1.8 * k : by - 0.4 * k;
       if(F.hang){ rx.fillStyle = '#1b1b1f'; rx.fillRect(x - 4.5 * k, by - 0.5 * k, 9 * k, 0.5 * k); }
       rx.fillStyle = '#141418'; rr(rx, x - 2.6 * k, by, 5.2 * k, 2 * k, 0.45 * k); rx.fill();
@@ -3020,6 +3020,12 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       rx.fillStyle = g; rx.beginPath(); rx.arc(x, hy, 2.1 * k, 0, 6.2832); rx.fill();
       var dx = Math.cos(F.ang), dy = Math.sin(F.ang), nx = -dy, ny = dx, cx = x + dx * 0.6 * k, cy = hy + dy * 0.6 * k;
       rx.fillStyle = '#060607'; rx.beginPath(); rx.ellipse(cx, cy, 0.98 * k, 1.95 * k, F.ang, 0, 6.2832); rx.fill();
+      if(F.house){
+        var lg = rx.createRadialGradient(cx, cy, 0, cx, cy, 1.6 * k);
+        lg.addColorStop(0, rgba(mix(F.c, WHITE, 0.6), 0.6 + 0.4 * F.I)); lg.addColorStop(0.45, rgba(F.c, 0.45 * F.I)); lg.addColorStop(1, rgba(F.c, 0));
+        rx.fillStyle = lg; rx.beginPath(); rx.ellipse(cx, cy, 0.8 * k, 1.6 * k, F.ang, 0, 6.2832); rx.fill();
+        return;
+      }
       rx.fillStyle = rgba(mix(F.c, WHITE, 0.4), 0.55 + 0.45 * F.I);
       DOTS.forEach(function(d){
         var a = d[0] * 0.85 * k, b = d[1] * 1.7 * k;
@@ -3056,7 +3062,16 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       else if(m === 2){ var b = Math.floor(t / 0.5), tg = (b + F.i) % 2; f = (1 - tg) + (2 * tg - 1) * ss(0, 0.12, t - b * 0.5); }
       o.c = mix(main, part, f);
       o.I = m === 2 ? 0.72 + 0.28 * Math.exp(-(t % 0.5) * 6) : (m === 1 ? 0.88 + 0.08 * Math.sin(t * 1.3 + F.j) : 0.92);
-      if(F.hang){
+      if(F.house){
+        o.half = 0.05;
+        if(st.faces){ o.c = WARM; o.I = 1.5; o.half = 0.04; o.tx = 0.5 * W; o.ty = 0.915 * H - 15 * u; }
+        else {
+          var sw3 = m === 0 ? 0 : (m === 1 ? 0.12 * Math.sin(t * TAU / 9 + 1) : 0.18 * Math.sin(t * TAU / 2 + 1));
+          o.tx = (0.5 + side * (0.17 + sw3)) * W;
+          o.ty = (m === 2 ? 0.88 + 0.04 * Math.sin(t * TAU + F.i) : 0.875) * H;
+        }
+        o.ang = Math.atan2(o.ty - F.hy, o.tx - F.x); o.len = Math.hypot(o.tx - F.x, o.ty - F.hy);
+      } else if(F.hang){
         o.half = 0.12;
         if(st.faces){ o.c = WARM; o.I = 1.6; o.half = 0.07; o.tx = 0.5 * W; o.ty = 0.915 * H - 12 * u; }
         else {
@@ -3084,7 +3099,9 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       var fz = (S.faces ? k : 0) + (PV && PV.faces ? 1 - k : 0);
       var fix = [
         { x: 0.075 * W, hy: 0.03 * H + 4.6 * u, hang: true, i: 0, j: 0 }, { x: 0.925 * W, hy: 0.03 * H + 4.6 * u, hang: true, i: 1, j: 1 },
-        { x: 0.27 * W, hy: 0.865 * H - 4.6 * u, hang: false, i: 1, j: 2 }, { x: 0.73 * W, hy: 0.865 * H - 4.6 * u, hang: false, i: 0, j: 3 }
+        { x: 0.27 * W, hy: 0.865 * H - 4.6 * u, hang: false, i: 1, j: 2 }, { x: 0.73 * W, hy: 0.865 * H - 4.6 * u, hang: false, i: 0, j: 3 },
+        { x: 0.21 * W, by: 0.004 * H, hy: 0.004 * H + 6.7 * u, s: 1.45, hang: true, house: true, i: 0, j: 4 },
+        { x: 0.79 * W, by: 0.004 * H, hy: 0.004 * H + 6.7 * u, s: 1.45, hang: true, house: true, i: 1, j: 5 }
       ];
       fix.forEach(function(F){
         var o = aim(S, F, t);
@@ -3094,10 +3111,11 @@ body:has(#page-worship:not([hidden])) .network{display:none}
             tx: F.hang ? lerp(p.tx, o.tx, k) : 0, ty: F.hang ? lerp(p.ty, o.ty, k) : 0 };
         }
         F.ang = o.ang; F.c = o.c; F.I = Math.min(1, o.I);
-        var ox = F.x + Math.cos(o.ang) * 0.85 * u, oy = F.hy + Math.sin(o.ang) * 0.85 * u;
+        var fs = F.s || 1, ox = F.x + Math.cos(o.ang) * 0.85 * fs * u, oy = F.hy + Math.sin(o.ang) * 0.85 * fs * u;
         beam(ox, oy, o.ang, o.len, o.half, o.c, o.I);
-        glow(ox, oy, 5 * u, o.c, 0.5 * F.I);
-        if(F.hang) pool(o.tx, o.ty, (o.len * Math.tan(o.half) + 2 * u) * 1.2, o.c, 0.35 * F.I);
+        glow(ox, oy, 5 * fs * u, o.c, 0.5 * F.I);
+        if(F.house) pool(o.tx, o.ty, (o.len * Math.tan(o.half) + 2 * u) * 1.3, o.c, 0.4 * F.I * (1 - fz));
+        else if(F.hang) pool(o.tx, o.ty, (o.len * Math.tan(o.half) + 2 * u) * 1.2, o.c, 0.35 * F.I);
       });
       if(fz > 0){ pool(0.5 * W, 0.915 * H, 7 * u, WARM, 0.35 * fz); glow(0.5 * W, 0.915 * H - 13 * u, 9 * u, WARM, 0.22 * fz); }
       person(fz > 0.5);
