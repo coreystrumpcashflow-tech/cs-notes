@@ -2107,11 +2107,17 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       ' vec3 H = lqHs(x, spd); return 1.0 / (abs((1.0 + s0 * H.x) * (1.0 + s0 * H.y) - s0 * s0 * H.z * H.z) + 0.4); }',
       'void main(){',
       ' vec2 uv = gl_FragCoord.xy / r; vec2 p = (gl_FragCoord.xy - 0.5 * r) / r.y; float lv = clamp(k, 0.0, 1.0);',
-      ' float spd = 0.035 + 0.02 * lv, s0 = 0.31;',
-      // trace back where the light landing on this spot of the floor came through the surface, then how much the surface
-      // focused it there: bright webs where it bunches up, soft where it spreads out
-      ' vec2 x = p; for(int it = 0; it < 5; it++) x = p - s0 * lqG(x, spd);',
-      ' vec2 g = lqG(x, spd); vec3 H = lqHs(x, spd);',
+      ' float spd = 0.03 + 0.02 * lv, s0 = 0.31;',
+      // Corey 11/2: "give it more depth like im looking at the top of water with shadows at the depth of the reflections".
+      // The surface right here (the big waves plus fine ripples): we look down through it, so the floor we see is shifted by
+      // its slope and wobbles as it moves
+      // (fine ripples on top read as a woven pattern and clumped sparkles; the swell alone makes the glints)
+      ' vec2 gs = lqG(p, spd);',
+      ' vec2 fp = p + 0.13 * gs;',
+      // on the floor: trace back where the light landing there came through the surface, then how much the surface focused
+      // it: bright webs where it bunches up, shadow where it spreads out
+      ' vec2 x = fp; for(int it = 0; it < 5; it++) x = fp - s0 * lqG(x, spd);',
+      ' vec3 H = lqHs(x, spd);',
       // each color bends a touch differently, so the brightest lines get a faint rainbow edge like real water light
       ' vec3 sv = vec3(0.988, 1.0, 1.012) * s0;',
       ' vec3 det = (1.0 + sv * H.x) * (1.0 + sv * H.y) - sv * sv * H.z * H.z;',
@@ -2120,15 +2126,20 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       // a wide soft glow around each line (the same focusing, measured loosely)
       // the glow: the light landing in a small ring around this spot, averaged (a soft blur of the lines)
       ' float hb = 0.0; for(int j = 0; j < 8; j++){ float a = float(j) * 0.7854;',
-      '  hb += lqF(p + 0.012 * vec2(cos(a), sin(a)), spd, s0) + lqF(p + 0.026 * vec2(cos(a + 0.39), sin(a + 0.39)), spd, s0); }',
+      '  hb += lqF(fp + 0.012 * vec2(cos(a), sin(a)), spd, s0) + lqF(fp + 0.026 * vec2(cos(a + 0.39), sin(a + 0.39)), spd, s0); }',
       ' float halo = smoothstep(0.76, 1.7, hb / 16.0); halo *= sqrt(halo);',
-      // the surface's own tilt right here: soft lighter and darker pillows
-      ' float tilt = clamp(0.5 + 1.8 * dot(lqG(p, spd), vec2(-0.45, 0.6)), 0.0, 1.0);',
-      ' vec3 col = mix(ca, cb, clamp(tilt * 0.5 + 0.22 + halo * 0.45, 0.0, 1.0));',
-      ' col += cb * 1.45 * halo * 0.6 + mix(cb, cc, 0.5) * min(max(gl - 1.0, 0.0), 4.0) * 0.13 + cc * core * core * 0.035;',
+      // the floor: lit where the light gathers, in shadow beside it where the light spread away, seen through deep water
+      ' float shade = smoothstep(0.4, 1.3, gl);',
+      ' vec3 flo = mix(ca, cb, clamp(0.12 + 0.55 * shade + halo * 0.35, 0.0, 1.0));',
+      ' flo += cb * 1.45 * halo * 0.34 + mix(cb, cc, 0.5) * min(max(gl - 1.0, 0.0), 4.0) * 0.1 + cc * core * core * 0.025;',
+      ' flo = mix(flo, ca, 0.15);',
+      // the surface on top: its slopes a touch lighter or darker, a soft sheen of sky, and sharp glints where ripples catch the light
+      ' vec3 n = normalize(vec3(-gs, 1.0)); vec3 L = normalize(vec3(-0.35, 0.5, 1.0)); vec3 hv = normalize(L + vec3(0.0, 0.0, 1.0));',
+      ' float nh = max(dot(n, hv), 0.0);',
+      ' vec3 col = flo * (1.0 + 0.6 * dot(gs, vec2(-0.3, 0.43))) + mix(cb, cc, 0.6) * pow(nh, 30.0) * 0.1 + mix(cc, vec3(1.0), 0.5) * pow(nh, 700.0) * 0.8;',
       ' col = 1.0 - exp(-col * 1.25);',
       // deeper darks, brighter lights, like the reference
-      ' col = min(pow(col, vec3(1.25)) * 1.6, 1.0);',
+      ' col = min(pow(col, vec3(1.25)) * 1.45, 1.0);',
       ' gl_FragColor = vec4(col * (0.8 + 0.2 * vig(uv)), 1.0);',
       '}'].join('\n'),
     smoke: [
