@@ -952,6 +952,28 @@ body:has(#page-worship:not([hidden])) .network{display:none}
 .ynf .ynf-svg text{fill:none;stroke:rgba(255,255,255,.22);stroke-width:3}
 .ynf .ynf-svg polygon{fill:none;stroke:none}
 .ynf .ynf-svg polygon:first-of-type{stroke:rgba(255,255,255,.22);stroke-width:3}
+/* outline + background (11/2): the wall is lit by the tile's own fire. --yc glow, --ye hot edge, --ys strength,
+   --yf into the song (0 = the opener's white Theme wall, 1 = fire light; ynTint sets it), --hz/--he the in-between colors */
+.ynf{--yc:176,31,5;--ye:255,96,32;--ys:1;--gx:50%}
+#scr-led-wynv{--yc:128,18,4;--ye:232,62,22;--ys:.6}
+#scr-led-wynb{--yc:170,100,24;--ye:255,186,84;--ys:1.4}
+#scr-led-wynbw{--yc:140,140,140;--ye:236,236,236}
+#scr-led-wynblue{--yc:13,51,199;--ye:92,150,255}
+#scr-led-wyncyan{--yc:0,133,153;--ye:70,224,245}
+#scr-led-wyngreen{--yc:13,148,51;--ye:92,234,130}
+#scr-tv-wyn{--ys:.6;--gx:45.5%}
+.ynf .ynx-bg::before,.ynf .ynx-bg::after,.ynf .ynx-glow::before,.ynf .ynx-glow::after{content:"";position:absolute;inset:0}
+.ynf .ynx-bg::before{background:radial-gradient(ellipse 62% 78% at 50% 52%,#101010 0%,#080808 50%,#030303 100%);opacity:var(--yf,1)}
+.ynf .ynx-bg::after{background:radial-gradient(ellipse calc(30% + 22% * var(--ys)) calc(12% + 12% * var(--ys)) at 50% 100%,rgba(var(--yc),calc(.42 * var(--ys))),rgba(var(--yc),0));opacity:var(--yf,1)}
+.ynf .ynx-glow{background:none}
+.ynf .ynx-glow::before{background:radial-gradient(ellipse calc(12% + 8% * var(--ys)) 52% at var(--gx) 51%,rgba(var(--yc),calc(.5 * var(--ys))),rgba(var(--yc),0) 72%);opacity:var(--yf,1)}
+.ynf .ynx-glow::after{background:radial-gradient(ellipse 20% 52% at var(--gx) 51%,rgba(255,255,255,.4),rgba(255,255,255,0) 72%);opacity:calc(1 - var(--yf,1))}
+.ynf .ynx-haze::before,.ynf .ynx-haze::after{background:radial-gradient(closest-side,rgba(var(--hz,var(--yc)),calc(.15 * var(--ys))),rgba(var(--hz,var(--yc)),0))}
+.ynf .ynf-svg{filter:drop-shadow(0 0 .45cqw rgba(var(--he,var(--ye)),calc(.3 + .3 * var(--yf,1))))}
+.ynf .ynf-svg text,.ynf .ynf-svg polygon:first-of-type{stroke:rgba(var(--he,var(--ye)),calc(.22 + .6 * var(--yf,1)));stroke-width:3}
+.ynf .ynf-svg polygon:nth-of-type(n+2){stroke:rgba(var(--he,var(--ye)),calc(.5 * var(--yf,1)));stroke-width:2;stroke-linejoin:round}
+.ynf .ynf-svg polygon:nth-of-type(2n){fill:rgba(0,0,0,calc(.3 * var(--yf,1)))}
+.ynf .ynf-svg polygon:nth-of-type(2n+3){fill:rgba(255,255,255,calc(.16 * var(--yf,1)))}
 .scr .ynx-bg,.scr .ynx-haze,.scr .ynx-glow,.scr .ynx-svg{position:absolute;inset:0;z-index:0}
 .ynx-bg{background:radial-gradient(ellipse 62% 78% at 50% 52%,#383838 0%,#191919 50%,#060606 100%)}
 .ynx-haze{overflow:hidden}
@@ -2636,9 +2658,19 @@ body:has(#page-worship:not([hidden])) .network{display:none}
     return { top: oy + 100 * s, hgt: 665 * s };   // the cross's top (100) to its foot (765) spans the letters too
   }
 
+  // into the song: the wall's light follows the fire up (--yf 0 = the opener's white Theme wall, 1 = lit by the fire)
+  function ynTint(o, ig){
+    var f = ig < 1 ? 0 : Math.min(1, (ig - 1) / 2.4); f = Math.round(f * f * (3 - 2 * f) * 100) / 100;
+    if(f === o.yf) return; o.yf = f;
+    var el = o.tile || (o.tile = o.cv.closest('.scr')), cs = getComputedStyle(el);
+    if(!o.yc){ o.yc = cs.getPropertyValue('--yc').split(',').map(Number); o.ye = cs.getPropertyValue('--ye').split(',').map(Number); }
+    var mix = function(c){ return c.map(function(v){ return Math.round(255 + (v - 255) * f); }).join(','); };
+    el.style.setProperty('--yf', f); el.style.setProperty('--hz', mix(o.yc)); el.style.setProperty('--he', mix(o.ye));
+  }
   // fire only inside the Theme wall's YES and NOW. (data-mask="ynx"); data-ignite: white letters first, then the fire rises through them
   function ynMask(o, t){
     var c = o.ctx, w = o.w, h = o.h, ig = o.ign ? (t / 1000) % 8 : 99;
+    if(o.ign) ynTint(o, ig);
     if(!o.mk || o.mk.width !== w || o.mk.height !== h || !o.mkok){
       o.mk = o.mk || document.createElement('canvas'); o.mk.width = w; o.mk.height = h;
       var mx = o.mk.getContext('2d'); mx.clearRect(0, 0, w, h); mx.fillStyle = '#fff'; o.ml = ynxLetters(mx, w, h, o.vb);
