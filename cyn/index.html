@@ -2119,9 +2119,11 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       ' float gl2 = lqF(P2, spd * 0.9, s0, 0.16);',
       // the floor: lit where the light gathers, a gentle shadow where it spread away; white-silver lines
       ' float shade = smoothstep(0.45, 1.25, gl);',
-      ' vec3 col = mix(ca, cb, clamp(0.3 + 0.45 * shade + 0.25 * halo, 0.0, 1.0));',
-      ' col += mix(cb, cc, 0.6) * halo * 0.18 + mix(cb, cc, 0.9) * min(max(gl - 1.0, 0.0), 2.2) * 0.17 + cc * min(core * core, 4.0) * 0.012;',
-      ' col += mix(cb, cc, 0.7) * min(max(gl2 - 1.1, 0.0), 3.0) * 0.025;',
+      // Corey 11/2: "it should be overall darker not so bright": the water a third darker, the light lines a little less
+      ' vec3 A = ca * 0.6, B = cb * 0.65;',
+      ' vec3 col = mix(A, B, clamp(0.3 + 0.45 * shade + 0.25 * halo, 0.0, 1.0));',
+      ' col += (mix(B, cc, 0.6) * halo * 0.18 + mix(B, cc, 0.9) * min(max(gl - 1.0, 0.0), 2.2) * 0.17 + cc * min(core * core, 4.0) * 0.012) * 0.85;',
+      ' col += mix(B, cc, 0.7) * min(max(gl2 - 1.1, 0.0), 3.0) * 0.025;',
       // the surface on top: gentle slope shading and a few faint glints
       ' vec3 n = normalize(vec3(-gs, 1.0)); vec3 L = normalize(vec3(-0.35, 0.5, 1.0)); float nh = max(dot(n, normalize(L + vec3(0.0, 0.0, 1.0))), 0.0);',
       ' col = col * (1.0 + 0.5 * dot(gs, vec2(-0.3, 0.43))) + cc * pow(nh, 900.0) * 0.25;',
