@@ -2052,23 +2052,28 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       'void main(){',
       ' vec2 uv = gl_FragCoord.xy / r; vec2 p = (gl_FragCoord.xy - 0.5 * r) / r.y;',
       ' float lv = clamp(k, 0.0, 1.0), s = r.y / 840.0, ta = t * 0.03;',
-      ' vec2 q = gl_FragCoord.xy / s;',
-      // light: a soft pool high in the middle, falling off to the sides and bottom; a slow wide band of light passing across
+      // Corey 11/2: "it should be a moving backround". The texture drifts behind the still cross with a slow push in and out,
+      // two wide bands of light cross the wall (about every 20 s and 30 s), dust floats up in front, the cross breathes
+      ' vec2 q = (gl_FragCoord.xy - 0.5 * r) / s * (1.0 - 0.035 * sin(t * 0.21)) + vec2(t * 9.0, -t * 5.0);',
+      // light: a soft pool high in the middle, falling off to the sides and bottom, and the two moving bands
       ' vec2 lp = (p - vec2(0.0, 0.15)) * vec2(0.6, 1.0); float light = 0.45 + 0.75 * exp(-dot(lp, lp) * 2.2);',
-      ' float sw = 0.5 + 0.5 * sin(p.x * 1.1 + p.y * 0.6 - t * 0.1); sw *= sw; light *= 0.9 + 0.2 * sw;',
-      // charcoal: broad smudges, specks that barely breathe, a fixed fine grain
+      ' float sw = 0.5 + 0.5 * sin(p.x * 1.1 + p.y * 0.6 - t * 0.32); sw *= sw;',
+      ' float sw2 = 0.5 + 0.5 * sin(-p.x * 0.7 + p.y * 1.3 - t * 0.21 + 1.3); sw2 *= sw2;',
+      ' light *= 0.78 + 0.3 * sw + 0.16 * sw2;',
+      // charcoal: broad smudges, specks that breathe a little, a fine grain, all moving with the drift
       ' float sm = ccF(mat2(0.88, 0.47, -0.47, 0.88) * q / 160.0 + vec2(ta, -ta * 0.6)) * 0.5 + ccF(mat2(0.6, -0.8, 0.8, 0.6) * q / 45.0 + vec2(-ta * 1.5, ta)) * 0.25;',
-      ' float spk = ccDots(mat2(0.8, 0.6, -0.6, 0.8) * q + vec2(0.0, -t * 0.6), 9.0, 1.0, 0.35, 0.15) * 0.6',
-      '   + ccDots(mat2(0.94, -0.34, 0.34, 0.94) * q + vec2(t * 0.4, 0.0), 5.0, 7.0, 0.5, 0.15) * 0.4;',
+      ' float spk = ccDots(mat2(0.8, 0.6, -0.6, 0.8) * q + vec2(0.0, -t * 1.5), 9.0, 1.0, 0.5, 0.3) * 0.6',
+      '   + ccDots(mat2(0.94, -0.34, 0.34, 0.94) * q + vec2(t * 1.0, 0.0), 5.0, 7.0, 0.7, 0.3) * 0.4;',
       ' float tx = 0.1 + sm + spk * 0.9 + (hash(floor(q / 2.0)) - 0.5) * 0.06;',
       ' vec3 wall = mix(ca, cb, clamp(tx, 0.0, 1.0));',
       ' wall = mix(wall, cc, smoothstep(0.85, 1.4, tx) * 0.55);',
       // the cross: the same wall, shaded lighter, a little more at the top, rising and falling with the passing light
       ' float m = 1.0 - smoothstep(-2.0 / r.y, 2.0 / r.y, ccCross(p));',
-      ' float shade = 1.0 + m * (0.9 + 0.25 * smoothstep(-0.46, 0.46, p.y)) * (0.75 + 0.35 * sw) * (0.85 + 0.3 * lv);',
-      // a few soft out-of-focus discs drifting in front, for depth
-      ' float bok = ccBokeh(q + vec2(t * 0.8, -t * 2.0), 42.0, 21.0);',
-      ' vec3 col = wall * light * shade + cc * bok * 0.08 * light;',
+      ' float shade = 1.0 + m * (0.9 + 0.25 * smoothstep(-0.46, 0.46, p.y)) * (0.72 + 0.4 * sw) * (0.9 + 0.12 * sin(t * 0.7)) * (0.85 + 0.3 * lv);',
+      // soft out-of-focus dust floating up in front, faster than the wall behind it (depth)
+      ' vec2 qf = gl_FragCoord.xy / s + vec2(t * 6.0 + sin(t * 0.2) * 20.0, -t * 16.0);',
+      ' float bok = ccBokeh(qf, 42.0, 21.0) + 0.6 * ccBokeh(qf * 1.6 + vec2(0.0, -t * 10.0), 42.0, 33.0);',
+      ' vec3 col = wall * light * shade + cc * bok * 0.15 * light;',
       ' col = 1.0 - exp(-col * 1.05);',
       ' gl_FragColor = vec4(col * (0.75 + 0.25 * vig(uv)), 1.0);',
       '}'].join('\n'),
