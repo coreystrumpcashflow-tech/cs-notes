@@ -962,7 +962,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .ka-light{position:absolute;inset:0;background:radial-gradient(ellipse 40% 55% at 60% 28%,rgba(255,255,255,.42),transparent 70%);mix-blend-mode:screen;animation:kabreathe 6s ease-in-out infinite alternate}
 @keyframes kabreathe{from{opacity:.25}to{opacity:.85}}
 .ka-sweep{position:absolute;inset:-30%;background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.2) 50%,transparent 58%);mix-blend-mode:screen;animation:kasweep 12s ease-in-out infinite}
-@keyframes kasweep{0%{transform:translateX(-40%)}60%,100%{transform:translateX(40%)}}
+@keyframes kasweep{0%{transform:translateX(-40%);opacity:0}9%{opacity:1}51%{opacity:1}60%,100%{transform:translateX(40%);opacity:0}}
 .ka-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(0,0,0,.8) 0,rgba(0,0,0,.48) 32%,transparent 58%)}
 .ka-scrim.c{background:radial-gradient(ellipse 58% 52% at 50% 50%,rgba(0,0,0,.72),rgba(0,0,0,.3) 70%,transparent)}
 [id^="scr-led-"] .op2.op-left{position:absolute;left:5%;top:14%;font-size:8cqw}
