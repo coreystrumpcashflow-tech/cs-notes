@@ -792,6 +792,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .sch-l li.nx{position:relative;color:var(--gold);background:linear-gradient(90deg,rgba(254,236,162,.2),rgba(254,236,162,.04));animation:nxglow 2.4s var(--eio) infinite}
 .sch-l li.nx::before{content:"Next";position:absolute;right:1.4cqw;top:50%;transform:translateY(-50%);font-family:var(--btn);font-weight:700;font-size:1.9cqw;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
 @keyframes nxglow{0%,100%{box-shadow:0 0 0 rgba(254,236,162,0)}50%{box-shadow:0 0 2.4cqw rgba(254,236,162,.28)}}
+/* words stay still on every background, only the backgrounds move (Corey 11/5: "i dont want the words on a loop, they should be still") */
+.rv span,.mn-l,.gv-t,.slam2,.pop2,.wc2{animation:none!important;opacity:1!important;filter:none!important;transform:none!important}
+.gv-t{background-position:50% 0!important}
+.sch-l li.nx{animation:none!important;box-shadow:0 0 2.4cqw rgba(254,236,162,.18)}
+.arena2 .kc,.arena2 .fx[data-gl]{animation:none!important}
 @media (prefers-reduced-motion: reduce){.cl-slide:first-of-type{opacity:1!important}}
 /* screens out of view hold still */
 .scr.scr-idle,.scr.scr-idle::before,.scr.scr-idle::after,.scr.scr-idle *,.scr.scr-idle *::before,.scr.scr-idle *::after{animation-play-state:paused!important;transition:none!important}
