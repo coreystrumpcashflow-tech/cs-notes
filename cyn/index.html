@@ -1385,7 +1385,7 @@ body:has(#page-worship:not([hidden])) .network{display:none}
 <section class="band stageband" aria-labelledby="h-stage">
   <div class="in">
     <h2 class="crew-h" id="h-stage">Stage preview <span class="crew-n">LED wall + 6 moving heads</span></h2>
-    <p class="sub-h">A mock-up of the room: the LED wall across the back, 2 moving heads hung above the stage, 2 on the floor next to the stage, and 2 hung over the seats facing the stage. Pick a worship pack and a part to see the wall and the lights together, or try any color and tab. Speaker shows the Speaker button: white on the person and nothing aimed at the seats.</p>
+    <p class="sub-h">A mock-up of the room: the LED wall across the back, 2 moving heads hung above the stage, 2 on the floor next to the stage, and 2 hung over the seats facing the stage. Pick any worship background, in the order they play, and one of its parts or colors to see the wall and the lights together. Each one starts on the lights it pairs with; then try any color and tab. Speaker shows the Speaker button: white on the person and nothing aimed at the seats.</p>
     <div class="stage" id="stage">
       <div class="stg-ceil"></div>
       <div class="stg-wall scr glt" id="scr-stage"><canvas class="fx" id="stgWall" data-gl="fire" data-pal="deep" data-k="0.2" data-ts="0.8"></canvas></div>
@@ -1394,8 +1394,8 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       <canvas class="stg-rig" id="stgRig" aria-hidden="true"></canvas>
     </div>
     <p class="stg-now" id="stgNow" aria-live="polite"></p>
-    <div class="cdctl stg-ctl" role="group" aria-label="Wall"><span class="lab">Wall</span><button class="cbtn" type="button" data-sp="0" aria-pressed="true">Fire</button><button class="cbtn" type="button" data-sp="1" aria-pressed="false">Tunnel</button><button class="cbtn" type="button" data-sp="2" aria-pressed="false">Diamond</button><button class="cbtn" type="button" data-sp="3" aria-pressed="false">Neon Arches</button><button class="cbtn" type="button" data-sp="4" aria-pressed="false">Calvary</button><button class="cbtn" type="button" data-sp="5" aria-pressed="false">Sea</button></div>
-    <div class="cdctl stg-ctl" role="group" aria-label="Song part"><span class="lab">Part</span><button class="cbtn" type="button" data-spt="0" aria-pressed="true">Verse</button><button class="cbtn" type="button" data-spt="1" aria-pressed="false">Chorus</button><button class="cbtn" type="button" data-spt="2" aria-pressed="false">Bridge</button></div>
+    <div class="cdctl stg-ctl" role="group" aria-label="Wall"><span class="lab">Wall</span><button class="cbtn" type="button" data-stw="0" aria-pressed="true">Rest on Us</button><button class="cbtn" type="button" data-stw="1" aria-pressed="false">Neon Arches</button><button class="cbtn" type="button" data-stw="2" aria-pressed="false">Calvary</button><button class="cbtn" type="button" data-stw="3" aria-pressed="false">Embers</button><button class="cbtn" type="button" data-stw="4" aria-pressed="false">Fire</button><button class="cbtn" type="button" data-stw="5" aria-pressed="false">Liquid Light</button><button class="cbtn" type="button" data-stw="6" aria-pressed="false">Windows to the Sea</button><button class="cbtn" type="button" data-stw="7" aria-pressed="false">Clouds</button><button class="cbtn" type="button" data-stw="8" aria-pressed="false">Charcoal Cross</button><button class="cbtn" type="button" data-stw="9" aria-pressed="false">Light Tunnel</button><button class="cbtn" type="button" data-stw="10" aria-pressed="false">Diamond</button></div>
+    <div class="cdctl stg-ctl" role="group" aria-label="Part or color" id="stgLooks"><span class="lab">Look</span></div>
     <div class="cdctl stg-ctl" role="group" aria-label="Light color"><span class="lab">Lights</span><button class="cbtn sbtn" type="button" data-sc="0" aria-pressed="false"><i style="--a:#ffffff"></i>White</button><button class="cbtn sbtn" type="button" data-sc="1" aria-pressed="false"><i style="--a:#2f6bff"></i>Blue</button><button class="cbtn sbtn" type="button" data-sc="2" aria-pressed="false"><i style="--a:#1fc8e0"></i>Cyan</button><button class="cbtn sbtn" type="button" data-sc="3" aria-pressed="false"><i style="--a:#25d26e"></i>Green</button><button class="cbtn sbtn" type="button" data-sc="4" aria-pressed="false"><i style="--a:#ff8a1f"></i>Orange</button><button class="cbtn sbtn" type="button" data-sc="5" aria-pressed="false"><i style="--a:#ff3fa4"></i>Pink</button><button class="cbtn sbtn" type="button" data-sc="6" aria-pressed="false"><i style="--a:#ffd60a"></i>Yellow</button><button class="cbtn sbtn" type="button" data-sc="7" aria-pressed="true"><i style="--a:#e3241b"></i>Red</button></div>
     <div class="cdctl stg-ctl" role="group" aria-label="Tab"><span class="lab">Tab</span><button class="cbtn" type="button" data-sm="0" aria-pressed="true">Still</button><button class="cbtn" type="button" data-sm="1" aria-pressed="false">Mid</button><button class="cbtn" type="button" data-sm="2" aria-pressed="false">Fast</button><button class="cbtn" type="button" id="stgFaces" aria-pressed="false">Speaker</button></div>
   </div>
@@ -3192,29 +3192,49 @@ body:has(#page-worship:not([hidden])) .network{display:none}
     var WARM = [255, 241, 214], WHITE = [255, 255, 255];
     var WP = [[7, 0], [7, 1], [4, 2]];
     var PK = [
-      { n: 'Fire', t: 'w1', L: WP }, { n: 'Tunnel', t: 'w2', L: WP }, { n: 'Diamond', t: 'w3', L: WP },
-      { n: 'Neon Arches', t: 'w7', L: [[1, 0], [3, 1], [0, 2]] },
-      { n: 'Calvary', t: 'w8', L: [[0, 0], [0, 1], [0, 1]] },
-      { n: 'Windows to the Sea', t: 'w9', L: [[2, 0], [2, 1], [2, 1]] }
+      { n: 'Rest on Us', s: 'Rest on Us / Amazing!', V: [['Verse', 'wynv', 7, 1], ['Chorus', 'wync', 7, 2], ['Bridge', 'wynb', 4, 2], ['Black and white', 'wynbw', 0, 2], ['Blue', 'wynblue', 1, 2], ['Cyan', 'wyncyan', 2, 2], ['Green', 'wyngreen', 3, 2]] },
+      { n: 'Neon Arches', s: 'What a God', V: [['Verse', 'w7v', 1, 0], ['Chorus', 'w7c', 3, 1], ['Bridge', 'w7b', 0, 2], ['Red', 'w7r', 7, 1]] },
+      { n: 'Calvary', s: 'Jesus Be the Name', V: [['Verse', 'w8v', 0, 0], ['Chorus', 'w8c', 0, 1], ['Bridge', 'w8b', 0, 1]] },
+      { n: 'Embers', s: 'Set a Fire, color not picked yet', V: [['Orange', 'wsfo', 4, 1], ['Red', 'wsfr', 7, 1], ['Gold', 'wsfg', 6, 1], ['Blue', 'wsfb', 1, 1], ['Purple', 'wsfp', 5, 1], ['Black and white', 'wsfw', 0, 1]] },
+      { n: 'Fire', s: 'Alleluia', V: [['Verse', 'w1v', 7, 0], ['Chorus', 'w1c', 7, 1], ['Bridge', 'w1b', 4, 2], ['Black and white', 'w1bw', 0, 1], ['Blue', 'w1blue', 1, 1], ['Cyan', 'w1cyan', 2, 1], ['Green', 'w1green', 3, 1]] },
+      { n: 'Liquid Light', s: 'Washed', V: [['Dark blue', 'wlqd', 1, 1], ['Light blue', 'wlql', 2, 1], ['Green', 'wlqg', 3, 1], ['Purple', 'wlqp', 5, 1]] },
+      { n: 'Windows to the Sea', s: 'Who Else', V: [['Verse', 'w9v', 2, 0], ['Chorus', 'w9c', 2, 1], ['Bridge', 'w9b', 2, 1]] },
+      { n: 'Clouds', s: 'Agnus Dei, color not picked yet', V: [['Gold', 'wadg', 6, 0], ['Black and white', 'wadw', 0, 0], ['Red', 'wadr', 7, 0], ['Blue', 'wadb', 1, 0], ['Purple', 'wadp', 5, 0]] },
+      { n: 'Charcoal Cross', s: 'Takeover', V: [['Blue', 'wccb', 1, 0], ['Black and white', 'wccw', 0, 0], ['Gold', 'wccgo', 6, 0], ['Red', 'wccr', 7, 0], ['Green', 'wccg', 3, 0]] },
+      { n: 'Light Tunnel', s: 'Phenomena', V: [['Verse', 'w2v', 7, 0], ['Chorus', 'w2c', 7, 1], ['Bridge', 'w2b', 4, 2]] },
+      { n: 'Diamond', s: 'no song yet', V: [['Verse', 'w3v', 7, 0], ['Chorus', 'w3c', 7, 1], ['Bridge', 'w3b', 4, 2], ['Bridge spinning', 'w3s', 4, 2]] }
     ];
-    var PART = ['v', 'c', 'b'], PARTN = ['verse', 'chorus', 'bridge'], MOTN = ['Still Lights', 'Mid Tempo', 'Fast Songs'];
+    var MOTN = ['Still Lights', 'Mid Tempo', 'Fast Songs'];
     var S = { pk: 0, pt: 0, c: 0, m: 0, faces: false };
 
     /* the wall shows the same tile the Worship tab shows for that pack and part */
     function setWall(){
-      var src = $('#scr-led-' + PK[S.pk].t + PART[S.pt]); if(!src) return;
+      var src = $('#scr-led-' + PK[S.pk].V[S.pt][1]); if(!src) return;
       var sc = src.querySelector('canvas'); if(!sc) return;
-      ['data-gl', 'data-pal', 'data-k', 'data-ts', 'data-img', 'data-dim'].forEach(function(a){
+      ['data-gl', 'data-pal', 'data-k', 'data-ts', 'data-img', 'data-dim', 'data-mask', 'data-vb'].forEach(function(a){
         var v = sc.getAttribute(a); if(v == null) wcv.removeAttribute(a); else wcv.setAttribute(a, v);
       });
+      if(wcv.parentNode !== wall) wall.insertBefore(wcv, wall.firstChild);
       [].slice.call(wall.children).forEach(function(ch){ if(ch !== wcv) wall.removeChild(ch); });
-      [].slice.call(src.children).forEach(function(ch){ if(ch.tagName !== 'CANVAS') wall.appendChild(ch.cloneNode(true)); });
+      wcv.className = 'fx';
+      // a tile whose canvas sits inside a wrapper (Rest on Us: fire inside the letters) gets the stage canvas in the wrapper's place
+      [].slice.call(src.children).forEach(function(ch){
+        if(ch.tagName === 'CANVAS') return;
+        var cl = ch.cloneNode(true), inner = cl.querySelector && cl.querySelector('canvas');
+        if(inner){ inner.parentNode.replaceChild(wcv, inner); wcv.className = sc.className; }
+        wall.appendChild(cl);
+      });
       wall.className = 'stg-wall ' + src.className.replace('scr-idle', '').trim();
+      var scs = getComputedStyle(src);
+      ['--yc', '--ye', '--ys', '--gx'].forEach(function(v){ var x = scs.getPropertyValue(v).trim(); if(x) wall.style.setProperty(v, x); else wall.style.removeProperty(v); });
+      ['--yf', '--hz', '--he'].forEach(function(v){ wall.style.removeProperty(v); });
       if(WO){
         WO.gl = sc.getAttribute('data-gl'); WO.img = sc.getAttribute('data-img');
         WO.pal = PAL[sc.getAttribute('data-pal')] || PAL.red;
         WO.ts = parseFloat(sc.getAttribute('data-ts') || '1') || 1;
         WO.kv = parseFloat(sc.getAttribute('data-k')) || 0; WO.kcd = false; WO.dim = parseFloat(sc.getAttribute('data-dim')) || 1;
+        WO.mask = sc.getAttribute('data-mask'); WO.vb = (sc.getAttribute('data-vb') || '0 0 2016 840').split(' ').map(Number);
+        WO.ign = sc.hasAttribute('data-ignite'); WO.mk = null; WO.mkok = false; WO.tile = null; WO.yf = null; WO.yc = null;
         if(reduce){ sizeS(WO, false); drawGL(WO, 4000); }
       }
     }
@@ -3386,10 +3406,10 @@ body:has(#page-worship:not([hidden])) .network{display:none}
     var now = $('#stgNow');
     function press(attr, val){ $$('[' + attr + ']').forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute(attr) === String(val) ? 'true' : 'false'); }); }
     function ui(){
-      press('data-sp', S.pk); press('data-spt', S.pt); press('data-sc', S.c); press('data-sm', S.m);
+      press('data-stw', S.pk); press('data-stv', S.pt); press('data-sc', S.c); press('data-sm', S.m);
       $$('[data-dlc]').forEach(function(b){ b.setAttribute('aria-pressed', (+b.getAttribute('data-dlc') === S.c && +b.getAttribute('data-dlm') === S.m && !S.faces) ? 'true' : 'false'); });
       $('#stgFaces').setAttribute('aria-pressed', S.faces ? 'true' : 'false');
-      now.textContent = 'On the wall: ' + PK[S.pk].n + ', ' + PARTN[S.pt] + '. Lights: '
+      now.textContent = 'On the wall: ' + PK[S.pk].n + ', ' + PK[S.pk].V[S.pt][0].toLowerCase() + ' (' + PK[S.pk].s + '). Lights: '
         + (S.faces ? 'Speaker, White Back: white on the stage and nothing aimed at the seats.' : MOTN[S.m] + ', ' + COL[S.c][0] + '.');
       $$('[data-dlspk]').forEach(function(b){ b.setAttribute('aria-pressed', S.faces ? 'true' : 'false'); });
       if(reduce) still();
@@ -3411,15 +3431,23 @@ body:has(#page-worship:not([hidden])) .network{display:none}
       if(wallToo) ghost();
       fn();
     }
-    function song(){ var L = PK[S.pk].L[S.pt]; S.c = L[0]; S.m = L[1]; S.faces = false; setWall(); ui(); }
-    $$('[data-sp]').forEach(function(b){ b.addEventListener('click', function(){ change(function(){ S.pk = +b.getAttribute('data-sp'); song(); }, true); }); });
-    $$('[data-spt]').forEach(function(b){ b.addEventListener('click', function(){ change(function(){ S.pt = +b.getAttribute('data-spt'); song(); }, true); }); });
+    function song(){ var L = PK[S.pk].V[S.pt]; S.c = L[2]; S.m = L[3]; S.faces = false; setWall(); ui(); }
+    var LOOKS = $('#stgLooks');
+    function looks(){
+      [].slice.call(LOOKS.querySelectorAll('[data-stv]')).forEach(function(b){ LOOKS.removeChild(b); });
+      PK[S.pk].V.forEach(function(v, i){
+        var b = document.createElement('button'); b.className = 'cbtn'; b.type = 'button'; b.setAttribute('data-stv', i); b.textContent = v[0];
+        b.addEventListener('click', function(){ change(function(){ S.pt = i; song(); }, true); });
+        LOOKS.appendChild(b);
+      });
+    }
+    $$('[data-stw]').forEach(function(b){ b.addEventListener('click', function(){ change(function(){ S.pk = +b.getAttribute('data-stw'); S.pt = 0; looks(); song(); }, true); }); });
     $$('[data-sc]').forEach(function(b){ b.addEventListener('click', function(){ change(function(){ S.c = +b.getAttribute('data-sc'); ui(); }); }); });
     $$('[data-sm]').forEach(function(b){ b.addEventListener('click', function(){ change(function(){ S.m = +b.getAttribute('data-sm'); ui(); }); }); });
     $('#stgFaces').addEventListener('click', function(){ change(function(){ S.faces = !S.faces; ui(); }); });
     $$('[data-dlc]').forEach(function(b){ b.addEventListener('click', function(){ change(function(){ S.c = +b.getAttribute('data-dlc'); S.m = +b.getAttribute('data-dlm'); S.faces = false; ui(); }); }); });
     $$('[data-dlspk]').forEach(function(b){ b.addEventListener('click', function(){ change(function(){ S.faces = true; ui(); }); }); });
-    song();
+    looks(); song();
     window.__cynStage = still;
     if(reduce) window.addEventListener('resize', still);
     else requestAnimationFrame(tick);
